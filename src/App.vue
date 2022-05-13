@@ -1,40 +1,11 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <MyCounter name="Counter 1" :initCount="5" @emitUp="getEvent" />
-    <MyCounter name="Counter 2" :initCount="10" @emitUp="getEvent" />
-    <p class="message">
-      EmitStak:
-      <ul>
-        <li v-for="item in stack" :key="item" >{{ item }}</li>
-      </ul>
-    </p>
-    <HelloWorld msg="Welcome to Your Vue.js App"/> 
-  </div>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/count">Count</router-link>
+  </nav>
+  <router-view />
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-import MyCounter from './components/MyCounter.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-    MyCounter
-  },
-  data(){
-    return {
-      stack: []
-    }
-  },
-  methods: {
-    getEvent(payload){
-      this.stack.push(payload)
-    }
-  }
-}
-</script>
 
 <style>
 #app {
@@ -43,9 +14,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-.message li {
-  list-style: inside;
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
