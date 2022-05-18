@@ -51,4 +51,8 @@ Vue CLI v5.0.4
 
  $ yarn serve
 
+## Add Modules
+vue add router
+vue add vuex
+
 ```

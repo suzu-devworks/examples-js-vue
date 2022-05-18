@@ -20,6 +20,10 @@ const routes = [
     component: () => import(/* webpackChunkName: "count" */ '../views/CountView.vue')
   },
   {
+    path: '/profile',
+    component: () => import(/* webpackChunkName: "profile" */ '../views/ProfileView.vue')
+  },
+  {
     path: '/paging/:page',
     component: () => import(/* webpackChunkName: "paging" */ '../views/PagingView.vue')
   }

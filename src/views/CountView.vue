@@ -5,16 +5,23 @@
     <MyCounter name="Counter 2" :initCount="10" @emitUp="getEvent" />
     <p class="message">
       EmitStak:
-    <ul>
-      <li v-for="item in stack" :key="item">{{ item }}</li>
-    </ul>
+      <ul>
+        <li v-for="item in stack" :key="item">{{ item }}</li>
+      </ul>
     </p>
-  </div>
+    <p>Store: {{ primitiveStore.globalCount }}</p>
+    <input type="text" v-model="primitiveStore.globalCount" />
+    <p>Vuex: {{ globalCount }}</p>
+   </div>
 </template>
 
 <script>
+ 
+
 // @ is an alias to /src
 import MyCounter from '@/components/MyCounter.vue'
+import primitiveStore from '@/primitiveStore.js'
+import { mapState } from 'vuex'
 
 export default {
   components: {
@@ -22,13 +29,19 @@ export default {
   },
   data() {
     return {
-      stack: []
+      stack: [],
+      primitiveStore: primitiveStore.state
     }
   },
   methods: {
     getEvent(payload) {
       this.stack.push(payload)
+      this.primitiveStore.globalCount++;
+      this.$store.commit("IncrementGlobal");
     }
+  },
+  computed: {
+    ...mapState(["globalCount"])
   }
 }
 </script>
