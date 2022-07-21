@@ -9,11 +9,12 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"dariofuzinato.vue-peek",
 		"Vue.volar", 
 		"Vue.vscode-typescript-vue-plugin",
-		"esbenp.prettier-vscode"
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"syler.sass-indented",
+		"dariofuzinato.vue-peek"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

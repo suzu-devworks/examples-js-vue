@@ -1,17 +1,19 @@
 ARG VARIANT="16-bullseye"
-FROM node:${VARIANT}  AS develop
+
+# For develop-stage.
+# > docker build --target develop-stage --tag examples-js:develop .
+FROM node:${VARIANT} as develop-stage
 WORKDIR /workspaces
 
-# Avoid warnings by switching to noninteractive
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Configure apt and install packages
+## Configure apt and install packages
 RUN set -x \
     && apt update \
     && apt install -y --no-install-recommends apt-utils dialog 2>&1 \
-    && apt install -y sudo
+    && apt install -y sudo \
+    \
+    && apt install -y procps iproute2 nano
 
-# Create a non-root user to use if preferred
+## Create a non-root user to use if preferred
 ARG USERNAME=vscode
 ARG USER_UID=2001
 ARG USER_GID=$USER_UID
@@ -22,15 +24,32 @@ RUN set -x \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
-# Configure node.js 
-RUN set -x \
-    && npm install -g npm @vue/cli
-
-# Clean up
+## Clean up
 RUN set -x \
     && apt autoremove -y \
     && apt clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Switch back to dialog for any ad-hoc use of apt-get
-ENV DEBIAN_FRONTEND=dialog
+
+# For build-stage.
+# > docker build --target build-stage --file .devcontainer/Dockerfile .
+# ### Please build in the parent folder. ###
+FROM develop-stage  AS build-stage
+ARG APP=apps/examples-ts-vue-started
+WORKDIR /build
+COPY ${APP} /build
+
+RUN set -x \
+    && yarn install \
+    && yarn build
+
+# For production-stage.
+# > docker build --file .devcontainer/Dockerfile .
+# ### Please build in the parent folder. ###
+FROM nginx:stable-alpine AS production-stage
+COPY --from=build-stage /build/dist /usr/share/nginx/html
+#COPY .devcontainer/config/nginx/nginx.conf /etc/nginx/nginx.conf 
+#COPY .devcontainer/config/nginx/default.conf /etc/nginx/conf.d/default.conf 
+
+EXPOSE 80
+CMD [ "nginx", "-g", "daemon off;" ]

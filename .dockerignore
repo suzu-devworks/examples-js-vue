@@ -1,0 +1,6 @@
+# ADD/COPY ignore
+
+.devcontainer/
+.vscode/
+**/node_modules/
+**/dist/
