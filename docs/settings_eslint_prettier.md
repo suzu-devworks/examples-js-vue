@@ -1,0 +1,2 @@
+# Settings ESLint and Prettier
+

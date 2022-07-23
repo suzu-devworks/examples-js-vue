@@ -1,4 +1,4 @@
-# Get Started Vue.js 3 + Vuetify 3 (Beta) project
+# Get Started Vue 3 + Vuetify 3 (Beta)
 
 ## The way to the present
 
@@ -47,7 +47,7 @@ Done. Now run:
 
 ```
 
-### Suppress Errors TS27xx: 
+### Suppress Errors TS27xx:
 
 **src/shims-vue.d.ts**
 
@@ -76,8 +76,7 @@ export default defineConfig({
     port: 8889,
     watch: {
       usePolling: true,
-    }
-  }
+    },
+  },
 });
-
 ```
