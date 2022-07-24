@@ -4,14 +4,13 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+      target: "develop-stage"
       args:
-        # 
-        "--target": "develop"
         # For Linux, Change the permission by specifying UID / GID.
         "USER_UID": ${VSCODE_UID:-2001}
         "USER_GID": ${VSCODE_GID:-2001}
     tty: true
     volumes:
-      - /var/run/docker.sock:/var/run/docker-host.sock 
+      - /var/run/docker.sock:/var/run/docker-host.sock
       - ..:/workspaces
     working_dir: /workspaces
