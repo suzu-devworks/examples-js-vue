@@ -1,0 +1,26 @@
+# .dockerignore
+# ADD/COPY ignore
+
+/.git
+/.devcontainer
+!.devcontainer/config
+/.vscode
+/docs
+
+## Node files.
+**/node_modules
+**/dist
+**/*.log*
+**/.nuxt
+**/.nitro
+**/.cache
+**/.output
+**/.env
+
+## Windows
+Thumbs.db
+$RECYCLE.BIN/
+
+## Macos
+.DS_Store
+._*
