@@ -27,6 +27,12 @@ lerna-debug.log*
 ## Node files.
 node_modules/
 dist/
+dist-ssr/
+coverage/
+
+## Nuxt
+.output/
+.nuxt/
 
 ## Visual Studio Code
 .vscode/*
