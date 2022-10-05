@@ -8,7 +8,8 @@
 yarn add --dev typescript
 yarn add --dev rimraf
 
-yarn add --dev eslint prettier
+# eslint and prettier
+yarn add --dev eslint prettier npm-run-all
 yarn add --dev eslint-config-prettier
 ```
 
