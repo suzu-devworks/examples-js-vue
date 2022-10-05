@@ -1,47 +1,52 @@
 <template>
   <div>
     <h2>
-      <span class="title">ステップアップ式 Vue.js 講座</span><br />
-      <span class="subtitle">Software Design 2020-09.</span>
+      <p class="title">ステップアップ式 Vue.js 講座</p>
+      <p class="subtitle">Software Design 2020-09.</p>
     </h2>
 
-    <div class="step">
-      <h3>Step1.</h3>
+    <section>
+      <h3>Step 1</h3>
       <ul>
         <li>
-          <a target="_blank" href="/software-design/202009/step1-hello.html">Hello Vue.(html)</a>
+          <a target="_blank" href="/software-design/202009/step1-hello.html">Hello Vue(html)</a>
         </li>
         <li>
           <a target="_blank" href="/software-design/202009/step1-more-hello.html"
-            >More Hello Vue.(html)</a
+            >More Hello Vue(html)</a
           >
         </li>
       </ul>
-    </div>
+    </section>
 
-    <div class="step">
-      <h3>Step2.</h3>
+    <section>
+      <h3>Step 2</h3>
       <ul>
-        <li><RouterLink to="/software-design/step2-1">Counter.</RouterLink></li>
-        <li><RouterLink to="/software-design/step2-2/1">Paging.</RouterLink></li>
+        <li><RouterLink to="/software-design/step2-1">Counter</RouterLink></li>
+        <li><RouterLink to="/software-design/step2-2/1">Paging</RouterLink></li>
       </ul>
-    </div>
+    </section>
 
-    <div class="step">
-      <h3>Step3.</h3>
+    <section>
+      <h3>Step 3</h3>
       <ul>
-        <li><RouterLink to="/software-design/step3-1">Counter with Store.</RouterLink></li>
-        <li><RouterLink to="/software-design/step3-2">Fetch Profile with Store.</RouterLink></li>
+        <li><RouterLink to="/software-design/step3-1">Counter with Store</RouterLink></li>
+        <li><RouterLink to="/software-design/step3-2">Fetch Profile with Store</RouterLink></li>
       </ul>
-    </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
+section {
+  padding: 1rem 0.2rem;
+}
+
 h2 {
   color: #333;
   background-color: #ccc;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #666;
+  padding: 0.2rem;
 }
 
 .title {
@@ -49,10 +54,7 @@ h2 {
 }
 
 .subtitle {
-  font-size: 1rem;
-}
-
-.step {
-  padding-top: 1.2rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
 }
 </style>
