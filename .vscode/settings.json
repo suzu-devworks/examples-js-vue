@@ -8,7 +8,8 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.associations": {
-    ".dockerignore": "ignore"
+    ".dockerignore": "ignore",
+    ".env.*": "properties"
   },
   "javascript.format.enable": false,
   "typescript.format.enable": false,

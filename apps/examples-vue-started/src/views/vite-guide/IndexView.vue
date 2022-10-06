@@ -11,12 +11,13 @@
       <h3>Features</h3>
       <ul>
         <li><RouterLink to="/vite/webworker">Web Wroker</RouterLink></li>
+        <li><RouterLink to="/vite/env">Env Variables</RouterLink></li>
       </ul>
     </section>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 section {
   padding: 1rem 0.2rem;
 }

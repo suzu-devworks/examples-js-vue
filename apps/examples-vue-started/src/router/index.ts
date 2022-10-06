@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 
 import routesOfSoftwareDesign from "./software-design"
-import routesOfVite from "./vite"
+import routesOfVite from "./vite-guide"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

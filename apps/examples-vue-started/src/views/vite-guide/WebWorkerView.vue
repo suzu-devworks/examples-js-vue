@@ -57,10 +57,13 @@ function stopWorker(): void {
         <button @click="sendMessage">Execute</button>
       </div>
       <div class="message">
-        <p>Auto message : {{ message }}</p>
+        <p>Auto message:</p>
+        <ul>
+          <li>{{ message }}</li>
+        </ul>
       </div>
       <div class="message">
-        <p>Manual messages :</p>
+        <p>Manual messages:</p>
         <ul>
           <li v-for="(item, index) in stack" :key="index">{{ item }}</li>
         </ul>
@@ -72,3 +75,10 @@ function stopWorker(): void {
     </section>
   </div>
 </template>
+
+<style scoped lang="scss">
+h2 {
+  font-weight: bold;
+  line-height: 2em;
+}
+</style>

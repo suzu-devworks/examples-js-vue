@@ -1,4 +1,4 @@
-import type { WorkerResponseMesssage } from "@/types/vite"
+import type { WorkerResponseMesssage } from "@/types/vite-guide"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const _worker: Worker = self as any

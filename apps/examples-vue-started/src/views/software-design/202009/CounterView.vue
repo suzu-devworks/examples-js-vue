@@ -34,7 +34,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .counteritem {
   margin: 0.5rem 0;
   color: black;

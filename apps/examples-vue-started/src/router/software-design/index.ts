@@ -1,5 +1,7 @@
+import type { RouteRecordRaw } from "vue-router"
+
 const root = "/software-design"
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: `${root}`,
     component: () => import("@/views/software-design/IndexView.vue"),
