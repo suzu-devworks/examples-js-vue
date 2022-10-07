@@ -6,6 +6,7 @@ temp/
 $RECYCLE.BIN/
 .DS_Store
 ._*
+.*/
 
 ## Log files
 logs
@@ -29,6 +30,7 @@ node_modules/
 dist/
 dist-ssr/
 coverage/
+*.local
 
 ## Nuxt
 .output/

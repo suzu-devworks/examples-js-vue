@@ -76,15 +76,18 @@ $ cd examples-vue-started
 ### Add packages
 
 ```shell
+yarn add --dev typescript
 yarn add --dev rimraf
-yarn add --dev eslint prettier
+
+# eslint & prettier
+yarn add --dev eslint prettier npm-run-all
 yarn add --dev eslint-config-prettier
 
+# sass
+yarn add --dev sass
 ```
 
 ### configure
-
-_.eslintrc.js_
 
 ```console
 $ npm init @eslint/config
@@ -106,6 +109,8 @@ eslint-plugin-vue@latest @typescript-eslint/eslint-plugin@latest @typescript-esl
 Installing eslint-plugin-vue@latest, @typescript-eslint/eslint-plugin@latest, @typescript-eslint/parser@latest
 
 ```
+
+_&#x2710; .eslintrc.js_
 
 ```diff
 module.exports = {
@@ -132,7 +137,7 @@ module.exports = {
 }
 ```
 
-_.prettierrc_
+_&#x2710; .prettierrc_
 
 ```json
 {
@@ -143,4 +148,30 @@ _.prettierrc_
   "tabWidth": 2,
   "trailingComma": "es5"
 }
+```
+
+_&#x2710; package.json_
+
+```diff
+{
+  "name": "examples-vue-started",
+  "version": "0.0.0",
++  "private": "true",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview --port 4173",
+    "test:unit": "vitest --environment jsdom",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
++    "clean": "rimraf dist/",
++    "lint:typecheck": "tsc",
++    "lint:prettier": "prettier . \"!test*\" --check --ignore-path .gitignore",
++    "lint:eslint": "eslint . --ext .vue,.js,.jsx,.mjs,.ts,.tsx,.mts --ignore-path .gitignore",
++    "lint": "run-p lint:*",
++    "lintfix:prettier": "yarn lint:prettier --write",
++    "lintfix:eslint": "yarn lint:eslint --fix",
++    "lintfix": "run-s lintfix:prettier lintfix:eslint "
+  },
+  ...
 ```
