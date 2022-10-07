@@ -6,6 +6,7 @@ temp/
 $RECYCLE.BIN/
 .DS_Store
 ._*
+.*/
 
 ## Log files
 logs

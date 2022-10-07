@@ -12,5 +12,11 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  server: {
+    // https: {
+    //   key: fileURLToPath(new URL("./.https/localhost.key", import.meta.url)),
+    //   cert: fileURLToPath(new URL("./.https/localhost.crt", import.meta.url)),
+    // },
+  },
   //envPrefix: "VUE_APP",
 })
