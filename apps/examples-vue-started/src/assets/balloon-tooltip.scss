@@ -1,0 +1,52 @@
+$tooltip-color: #fff;
+$tooltip-backcolor: #666;
+$tooltip-leader-size: 10px;
+
+/* ツールチップの設定 */
+.tooltip-down {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s;
+    top: 0;
+    left: 0;
+  }
+
+  /* 吹き出しの本体 */
+  &::after {
+    content: attr(data-tooltip);
+    padding: 0.2em 0.5em;
+    min-width: 120px;
+    max-width: 100%;
+    color: $tooltip-color;
+    background: $tooltip-backcolor;
+    border-radius: 3px;
+    font-size: 1rem;
+    transform: translateX(-1 * $tooltip-leader-size);
+    top: calc(($tooltip-leader-size / 2) + ($tooltip-leader-size * 2));
+  }
+
+  /* 吹き出しのひげ部分 */
+  &::before {
+    content: "";
+    border: $tooltip-leader-size solid transparent;
+    border-bottom-color: $tooltip-backcolor;
+    top: calc($tooltip-leader-size / 2);
+  }
+
+  /* マウスホバーしたときの設定 */
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+      display: inline-block;
+    }
+  }
+}
