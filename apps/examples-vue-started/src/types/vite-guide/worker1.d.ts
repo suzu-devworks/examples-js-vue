@@ -1,4 +1,4 @@
-export interface WorkerResponseMesssage {
+export interface IWorkerResponseMesssage {
   kind?: string
   message: string
 }

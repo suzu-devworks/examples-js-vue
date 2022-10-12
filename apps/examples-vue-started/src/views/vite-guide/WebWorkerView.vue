@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import type { WorkerResponseMesssage } from "@/types/vite"
+import type { IWorkerResponseMesssage } from "@/types/vite-guide"
 // Use Query Suffix. ?worker or ?sharedworker
 import MyWorker from "./worker1?worker"
 
@@ -19,7 +19,7 @@ const stack = ref([] as string[])
 const worker = new MyWorker()
 console.log(worker)
 
-worker.onmessage = (event: MessageEvent<WorkerResponseMesssage>) => {
+worker.onmessage = (event: MessageEvent<IWorkerResponseMesssage>) => {
   //console.log(event)
   //console.log(event.data)
   const response = event.data
