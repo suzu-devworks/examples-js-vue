@@ -3,7 +3,9 @@
     <h2>
       <p class="title">Vue guide</p>
       <p class="subtitle">
-        <a target="_blank" href="https://v3.ja.vuejs.org/guide/">https://v3.ja.vuejs.org/guide/</a>
+        <a target="_blank" href="https://ja.vuejs.org/guide/introduction.html"
+          >https://ja.vuejs.org/guide/</a
+        >
       </p>
     </h2>
 

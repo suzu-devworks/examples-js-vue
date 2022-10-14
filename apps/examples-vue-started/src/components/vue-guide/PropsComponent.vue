@@ -40,7 +40,7 @@ function functionCounter(): number {
   return counter.value * 2
 }
 watch(counter, (count, prev) => {
-  console.log(`${prev} -> ${count}`)
+  console.log(`watcher: ${prev} -> ${count}`)
 })
 </script>
 
