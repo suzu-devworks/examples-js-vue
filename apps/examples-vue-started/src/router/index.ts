@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue"
 
 import routesOfSoftwareDesign from "./software-design"
 import routesOfVite from "./vite-guide"
+import routesOfVue from "./vue-guide"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,7 @@ const router = createRouter({
     },
     ...routesOfSoftwareDesign,
     ...routesOfVite,
+    ...routesOfVue,
   ],
 })
 
