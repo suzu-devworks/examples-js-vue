@@ -1,9 +1,9 @@
-ARG VARIANT="16-bullseye"
+ARG VARIANT="18-bullseye"
 
 # For develop-stage.
 # > docker build --target develop-stage .
 FROM node:${VARIANT} as develop-stage
-WORKDIR /workspaces
+WORKDIR /examples-js-vue
 
 ## Configure apt and install packages
 RUN set -x \

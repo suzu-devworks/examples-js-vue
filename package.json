@@ -1,0 +1,9 @@
+{
+  "name": "examples-js-vue",
+  "version": "1.0.0",
+  "description": "Workspace for studying Vue.js programming.",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

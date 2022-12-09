@@ -2,20 +2,13 @@
   "name": "Node.js (Vue.js)",
   "dockerComposeFile": "docker-compose.yml",
   "service": "dev",
-  "workspaceFolder": "/workspaces",
+  "workspaceFolder": "/examples-js-vue",
 
   // Set *default* container specific settings.json values on container create.
   "settings": {},
 
   // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [
-    "Vue.volar",
-    "Vue.vscode-typescript-vue-plugin",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "syler.sass-indented",
-    "dariofuzinato.vue-peek"
-  ],
+  "extensions": [],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [],
