@@ -1,3 +1,5 @@
+# .editorconfig
+
 root = true
 
 [*]
@@ -12,3 +14,6 @@ max_line_length = off
 
 [CHANGELOG.md]
 indent_size = false
+
+[*.md]
+trim_trailing_whitespace = false

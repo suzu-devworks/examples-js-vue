@@ -1,21 +1,40 @@
 {
-  "name": "Node.js (Vue.js)",
+  "name": "DevContainer for Node.js(Vue.js)",
   "dockerComposeFile": "docker-compose.yml",
   "service": "dev",
-  "workspaceFolder": "/examples-js-vue",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
-  // Set *default* container specific settings.json values on container create.
-  "settings": {},
+  // Use this environment variable if you need to bind mount your local source code into a new container.
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
 
-  // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [],
+  "customizations": {
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {},
+
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "christian-kohler.npm-intellisense",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.live-server",
+        "syler.sass-indented",
+        "Vue.volar",
+        "Vue.vscode-typescript-vue-plugin",
+        "dariofuzinato.vue-peek"
+      ]
+    }
+  },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [],
+  // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "yarn install",
+  // "postCreateCommand": "docker --version",
 
-  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   "remoteUser": "vscode"
 }

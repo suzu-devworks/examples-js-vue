@@ -1,4 +1,6 @@
-# https://github.com/github/gitignore/blob/main/Node.gitignore
+# .gitignore
+
+##> https://github.com/github/gitignore/blob/main/Node.gitignore
 
 # Logs
 logs
@@ -131,19 +133,27 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-
-##> User defines.
+##> system files.
 [Tt]emp/
 [Tt]humbs.db
 $RECYCLE.BIN/
 .DS_Store
 ._*
+
+##> temporary files
 *.sw?
 *.db
 
+##> Certificate
+*.key
+*.csr
+*.crt
+*.cer
+*.pfx
+
 ##> Visual Studio Code
 .vscode/*
-!.vscode/extensions.json
+#!.vscode/extensions.json
 !.vscode/settings.json
-##!.vscode/tasks.json
-##!.vscode/launch.json
+#!.vscode/tasks.json
+#!.vscode/launch.json

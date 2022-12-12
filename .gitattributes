@@ -3,7 +3,7 @@
 # make sure everyone has the same behavior for all files
 * text=auto
 
-# for docker configuration 
+# for docker configuration
 *.conf text eol=lf
 
 # for graphics

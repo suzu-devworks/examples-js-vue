@@ -1,4 +1,5 @@
 # .dockerignore
+
 # ADD/COPY ignore
 
 /.git
@@ -24,3 +25,6 @@ $RECYCLE.BIN/
 ## Macos
 .DS_Store
 ._*
+
+# original copy files
+*.org
