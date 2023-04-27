@@ -4,6 +4,6 @@
   "description": "Workspace for studying Vue.js programming.",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "src/*"
   ]
 }
