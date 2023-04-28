@@ -1,4 +1,4 @@
-ARG VARIANT="20-bullseye"
+ARG VARIANT="18-bullseye"
 
 # For develop-stage.
 # > docker build --target develop-stage .
