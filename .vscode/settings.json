@@ -1,11 +1,9 @@
 {
-  "eslint.format.enable": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.associations": {
@@ -13,7 +11,12 @@
     ".env.*": "properties"
   },
   "javascript.format.enable": false,
-  "typescript.format.enable": false,
   "json.format.enable": false,
-  "prettier.semi": false
+  "prettier.semi": false,
+
+  "eslint.format.enable": false,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+
+  "typescript.format.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
