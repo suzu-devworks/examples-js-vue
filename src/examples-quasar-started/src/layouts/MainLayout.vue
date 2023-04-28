@@ -13,6 +13,13 @@
 
         <q-toolbar-title> Quasar App </q-toolbar-title>
 
+        <q-toggle
+          v-model="darkMode"
+          icon="dark_mode"
+          cokor="pink-4"
+          @click="toggleDarkMode"
+        />
+
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
@@ -40,6 +47,7 @@ import { ref } from 'vue';
 import EssentialLink, {
   EssentialLinkProps,
 } from 'components/EssentialLink.vue';
+import { useQuasar } from 'quasar';
 
 const essentialLinks: EssentialLinkProps[] = [
   {
@@ -90,5 +98,12 @@ const leftDrawerOpen = ref(false);
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+
+// --- dark mode
+const $quasar = useQuasar();
+const darkMode = ref($quasar.dark.isActive);
+function toggleDarkMode() {
+  $quasar.dark.set(darkMode.value);
 }
 </script>
