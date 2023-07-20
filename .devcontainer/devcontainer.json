@@ -1,5 +1,5 @@
 {
-  "name": "DevContainer for Node.js(Vue.js)",
+  "name": "Vue.js with DevContainer",
   "dockerComposeFile": "docker-compose.yml",
   "service": "dev",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -27,7 +27,7 @@
         "dariofuzinato.vue-peek"
       ]
     }
-  },
+  }
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -36,5 +36,5 @@
   // "postCreateCommand": "docker --version",
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  "remoteUser": "vscode"
+  // "remoteUser": "vscode"
 }
