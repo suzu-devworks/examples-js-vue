@@ -16,7 +16,7 @@
         <q-toggle
           v-model="darkMode"
           icon="dark_mode"
-          cokor="pink-4"
+          color="pink-4"
           @click="toggleDarkMode"
         />
 
@@ -36,63 +36,29 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
-      <router-view />
+    <q-page-container class="transition-container">
+      <router-view v-slot="{ Component }">
+        <transition
+          mode="out-in"
+          enter-active-class="animated slideInRight"
+          leave-active-class="animated slideOutLeft"
+          @enter="onBeforeEnter"
+          @after-enter="onAfterEnter"
+        >
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import EssentialLink, {
-  EssentialLinkProps,
-} from 'components/EssentialLink.vue';
+import EssentialLink from 'components/EssentialLink.vue';
 import { useQuasar } from 'quasar';
 
-const essentialLinks: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
+// --- export *.ts
+import { essentialLinks } from 'components/essential-links';
 
 const leftDrawerOpen = ref(false);
 
@@ -105,5 +71,21 @@ const $quasar = useQuasar();
 const darkMode = ref($quasar.dark.isActive);
 function toggleDarkMode() {
   $quasar.dark.set(darkMode.value);
+}
+
+// --- transition hide scrollbar.
+function onBeforeEnter(elem: Element /* done: () => void */): void {
+  console.log('onEnter', elem.parentElement);
+  if (elem.parentElement) {
+    elem.parentElement.style.overflow = 'hidden';
+  }
+  // done();
+}
+
+function onAfterEnter(elem: Element): void {
+  //console.log('onBeforeEnter');
+  if (elem.parentElement) {
+    elem.parentElement.style.overflow = '';
+  }
 }
 </script>

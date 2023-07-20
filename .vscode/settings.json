@@ -16,7 +16,7 @@
 
   "eslint.format.enable": false,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-
   "typescript.format.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "vue.updateImportsOnFileMove.enabled": true
 }
