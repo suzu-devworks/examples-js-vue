@@ -6,15 +6,17 @@
 
 ### ▶︎ nuxi(v3)
 
-- https://v3.nuxtjs.org/getting-started/installation
+- https://nuxt.com/docs/getting-started/installation
 
 ```shell
 # create.
-$ npx nuxi init my-nuxt-project
+$ npx nuxi@latest init my-nuxt-project
 $ cd my-nuxt-project
 
+$ yarn install
+
 # run.
-$ npm run dev
+$ yarn dev -o
 ```
 
 ## Create Vue project
