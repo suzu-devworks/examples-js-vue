@@ -9,6 +9,16 @@ export default defineNuxtConfig({
       apiBase: "/api",
     },
   },
+  vite: {
+    // https://nuxt.com/docs/getting-started/assets
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/_colors.scss" as *;',
+        },
+      },
+    },
+  },
   devtools: { enabled: true },
   typescript: {
     // Do not generate shims file when using Volar in VSCode (false).
