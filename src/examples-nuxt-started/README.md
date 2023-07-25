@@ -61,3 +61,20 @@ yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+<!-- -->
+
+## Create project
+
+```shell
+npx nuxi@latest init examples-nuxt-started
+$ cd examples-nuxt-started
+
+yarn install
+
+yarn add --dev eslint
+yarn add --dev prettier eslint-config-prettier @vue/eslint-config-prettier
+yarn add --dev typescript vue-tsc
+yarn add --dev rimraf npm-run-all
+
+```

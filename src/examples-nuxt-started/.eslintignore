@@ -1,0 +1,24 @@
+## .eslintignore default
+# node_modules/
+# .*
+#!.eslintrc.*
+
+## .prettierignore default
+# **/.git
+# **/.svn
+# **/.hg
+# **/node_modules
+
+## default
+node_modules
+.*
+!.eslintrc.*
+
+## Vue
+dist
+dist-ssr
+*.local
+
+##
+/src/*.js
+/src/*.js.map
