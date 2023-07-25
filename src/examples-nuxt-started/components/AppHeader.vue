@@ -12,10 +12,11 @@
         <li><NuxtLink to="/about">About</NuxtLink></li>
         <li><NuxtLink to="/assets">Assets</NuxtLink></li>
         <li><NuxtLink to="/styling">Styling</NuxtLink></li>
-        <li><NuxtLink to="/posts/1">Post 1</NuxtLink></li>
-        <li><NuxtLink to="/posts/2">Post 2</NuxtLink></li>
-        <li><NuxtLink to="/posts/A">Post A</NuxtLink></li>
-        <li><NuxtLink to="/dashboard">Dashboard</NuxtLink></li>
+        <li><NuxtLink to="/posts/1">Routing - Post 1</NuxtLink></li>
+        <li><NuxtLink to="/posts/2">Routing - Post 2</NuxtLink></li>
+        <li><NuxtLink to="/posts/A">Routing - Post A(failed)</NuxtLink></li>
+        <li><NuxtLink to="/dashboard">Routing - Dashboard(require from home)</NuxtLink></li>
+        <li><NuxtLink to="/seo-meta">SEO and Meta</NuxtLink></li>
       </ul>
     </nav>
   </header>

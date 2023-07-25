@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      // https://nuxt.com/docs/getting-started/seo-meta
+      htmlAttrs: {
+        lang: "ja",
+      },
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
       link: [
         {
           // https://nuxt.com/docs/getting-started/styling
