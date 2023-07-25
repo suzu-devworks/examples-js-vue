@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "clean": "rimraf dist .nuxt .output",
     "lint": "run-p lint:*",
-    "lint:typecheck": "tsc",
+    "lint:typecheck": "nuxi typecheck",
     "lint:prettier": "prettier . \"!test*\" --check --ignore-path .eslintignore",
     "lint:eslint": "eslint .",
     "fix": "run-s fix:eslint fix:prettier",

@@ -49,9 +49,8 @@ const color = ref("red")
 
 <template>
   <div>
-    <h1 class="animate__animated animate__bounce">
-      Nuxt is highly flexible when it comes to styling
-    </h1>
+    <h1 class="animate__animated animate__bounce">Styling</h1>
+    <p class="code">Nuxt is highly flexible when it comes to styling.</p>
     <section>
       <h2>Ref and reactive</h2>
       <div class="static" :class="{ active: isActive, 'text-danger': hasError }">
@@ -84,7 +83,7 @@ const color = ref("red")
 @import url("~/assets/css/second.css");
 @import url("animate.css");
 
-h1 {
+.code {
   font-family: "SourceCodePro", sans-serif;
   background-color: rgb(200, 200, 200);
 }

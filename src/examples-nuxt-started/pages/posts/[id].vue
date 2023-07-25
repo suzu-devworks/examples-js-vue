@@ -1,11 +1,14 @@
 <script setup lang="ts">
+// https://nuxt.com/docs/getting-started/routing
+
+// access the current route details
 const route = useRoute()
 
 // When accessing /posts/1, route.params.id will be 1
 /* eslint no-console: off */
 console.log(route.params.id)
 
-// https://nuxt.com/docs/getting-started/routing
+// Nuxt offers route validation via the validate property in definePageMeta.
 definePageMeta({
   // eslint-disable-next-line require-await
   validate: async (route) => {
