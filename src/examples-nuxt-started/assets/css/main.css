@@ -1,0 +1,13 @@
+/* assets/css/main.css */
+body {
+  margin: 0;
+}
+
+/* https://nuxt.com/docs/getting-started/styling */
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("/fonts/SourceCodePro-Regular.otf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

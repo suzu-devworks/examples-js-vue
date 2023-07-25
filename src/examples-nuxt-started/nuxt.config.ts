@@ -1,5 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        {
+          // https://nuxt.com/docs/getting-started/styling
+          rel: "stylesheet",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+        },
+      ],
+    },
+  },
   // https://nuxt.com/docs/getting-started/configuration
   runtimeConfig: {
     // The private keys which are only available server-side
@@ -9,6 +20,11 @@ export default defineNuxtConfig({
       apiBase: "/api",
     },
   },
+  css: [
+    // https://nuxt.com/docs/getting-started/styling
+    "animate.css",
+    "~/assets/css/main.css",
+  ],
   vite: {
     // https://nuxt.com/docs/getting-started/assets
     css: {
