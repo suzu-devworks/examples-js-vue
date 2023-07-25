@@ -10,4 +10,9 @@ export default defineNuxtConfig({
     // Use vue-tsc instead
     typeCheck: false,
   },
+  // for vscode debug.
+  sourcemap: {
+    server: true,
+    client: true,
+  },
 })

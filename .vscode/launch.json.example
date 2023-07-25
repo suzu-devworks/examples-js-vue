@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src/examples-nuxt-started/"
+    },
+    {
+      "name": "Launch via Yarn",
+      "request": "launch",
+      "runtimeArgs": ["dev"],
+      "runtimeExecutable": "yarn",
+      "type": "node",
+      "cwd": "${workspaceRoot}/src/examples-nuxt-started/"
+    },
+    {
+      "name": "Attach",
+      "port": 9229,
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Do Debug.",
+      "configurations": ["Launch via Yarn", "Launch Chrome"],
+      "stopAll": true
+    },
+    {
+      "name": "Attach Debug.",
+      "configurations": ["Attach", "Launch Chrome"],
+      "stopAll": true
+    }
+  ]
+}
