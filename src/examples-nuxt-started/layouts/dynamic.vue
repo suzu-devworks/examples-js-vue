@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
 const id = computed(() => Number(route.params.id || 1))
-const prev = computed(() => "/numbers/" + (id.value - 1))
-const next = computed(() => "/numbers/" + (id.value + 1))
+const prev = computed(() => "/transitions/numbers/" + (id.value - 1))
+const next = computed(() => "/transitions/numbers/" + (id.value + 1))
 </script>
 
 <template>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { RouteLocationNormalized } from "vue-router"
-
 // https://nuxt.com/docs/getting-started/transitions
 definePageMeta({
   layout: "dynamic",
@@ -8,7 +6,7 @@ definePageMeta({
     name: "slide-right",
     mode: "out-in",
   },
-  middleware(to: RouteLocationNormalized, from: RouteLocationNormalized) {
+  middleware(to, from) {
     if (to.meta.pageTransition) {
       to.meta.pageTransition = {
         name: +to.params.id > +from.params.id ? "slide-left" : "slide-right",

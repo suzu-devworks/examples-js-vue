@@ -11,6 +11,7 @@ definePageMeta({
 <template>
   <div>
     <h1>Transitions</h1>
+    <h2>Anothor Layout</h2>
     <p><NuxtLink to="/">Home page</NuxtLink></p>
     <p>
       Nuxt leverages Vue's &lt;Transition&gt; component to apply transitions between pages and

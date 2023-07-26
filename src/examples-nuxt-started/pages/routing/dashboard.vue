@@ -7,5 +7,8 @@ definePageMeta({
 </script>
 
 <template>
-  <h1>Welcome to your dashboard</h1>
+  <div>
+    <h1>Routing</h1>
+    <h2>Welcome to your dashboard</h2>
+  </div>
 </template>

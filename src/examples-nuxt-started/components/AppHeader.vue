@@ -12,14 +12,14 @@
         <li><NuxtLink to="/about">About</NuxtLink></li>
         <li><NuxtLink to="/assets">Assets</NuxtLink></li>
         <li><NuxtLink to="/styling">Styling</NuxtLink></li>
-        <li><NuxtLink to="/posts/1">Routing - Post 1</NuxtLink></li>
-        <li><NuxtLink to="/posts/2">Routing - Post 2</NuxtLink></li>
-        <li><NuxtLink to="/posts/A">Routing - Post A(failed)</NuxtLink></li>
-        <li><NuxtLink to="/dashboard">Routing - Dashboard(require from home)</NuxtLink></li>
+        <li><NuxtLink to="/routing/posts/1">Routing - Post 1</NuxtLink></li>
+        <li><NuxtLink to="/routing/posts/2">Routing - Post 2</NuxtLink></li>
+        <li><NuxtLink to="/routing/posts/A">Routing - Post A(failed)</NuxtLink></li>
+        <li><NuxtLink to="/routing/dashboard">Routing - Dashboard(require from home)</NuxtLink></li>
         <li><NuxtLink to="/seo-meta">SEO and Meta</NuxtLink></li>
-        <li><NuxtLink to="/trans-layout">Transitions - Layout</NuxtLink></li>
-        <li><NuxtLink to="/trans-hooks">Transitions - Hooks</NuxtLink></li>
-        <li><NuxtLink to="/numbers/1">Transitions - Dynamic</NuxtLink></li>
+        <li><NuxtLink to="/transitions/anothor-layout">Transitions - Layout</NuxtLink></li>
+        <li><NuxtLink to="/transitions/hooks">Transitions - Hooks</NuxtLink></li>
+        <li><NuxtLink to="/transitions/numbers/1">Transitions - Dynamic</NuxtLink></li>
       </ul>
     </nav>
   </header>
