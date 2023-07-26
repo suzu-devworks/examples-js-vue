@@ -86,6 +86,7 @@ const color = ref("red")
 .code {
   font-family: "SourceCodePro", sans-serif;
   background-color: rgb(200, 200, 200);
+  display: inline-block;
 }
 
 .static {

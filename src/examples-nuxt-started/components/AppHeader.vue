@@ -17,6 +17,9 @@
         <li><NuxtLink to="/posts/A">Routing - Post A(failed)</NuxtLink></li>
         <li><NuxtLink to="/dashboard">Routing - Dashboard(require from home)</NuxtLink></li>
         <li><NuxtLink to="/seo-meta">SEO and Meta</NuxtLink></li>
+        <li><NuxtLink to="/trans-layout">Transitions - Layout</NuxtLink></li>
+        <li><NuxtLink to="/trans-hooks">Transitions - Hooks</NuxtLink></li>
+        <li><NuxtLink to="/numbers/1">Transitions - Dynamic</NuxtLink></li>
       </ul>
     </nav>
   </header>

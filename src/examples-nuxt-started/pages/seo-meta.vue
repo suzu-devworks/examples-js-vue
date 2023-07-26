@@ -52,7 +52,7 @@ useHead({
     <Head>
       <Title>{{ title }}</Title>
       <Meta name="description" :content="description" />
-      <Style type="text/css" children="body { background-color: green; }" />
+      <Style type="text/css" children="body { background-color: lightgreen; }" />
     </Head>
 
     <h1>SEO and Meta</h1>

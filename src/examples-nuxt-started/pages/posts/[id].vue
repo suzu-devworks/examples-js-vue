@@ -16,6 +16,13 @@ definePageMeta({
     return /^\d+$/.test(route.params.id as string)
   },
 })
+
+// https://nuxt.com/docs/getting-started/transitions
+// disable transition
+definePageMeta({
+  pageTransition: false,
+  layoutTransition: false,
+})
 </script>
 
 <template>
