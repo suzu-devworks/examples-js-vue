@@ -77,6 +77,8 @@ yarn add --dev prettier eslint-config-prettier @vue/eslint-config-prettier
 yarn add --dev typescript vue-tsc
 yarn add --dev rimraf npm-run-all
 
-yarn add animation.css sass
+yarn add animation.css
+yarn add sass
+yarn add superjson
 
 ```

@@ -20,6 +20,10 @@
         <li><NuxtLink to="/transitions/anothor-layout">Transitions - Layout</NuxtLink></li>
         <li><NuxtLink to="/transitions/hooks">Transitions - Hooks</NuxtLink></li>
         <li><NuxtLink to="/transitions/numbers/1">Transitions - Dynamic</NuxtLink></li>
+        <li><NuxtLink to="/data/composable">Data fetching</NuxtLink></li>
+        <li><NuxtLink to="/data/options">Data fetching - Options</NuxtLink></li>
+        <li><NuxtLink to="/data/cookies">Data fetching - Passing Headers and cookies</NuxtLink></li>
+        <li><NuxtLink to="/data/serialization">Data fetching - Serialization</NuxtLink></li>
       </ul>
     </nav>
   </header>

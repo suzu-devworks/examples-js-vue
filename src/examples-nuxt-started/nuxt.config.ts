@@ -34,6 +34,9 @@ export default defineNuxtConfig({
     "~/assets/css/main.css",
   ],
   vite: {
+    build: {
+      target: "esnext",
+    },
     // https://nuxt.com/docs/getting-started/assets
     css: {
       preprocessorOptions: {
