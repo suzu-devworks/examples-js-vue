@@ -17,7 +17,7 @@ console.log(`index.vue: appConfig.theme.colors.primary=${appConfig.theme.colors.
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <h1>Welcome to the homepage</h1>
     <AppAlert> This is an auto-imported component </AppAlert>
   </div>

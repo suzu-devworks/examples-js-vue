@@ -26,6 +26,9 @@ definePageMeta({
 
 <template>
   <div>
-    <h1>Page {{ route.params.id }}</h1>
+    <h1>Routing</h1>
+    <section>
+      <h2>Page {{ route.params.id }}</h2>
+    </section>
   </div>
 </template>

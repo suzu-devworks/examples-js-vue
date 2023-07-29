@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   css: [
     // https://nuxt.com/docs/getting-started/styling
     "animate.css",
-    "~/assets/css/main.css",
+    "~/assets/css/main.scss",
   ],
   vite: {
     build: {

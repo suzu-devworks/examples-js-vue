@@ -9,6 +9,6 @@ definePageMeta({
 <template>
   <div>
     <h1>Routing</h1>
-    <h2>Welcome to your dashboard</h2>
+    <p>Welcome to your dashboard</p>
   </div>
 </template>

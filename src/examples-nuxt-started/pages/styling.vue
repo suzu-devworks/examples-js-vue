@@ -51,6 +51,7 @@ const color = ref("red")
   <div>
     <h1 class="animate__animated animate__bounce">Styling</h1>
     <p class="code">Nuxt is highly flexible when it comes to styling.</p>
+
     <section>
       <h2>Ref and reactive</h2>
       <div class="static" :class="{ active: isActive, 'text-danger': hasError }">
@@ -58,20 +59,24 @@ const color = ref("red")
       </div>
       <div :class="classObjectReactive">■modified class</div>
     </section>
+
     <section>
       <h2>Computed</h2>
       <div :class="classObjectComputed">■modified class</div>
     </section>
+
     <section>
       <h2>Array</h2>
       <div :class="[{ active: isActive }, errorClass]">■modified classes</div>
     </section>
+
     <section>
       <h2>Style</h2>
       <div :style="{ color: activeColor, fontSize: fontSize + 'px' }">■modified style</div>
       <div :style="[baseStyles, overridingStyles]">■modified style</div>
       <div :style="styleObject">■modified style</div>
     </section>
+
     <section>
       <h2>Dynamic Styles With v-bind</h2>
       <div class="text">hello</div>

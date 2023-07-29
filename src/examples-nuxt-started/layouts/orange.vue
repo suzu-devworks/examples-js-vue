@@ -1,14 +1,33 @@
+<script setup lang="ts">
+// https://nuxt.com/docs/getting-started/views
+</script>
+
 <template>
-  <div>
-    <pre>orange layout</pre>
-    <slot />
+  <div class="view">
+    <AppHeader />
+
+    <main>
+      <slot />
+    </main>
+    <aside>
+      <div>
+        <NuxtLink to="/">Home page</NuxtLink>
+      </div>
+    </aside>
+
+    <AppFooter>
+      <span>orange layout</span>
+    </AppFooter>
   </div>
 </template>
 
-<style scoped>
-div {
-  background-color: #eebb90;
-  padding: 20px;
-  height: 100vh;
+<style lang="scss" scoped>
+.view {
+  background-color: orange;
+  min-height: 100vh;
+
+  & > main {
+    padding-top: 2rem;
+  }
 }
 </style>
