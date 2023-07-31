@@ -85,6 +85,10 @@ export const menus: NaviItemPorps[] = [
     ],
   },
   {
+    title: "State Management",
+    link: "/states",
+  },
+  {
     title: "Original home",
     link: "/original",
   },
