@@ -1,22 +1,26 @@
-# Settings ESLint and Prettier
+# Settings ESLint and Prettier and tsc
 
 ## Commons
 
 ### Add Packages
 
 ```shell
-yarn add --dev typescript
-yarn add --dev rimraf
-
 # eslint and prettier
-yarn add --dev eslint prettier npm-run-all
-yarn add --dev eslint-config-prettier
+yarn add --dev eslint
+yarn add --dev prettier eslint-config-prettier @vue/eslint-config-prettier
+
+# typescript check
+yarn add --dev typescript vue-tsc
+
+# other
+yarn add --dev rimraf npm-run-all
+
 ```
 
 ### Generate `.eslintrc.js`
 
 ```console
-$ npm init @eslint/config
+$ yarn create @eslint/config
 
 Need to install the following packages:
   @eslint/create-config
@@ -33,8 +37,13 @@ The config that you've selected requires the following dependencies:
 eslint-plugin-vue@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
 ✔ Would you like to install them now? · No / _Yes_
 ✔ Which package manager do you want to use? · yarn
-Installing eslint-plugin-vue@latest,
+Installing @typescript-eslint/eslint-plugin@latest, eslint-plugin-vue@latest, @typescript-eslint/parser@latest
 ...
+info All dependencies
+├─ @typescript-eslint/eslint-plugin@6.2.0
+├─ @typescript-eslint/parser@6.2.0
+├─ @typescript-eslint/type-utils@6.2.0
+└─ eslint-plugin-vue@9.15.1
 ```
 
 ### Configuration files
@@ -51,9 +60,10 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:vue/vue3-essential",
     "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-essential",
 +    "eslint-config-prettier",
++    "@vue/eslint-config-prettier",
   ],
   parserOptions: {
     ecmaVersion: "latest",
@@ -147,12 +157,6 @@ yarn fix
 yarn clean
 ```
 
-## Settings for Vue 3
-
-```shell
-
-```
-
 ## Settings for Nuxt 3
 
 ### Add Packages
@@ -162,6 +166,23 @@ yarn add --dev @nuxtjs/eslint-config-typescript
 ```
 
 ### Configuration files
+
+#### `nuxt.config.ts`
+
+```ts
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  typescript: {
+    // Do not generate shims file when using Volar in VSCode (false).
+    shim: false,
+    // Strict type checking.
+    strict: true,
+    // Nuxt TypeScript TypeCheck is not used because it is incompatible with vue's ｀script setup` (No default export).
+    // Use vue-tsc instead
+    typeCheck: false,
+  },
+})
+```
 
 #### `.eslintrc.js`
 
