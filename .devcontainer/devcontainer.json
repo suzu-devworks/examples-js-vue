@@ -1,0 +1,35 @@
+{
+  "name": "TypeScript (Node.js)",
+  "dockerComposeFile": ["compose.dev.yaml"],
+  "service": "dev",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "mounts": ["source=node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"],
+  "postCreateCommand": "/bin/sh ./.devcontainer/postCreateCommand.sh",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/copilot-cli": {},
+    "ghcr.io/devcontainers/features/github-cli": {},
+    "ghcr.io/devcontainers/features/node": {
+      "nodeGypDependencies": true,
+      "version": "26",
+      "npmVersion": "latest",
+      "pnpmVersion": "latest",
+      "nvmVersion": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "streetsidesoftware.code-spell-checker",
+        "DavidAnson.vscode-markdownlint",
+        "christian-kohler.npm-intellisense",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "DotJoshJohnson.xml",
+        "jock.svg"
+      ]
+    }
+  }
+}
