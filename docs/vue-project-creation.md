@@ -24,7 +24,8 @@ Create a new project:
 
 ```bash
 pnpm create vue@latest
-cd my-vue-project
+pnpm install
+cd examples-vue-app
 ```
 
 Start the development server:
@@ -46,7 +47,7 @@ Create a new project:
 
 ```bash
 pnpm create vite@latest --template vue-ts
-cd examples-vue3-vite
+cd examples-vue-vite
 ```
 
 Start the development server:
@@ -68,7 +69,7 @@ Create a new project:
 
 ```shell
 pnpm create quasar@latest
-cd examples-vue3-quasar
+cd examples-vue-quasar
 ```
 
 Start the development server:
@@ -91,7 +92,7 @@ Create a new project:
 
 ```bash
 pnpm create vuetify
-cd examples-vue3-vuetify
+cd examples-vue-vuetify
 ```
 
 Start the development server:
@@ -130,8 +131,8 @@ ionic start --list --type=vue
 Create a new project:
 
 ```bash
-ionic start examples-ionic-app tabs --type vue
-cd examples-ionic-app
+ionic start examples-vue-ionic tabs --type vue
+cd examples-vue-ionic
 ```
 
 Start the development server:
@@ -155,8 +156,8 @@ Run the following command from the command line:
 Create a new project:
 
 ```bash
-pnpm create nuxt@latest examples-nuxt4-app
-cd examples-nuxt4-app
+pnpm create nuxt@latest examples-nuxt-app
+cd examples-nuxt-app
 ```
 
 Start the development server:
