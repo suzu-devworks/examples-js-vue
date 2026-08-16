@@ -4,7 +4,7 @@ const root = "/software-design/2020-09"
 const routes: RouteRecordRaw[] = [
   {
     path: `${root}`,
-    component: () => import("./views/IndexView.vue"),
+    component: () => import("./views/index.vue"),
   },
   {
     path: `${root}/step2-1`,

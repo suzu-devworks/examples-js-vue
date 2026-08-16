@@ -21,7 +21,7 @@ export default defineComponent({
 
 <template>
   <div class="profile">
-    <h1>This is github progile page</h1>
+    <h1>This is github profile page</h1>
     <p>{{ profile }}</p>
   </div>
 </template>

@@ -32,20 +32,3 @@ export default defineComponent({
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-.counter-item {
-  margin: 0.5rem 0;
-  color: black;
-  background-color: #ee6;
-}
-
-.message {
-  margin: 0.5rem 0;
-  color: black;
-  background-color: #eee;
-  li {
-    list-style: inside;
-  }
-}
-</style>
