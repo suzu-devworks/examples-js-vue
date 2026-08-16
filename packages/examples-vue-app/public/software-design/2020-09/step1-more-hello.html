@@ -1,0 +1,60 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Step 1 - More Hello Vue</title>
+    <style>
+      .subtitle {
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <span>ステップアップ式 Vue.js 講座</span><br />
+      <span class="subtitle">Software Design 2020-09.</span>
+    </h2>
+
+    <div id="app">
+      <p>Counter: {{count}}</p>
+      <div>
+        <button v-on:click="reset()">Clear</button>
+        <button v-on:click="increment()">+1</button>
+        <button v-on:click="increment(5)">+5</button>
+      </div>
+      <ul>
+        <li v-for="item in list">{{ item }}</li>
+      </ul>
+      <button v-on:click="addItem()">addItem</button>
+      <p>user オブジェクト {{ user }}</p>
+      <p>名前: {{ user.name }}, メール: {{ user.email }}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const appdata = {
+        data() {
+          return {
+            count: 0,
+            list: [2, 4, 6],
+            user: {
+              name: "Riin",
+              email: "riin@example.com",
+            },
+          }
+        },
+        methods: {
+          reset() {
+            this.count = 0
+          },
+          increment(val = 1) {
+            this.count += val
+          },
+          addItem() {
+            this.list.push(this.count)
+          },
+        },
+      }
+      Vue.createApp(appdata).mount("#app")
+    </script>
+  </body>
+</html>

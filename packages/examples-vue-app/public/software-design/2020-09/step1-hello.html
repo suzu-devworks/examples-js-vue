@@ -1,0 +1,38 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Step 1 - Hello Vue</title>
+    <style>
+      .subtitle {
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <span>ステップアップ式 Vue.js 講座</span><br />
+      <span class="subtitle">Software Design 2020-09.</span>
+    </h2>
+
+    <div id="app">
+      <p>Hello {{world}}</p>
+      <p>Counter: {{count}}</p>
+      <p v-if="count == 5">見えたよ！</p>
+      <input v-model="world" /><br />
+      <input type="number" v-model="count" />
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const appdata = {
+        data() {
+          return {
+            world: "Vue",
+            count: 0,
+          }
+        },
+      }
+      Vue.createApp(appdata).mount("#app")
+    </script>
+  </body>
+</html>
