@@ -28,7 +28,8 @@
         "dbaeumer.vscode-eslint",
         "stylelint.vscode-stylelint",
         "DotJoshJohnson.xml",
-        "jock.svg"
+        "jock.svg",
+        "Vue.volar"
       ]
     }
   }
