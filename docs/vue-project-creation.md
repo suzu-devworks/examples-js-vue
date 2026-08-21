@@ -18,7 +18,7 @@
 This is the most basic project generation method, which is explained on the official website.
 
 - [Quick Start | Vue.js](https://ja.vuejs.org/guide/quick-start.html)
-- [vuejs/create-vue - https://github.com](<https://github.com/vuejs/create-vue>)
+- [vuejs/create-vue - https://github.com](https://github.com/vuejs/create-vue)
 
 Create a new project:
 
