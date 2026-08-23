@@ -1,8 +1,8 @@
-# eslint and prettier
+# ESLint and Prettier
 
 ## Installation
 
-It should be on the top of the workspace.
+Run this at the root of the workspace:
 
 ```bash
 pnpm add -D eslint prettier
@@ -11,7 +11,9 @@ pnpm add -D eslint-config-prettier
 
 ## Configuration
 
-### Generate `eslint.config.js` file
+### [eslint] Generate `eslint.config.js` file
+
+Run this at the root of the workspace:
 
 ```bash
 pnpm create @eslint/config@latest
@@ -51,18 +53,20 @@ Done in 1.1s using pnpm v11.22.0
 ✔ Successfully created /workspaces/examples-js-vue/eslint.config.js file.
 ```
 
-### Add `eslint-config-prettier` to `eslint.config.js`
+### [eslint] Add `eslint-config-prettier` to `eslint.config.js`
+
+Modify `eslint.config.js` as follows:
 
 ```js
 import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default defineConfig([
-  // ...,
+  // ...
   eslintConfigPrettier,
 ])
 ```
 
-### Create `.prettierrc.yaml` file
+### [prettier] Create `.prettierrc.yaml` file
 
 I feel like yaml is better
 
@@ -134,12 +138,35 @@ Prettier doesn't format `[json]` and `[markdown]`, leave it to another extension
 
 ## Run
 
+Run it using the following command:
+
 ```bash
 pnpm lint
 pnpm format
 
 # auto fix
 pnpm lint --fix
+```
+
+## Rules
+
+### `vue/block-order`
+
+Modify `eslint.config.js` as follows:
+
+```js
+  {
+    files: ['**/*.vue'],
+    languageOptions: { parserOptions: { parser: tseslint.parser } },
+    rules: {
+      'vue/block-order': [
+        'error',
+        {
+          order: [['script', 'template'], 'style'],
+        },
+      ],
+    },
+  },
 ```
 
 ## References

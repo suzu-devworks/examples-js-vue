@@ -9,8 +9,10 @@
     "Oxfmt",
     "oxfmtrc",
     "oxlint",
+    "oxlintrc",
     "Razvan",
     "Stoenescu",
+    "tsgolint",
     "vuejs",
     "vuetify"
   ],

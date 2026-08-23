@@ -2,7 +2,7 @@
 
 ## Installation
 
-It should be on the top of the workspace.
+Run this at the root of the workspace:
 
 ```bash
 pnpm add -D rimraf

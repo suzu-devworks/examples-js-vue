@@ -2,6 +2,8 @@
 
 ## Installation
 
+Run this at the root of the workspace:
+
 ```bash
 pnpm create stylelint@latest
 ```
@@ -68,6 +70,8 @@ export default {
 
 ### For Vue3
 
+You need to add a package:
+
 ```bash
 pnpm add -D stylelint-config-standard-vue
 ```
@@ -82,6 +86,8 @@ export default {
 ```
 
 ### For SCSS
+
+You need to add a package:
 
 ```bash
 pnpm add -D stylelint-config-standard-scss
@@ -111,6 +117,8 @@ export default {
 It is preferable that properties are ordered according to rules.
 There are various settings for the sort order,
 but here we will use [stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order).
+
+You need to add a package:
 
 ```bash
 pnpm add -D stylelint-order stylelint-config-recess-order
@@ -176,6 +184,8 @@ Set the following settings if there are duplicate errors:
 ```
 
 ## Run
+
+Run it using the following command:
 
 ```bash
 pnpm lint:style

@@ -7,16 +7,15 @@
     ".git*",
     "*.json",
     "*.yaml",
-    "go.mod",
-    "go.sum",
     "yarn.lock",
     "pnpm-lock.yaml",
-    "**/*.csproj",
     "packages.lock.json"
   ],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": [],
+  "words": [
+    "oxlint"
+  ],
   "ignoreWords": [],
   "import": []
 }

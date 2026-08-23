@@ -10,9 +10,9 @@
   },
   "[javascript][typescript][vue]": {
     "editor.codeActionsOnSave": {
-      "source.format.oxc": "always",
       "source.fixAll.eslint": "explicit",
-      "source.organizeImports": "explicit"
+      "source.fixAll.oxc": "explicit",
+      "source.format.oxc": "explicit"
     },
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
@@ -46,5 +46,8 @@
     "css",
     "scss",
     "vue"
-  ]
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  }
 }
