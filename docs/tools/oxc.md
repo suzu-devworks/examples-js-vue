@@ -146,7 +146,8 @@ I leave the formatting completely to prettier, so I don't use eslint's format.
 
 Use [oxc](https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode) extension to format on save.
 
-Apparently, there used to be a way to control the execution order by specifying an array for `editor.codeActionsOnSave`, but since I’m not sure what the current status of that is, I’ll play it safe and specify it as an object instead.
+Apparently, there used to be a way to control the execution order by specifying an array for `editor.codeActionsOnSave`,
+but since I’m not sure what the current status of that is, I’ll play it safe and specify it as an object instead.
 
 The official documentation lists it as `always` but I think `explicit` is fine.
 
