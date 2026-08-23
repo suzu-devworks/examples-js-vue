@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/examples-vue-app"
+    },
+  ]
+}
