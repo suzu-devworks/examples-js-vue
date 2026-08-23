@@ -4,11 +4,15 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "esbenp",
     "nuxi",
     "Oxfmt",
+    "oxfmtrc",
     "oxlint",
+    "oxlintrc",
     "Razvan",
     "Stoenescu",
+    "tsgolint",
     "vuejs",
     "vuetify"
   ],

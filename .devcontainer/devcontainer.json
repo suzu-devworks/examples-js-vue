@@ -1,9 +1,13 @@
 {
   "name": "TypeScript (Node.js)",
-  "dockerComposeFile": ["compose.dev.yaml"],
+  "dockerComposeFile": [
+    "compose.dev.yaml"
+  ],
   "service": "dev",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "mounts": ["source=node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"],
+  "mounts": [
+    "source=node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
   "postCreateCommand": "/bin/sh ./.devcontainer/postCreateCommand.sh",
   "remoteUser": "vscode",
   "features": {
@@ -24,11 +28,12 @@
         "streetsidesoftware.code-spell-checker",
         "DavidAnson.vscode-markdownlint",
         "christian-kohler.npm-intellisense",
-        "esbenp.prettier-vscode",
+        "oxc.oxc-vscode",
         "dbaeumer.vscode-eslint",
         "stylelint.vscode-stylelint",
         "DotJoshJohnson.xml",
-        "jock.svg"
+        "jock.svg",
+        "Vue.volar"
       ]
     }
   }

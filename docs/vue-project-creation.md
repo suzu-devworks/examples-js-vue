@@ -18,7 +18,7 @@
 This is the most basic project generation method, which is explained on the official website.
 
 - [Quick Start | Vue.js](https://ja.vuejs.org/guide/quick-start.html)
-- [vuejs/create-vue - https://github.com](<https://github.com/vuejs/create-vue>)
+- [vuejs/create-vue - https://github.com](https://github.com/vuejs/create-vue)
 
 Create a new project:
 
@@ -38,7 +38,8 @@ If you are running it inside a Dev Container, please include the `--host` flag.
 
 ### 🛠️ `create-vite`
 
-Vite is the official recommended build tool for Vue.js. Currently, Vite is the strongest option and recommended for creating Vue.js projects.
+Vite is the official recommended build tool for Vue.js. Currently, Vite is the strongest option and recommended
+for creating Vue.js projects.
 
 - [Scaffolding Your First Vite Project - Getting Started | Vite](https://ja.vite.dev/guide/)
 - [create-vite - https://github.com/vitejs/vite](https://github.com/vuejs/vite/tree/main/packages/create-vite)
@@ -60,7 +61,8 @@ If you are running it inside a Dev Container, please include the `--host` flag.
 
 ### 🛠️ `create-quasar`
 
-Quasar is an open-source, Vue.js-based framework released under the MIT License that enables web developers to rapidly build responsive websites and applications in a variety of styles.
+Quasar is an open-source, Vue.js-based framework released under the MIT License that enables web developers
+to rapidly build responsive websites and applications in a variety of styles.
 Its motto is: "Write your code once and simultaneously deploy it as a website, mobile app, and Electron app."
 
 - [Quick Start - Quasar docs](https://quasar.dev/start/quick-start)

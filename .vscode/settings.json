@@ -1,4 +1,21 @@
 {
+  "[css][scss][sass]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    },
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascript][typescript][vue]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.oxc": "explicit",
+      "source.format.oxc": "explicit"
+    },
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
   "[json][jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -8,14 +25,29 @@
     },
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
+  "css.validate": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "eslint.format.enable": false,
+  "eslint.useFlatConfig": true,
   "files.associations": {
     ".*ignore": "ignore",
+    ".env.*": "properties"
   },
+  "files.insertFinalNewline": true,
   "files.watcherExclude": {
     "**/.git/**": true,
     "**/bin/**": true,
     "**/obj/**": true
+  },
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   }
 }
