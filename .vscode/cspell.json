@@ -15,7 +15,8 @@
   "dictionaries": [],
   "words": [
     "oxlint",
-    "Vetur"
+    "Vetur",
+    "Vite"
   ],
   "ignoreWords": [],
   "import": []

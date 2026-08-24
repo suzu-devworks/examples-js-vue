@@ -26,6 +26,12 @@ export default defineConfig([
           order: [['script', 'template'], 'style'],
         },
       ],
+      'vue/multi-word-component-names': [
+        'error',
+        {
+          ignores: ['index', 'App'],
+        },
+      ],
     },
   },
   ...oxlint.configs['flat/all'],
