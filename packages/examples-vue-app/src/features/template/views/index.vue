@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
 
+import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
+
 // import '../assets/main.css'
 import HelloWorld from '../components/HelloWorld.vue'
 import TheWelcome from '../components/TheWelcome.vue'
@@ -34,21 +36,42 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <DefaultLayout class="template-view">
+    <main>
+      <header>
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+        <div class="wrapper">
+          <HelloWorld msg="You did it!" />
+        </div>
+      </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+      <div class="main">
+        <TheWelcome />
+      </div>
+    </main>
+  </DefaultLayout>
 </template>
 
-<style src="../assets/main.css" scoped>
-</styl > <style scoped > header {
+<style lang="css" scoped>
+.template-view main {
+  max-width: 1280px;
+  padding: 2rem;
+  padding-top: calc(var(--layout-header-height) + var(--layout-border-width));
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+@media (width >= 1024px) {
+  .template-view main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+    padding-top: calc(var(--layout-header-height) + var(--layout-border-width));
+  }
+}
+
+header {
   line-height: 1.5;
 }
 

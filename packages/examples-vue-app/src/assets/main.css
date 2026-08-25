@@ -1,1 +1,68 @@
-/* TODO */
+@import url('../assets/reset.css');
+@import url('../assets/variables.css');
+
+:root {
+  --app-border-color-hover: color-mix(in oklab, var(--app-color-text-link) 40%, transparent);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--app-font-sans);
+  font-size: var(--app-text-base);
+  line-height: var(--app-leading-normal);
+  color: var(--app-color-text);
+  letter-spacing: var(--app-tracking-normal);
+  background-color: var(--app-surface-ground);
+  text-rendering: optimizelegibility;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--app-weight-bold);
+  line-height: var(--app-leading-tight);
+  letter-spacing: var(--app-tracking-wide);
+}
+
+h1 {
+  font-size: var(--app-text-2xl);
+  color: var(--app-color-text-emphasis);
+}
+
+h2 {
+  font-size: var(--app-text-xl);
+  color: var(--app-color-text-emphasis);
+}
+
+h3 {
+  font-size: var(--app-text-lg);
+}
+
+code,
+pre {
+  font-family: var(--app-font-mono);
+  font-size: 0.875em; /* Correction to align height with surrounding text */
+}
+
+small,
+.text-muted {
+  font-size: var(--app-text-sm);
+}
+
+a {
+  padding: var(--app-spacing-sm);
+  color: var(--app-color-text-link);
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: color-mix(in srgb, var(--app-color-text-link) 20%, transparent);
+  }
+}
