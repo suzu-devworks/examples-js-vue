@@ -14,5 +14,6 @@ export default {
   ignoreFiles: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**'],
   rules: {
     'alpha-value-notation': 'number',
+    'comment-empty-line-before': ['always', { except: ['first-nested'], ignore: ['after-comment'] }],
   },
 }

@@ -1,9 +1,9 @@
 globs:
-  - "**/*.md"
+  - '**/*.md'
 
 ignores:
-  - ".github/instructions/*.md"
-  - "**/AnalyzerReleases.*.md"
+  - '.github/instructions/*.md'
+  - '**/AnalyzerReleases.*.md'
 
 gitignore: true
 
