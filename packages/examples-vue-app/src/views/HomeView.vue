@@ -22,6 +22,13 @@ import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
             <p>This is a template page generated using the `create-vue` command.</p>
           </article>
         </RouterLink>
+
+        <RouterLink to="/software-design" class="article-item">
+          <article>
+            <h2>&#x1f4d8; Articles of Software Design</h2>
+            <p>This content is based on the feature article from the Software Design.</p>
+          </article>
+        </RouterLink>
       </div>
     </main>
   </DefaultLayout>
