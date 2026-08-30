@@ -15,7 +15,7 @@ pnpm add -D @types/node@26
 
 While the root `tsconfig.json` serves to enforce project configuration, it also enables type checking within the IDE.
 Since we want to prioritize the latter for the time being, we will create a simple root tsconfig that merely references
- other configurations.
+other configurations.
 
 We will consider shared configurations at a later stage.
 
@@ -27,7 +27,7 @@ Create a `tsconfig.json` file as follows:
   "references": [
     {
       "path": "./packages/examples-vue-app"
-    },
+    }
   ]
 }
 ```

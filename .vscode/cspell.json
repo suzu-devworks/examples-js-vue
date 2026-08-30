@@ -15,7 +15,10 @@
   "dictionaries": [],
   "words": [
     "oxlint",
-    "Vetur"
+    "pinia",
+    "Vetur",
+    "Vite",
+    "vuex"
   ],
   "ignoreWords": [],
   "import": []

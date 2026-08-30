@@ -1,0 +1,52 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Step 1: More Hello Vue - [Step-by-Step] Vue.js Course Understand the trends in JavaScript frameworks</title>
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <p>Counter: {{count}}</p>
+        <div>
+          <button v-on:click="reset()">Clear</button>
+          <button v-on:click="increment()">+1</button>
+          <button v-on:click="increment(5)">+5</button>
+        </div>
+        <ul>
+          <li v-for="item in list">{{ item }}</li>
+        </ul>
+        <button v-on:click="addItem()">addItem</button>
+        <p>user object: {{ user }}</p>
+        <p>name: {{ user.name }}, e-mail: {{ user.email }}</p>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const appdata = {
+        data() {
+          return {
+            count: 0,
+            list: [2, 4, 6],
+            user: {
+              name: 'Riin',
+              email: 'riin@example.com',
+            },
+          }
+        },
+        methods: {
+          reset() {
+            this.count = 0
+          },
+          increment(val = 1) {
+            this.count += val
+          },
+          addItem() {
+            this.list.push(this.count)
+          },
+        },
+      }
+      Vue.createApp(appdata).mount('#app')
+    </script>
+  </body>
+</html>

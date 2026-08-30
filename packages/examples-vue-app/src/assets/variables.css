@@ -1,0 +1,122 @@
+/** variables.css */
+
+/* ---------------------------------------------- *
+ * Color Palette
+ * ---------------------------------------------- */
+:root {
+  color-scheme: light dark;
+
+  /* 1. Brand & Main Elements (Fixed) */
+  --app-color-brand: hsl(160deg 100% 37%);
+
+  /* 2. Button & action (calm pastel tone) */
+  --app-color-primary: hsl(145deg 61% 34%);
+  --app-color-on-primary: hsl(220deg 13% 96%);
+  --app-color-secondary: hsl(215deg 16% 47%);
+  --app-color-on-secondary: hsl(220deg 13% 96%);
+  --app-color-accent: hsl(295deg 58% 65%);
+  --app-color-on-accent: hsl(220deg 13% 96%);
+
+  /* 3. System status/signal (bright and clear adult pastel) */
+  --app-color-info: hsl(196deg 68% 65%);
+  --app-color-on-info: hsl(220deg 13% 96%);
+  --app-color-success: hsl(146deg 45% 51%);
+  --app-color-on-success: hsl(220deg 13% 96%);
+  --app-color-warning: hsl(33deg 80% 54%);
+  --app-color-on-warning: hsl(220deg 13% 96%);
+  --app-color-error: hsl(0deg 75% 70%);
+  --app-color-on-error: hsl(220deg 13% 96%);
+
+  /* 4. Neutral (light mode) */
+  --neutral-base-light: 214deg 24%;
+  --app-surface-ground: hsl(var(--neutral-base-light) 97%);
+  --app-surface-section: hsl(var(--neutral-base-light) 95%);
+  --app-surface-card: hsl(0deg 0% 100%);
+  --app-surface-overlay: hsl(0deg 0% 100%);
+  --app-surface-border: hsl(var(--neutral-base-light) 88%);
+  --app-surface-hover: hsl(var(--neutral-base-light) 95%);
+  --app-surface-disabled: hsl(var(--neutral-base-light) 91%);
+
+  /* 5. Basic text color (light mode) */
+  --text-base-light: 214deg 40%;
+  --app-color-text-emphasis: hsl(var(--text-base-light) 14%);
+  --app-color-text: hsl(var(--text-base-light) 28%);
+  --app-color-text-muted: hsl(214deg 20% 48%);
+  --app-color-text-link: hsl(214deg 82% 51%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 4. Neutral (dark mode) */
+    --neutral-base-dark: 210deg 14%;
+    --app-surface-ground: hsl(var(--neutral-base-dark) 11%);
+    --app-surface-section: hsl(var(--neutral-base-dark) 17%);
+    --app-surface-card: hsl(var(--neutral-base-dark) 14%);
+    --app-surface-overlay: hsl(var(--neutral-base-dark) 21%);
+    --app-surface-border: hsl(217deg 12% 29%);
+    --app-surface-hover: hsl(var(--neutral-base-dark) 17%);
+    --app-surface-disabled: hsl(217deg 12% 29%);
+
+    /* 5. Basic text color (dark mode) */
+    --text-base-dark: 210deg 24%;
+    --app-color-text-emphasis: hsl(var(--text-base-dark) 96%);
+    --app-color-text: hsl(var(--text-base-dark) 84%);
+    --app-color-text-muted: hsl(210deg 14% 65%);
+    --app-color-text-link: hsl(196deg 68% 65%);
+  }
+}
+
+/* ---------------------------------------------- *
+ * Layout & Spacing
+ * ---------------------------------------------- */
+/* stylelint-disable-next-line no-duplicate-selectors */
+:root {
+  --app-spacing-xs: 4px; /* 👈 Exception: Extremely narrow gaps (such as between text and icons) */
+  --app-spacing-sm: 8px; /* Narrow margin (e.g. between label and input field) */
+  --app-spacing-md: 16px; /* Basic margins (such as inner margins of cards) */
+  --app-spacing-lg: 24px; /* Slightly wider margin (content separation) */
+  --app-spacing-xl: 32px; /* Wide margins (e.g. spacing between sections) */
+  --app-spacing-xxl: 64px; /* Extra-large margins (e.g. above and below the main visual on the top page) */
+}
+
+/* ---------------------------------------------- *
+ * Component / Visual
+ * ---------------------------------------------- */
+/* stylelint-disable-next-line no-duplicate-selectors */
+:root {
+  --app-radius-sm: 4px;
+  --app-radius-md: 8px;
+  --app-radius-lg: 16px;
+  --app-radius-full: 9999px;
+}
+
+/* ---------------------------------------------- *
+ * Typography
+ * ---------------------------------------------- */
+/* stylelint-disable-next-line no-duplicate-selectors */
+:root {
+  /* font-family (default fonts) */
+  --app-font-sans: system-ui, -apple-system, 'Segoe UI', 'Roboto', sans-serif;
+  --app-font-mono: ui-monospace, 'SFMono-Regular', consolas, monospace;
+
+  /* font-weight */
+  --app-weight-normal: 400; /* For normal body */
+  --app-weight-bold: 700; /* For headings and strong emphasis */
+
+  /* font-size, Designed with a ratio of 1.25 times (major third) */
+  --app-text-sm: 0.875rem; /* 14px: For annotations/supplements */
+  --app-text-base: 1rem; /* 16px: for standard body */
+  --app-text-lg: 1.25rem; /* 20px: for subheading (h3) */
+  --app-text-xl: 1.563rem; /* 25px: for medium heading (h2) */
+  --app-text-2xl: 1.953rem; /* 31px: For main heading (h1) */
+
+  /* line-height */
+  --app-leading-none: 1; /* For icons or single-line elements */
+  --app-leading-tight: 1.2; /* For headings and compact UI */
+  --app-leading-snug: 1.4; /* For labels, captions, and short text */
+  --app-leading-normal: 1.7; /* For body text and long-form reading */
+
+  /* letter-spacing */
+  --app-tracking-normal: 0.05em; /* For main text (leave a little space) */
+  --app-tracking-wide: 0.1em; /* For heading (produces a relaxed and luxurious feel) */
+}

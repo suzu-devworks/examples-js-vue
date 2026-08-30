@@ -8,10 +8,19 @@
   "[html]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
-  "[javascript][typescript][vue]": {
+  "[javascript][typescript]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "source.fixAll.oxc": "explicit",
+      "source.format.oxc": "explicit"
+    },
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[vue]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.oxc": "explicit",
+      "source.fixAll.stylelint": "explicit",
       "source.format.oxc": "explicit"
     },
     "editor.defaultFormatter": "oxc.oxc-vscode"

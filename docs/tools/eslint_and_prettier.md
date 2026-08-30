@@ -162,7 +162,7 @@ Modify `eslint.config.js` as follows:
       'vue/block-order': [
         'error',
         {
-          order: [['script', 'template'], 'style'],
+          order: ['script', 'template', 'style'],
         },
       ],
     },
