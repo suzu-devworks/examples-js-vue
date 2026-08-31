@@ -12,6 +12,7 @@ body {
   line-height: var(--app-leading-normal);
   color: var(--app-color-text);
   letter-spacing: var(--app-tracking-normal);
+  scrollbar-color: var(--app-surface-border) transparent;
   background-color: var(--app-surface-ground);
   text-rendering: optimizelegibility;
   transition:
@@ -64,5 +65,69 @@ a {
 @media (hover: hover) {
   a:hover {
     background-color: color-mix(in srgb, var(--app-color-text-link) 20%, transparent);
+  }
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-spacing-sm);
+  margin-bottom: var(--app-spacing-md);
+}
+
+button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--app-spacing-xs) var(--app-spacing-md);
+  font-size: var(--app-text-base);
+  font-weight: var(--app-weight-bold);
+  color: var(--app-control-text);
+  cursor: pointer;
+  background-color: var(--app-control-background);
+  border: 1px solid var(--app-control-border);
+  border-radius: var(--app-radius-md);
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &:disabled {
+    color: var(--app-color-text-muted);
+    cursor: not-allowed;
+    background-color: var(--app-surface-disabled);
+    border-color: var(--app-surface-border);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--app-control-background-hover);
+  }
+}
+
+.button-primary {
+  color: var(--app-color-on-primary);
+  background-color: var(--app-color-primary);
+
+  &:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--app-color-primary) 85%, #000);
+  }
+}
+
+.button-secondary {
+  color: var(--app-color-on-secondary);
+  background-color: var(--app-color-secondary);
+
+  &:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--app-color-secondary) 85%, #000);
+  }
+}
+
+.button-accent {
+  color: var(--app-color-on-accent);
+  background-color: var(--app-color-accent);
+
+  &:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--app-color-accent) 85%, #000);
   }
 }

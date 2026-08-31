@@ -15,7 +15,7 @@
   --app-color-secondary: hsl(215deg 16% 47%);
   --app-color-on-secondary: hsl(220deg 13% 96%);
   --app-color-accent: hsl(295deg 58% 65%);
-  --app-color-on-accent: hsl(220deg 13% 96%);
+  --app-color-on-accent: hsl(295deg 40% 18%);
 
   /* 3. System status/signal (bright and clear adult pastel) */
   --app-color-info: hsl(196deg 68% 65%);
@@ -36,6 +36,12 @@
   --app-surface-border: hsl(var(--neutral-base-light) 88%);
   --app-surface-hover: hsl(var(--neutral-base-light) 95%);
   --app-surface-disabled: hsl(var(--neutral-base-light) 91%);
+
+  /* 4-1. Form controls */
+  --app-control-background: var(--app-surface-section);
+  --app-control-background-hover: var(--app-surface-border);
+  --app-control-border: var(--app-surface-border);
+  --app-control-text: var(--app-color-text);
 
   /* 5. Basic text color (light mode) */
   --text-base-light: 214deg 40%;

@@ -4,7 +4,7 @@ import js from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import oxlint from 'eslint-plugin-oxlint'
 import pluginVue from 'eslint-plugin-vue'
-import { defineConfig } from 'eslint/config'
+import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
@@ -36,4 +36,5 @@ export default defineConfig([
   },
   ...oxlint.configs['flat/all'],
   eslintConfigPrettier,
+  globalIgnores(['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**']),
 ])

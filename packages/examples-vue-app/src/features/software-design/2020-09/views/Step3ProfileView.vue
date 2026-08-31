@@ -20,7 +20,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sd-step3-profile sd-card">
+  <div class="sd-step3-profile article-example">
     <h3>Step 3-2: Example of Fetch component with store</h3>
 
     <div class="sd-step3-profile-loading" v-if="globalProfileStore.loading">

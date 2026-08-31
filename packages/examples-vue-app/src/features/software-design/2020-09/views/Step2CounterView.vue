@@ -21,7 +21,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sd-step2-counter sd-card">
+  <div class="sd-step2-counter article-example">
     <h3>Step 2-1: Example of the first component</h3>
 
     <div class="container">

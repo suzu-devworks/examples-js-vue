@@ -1,11 +1,11 @@
 <template>
-  <main>
-    <header class="sd-section">
+  <main class="article-page">
+    <header>
       <h1>Step 3: Address issues arising from component splitting</h1>
-      <p class="sd-article-title">[Step-by-Step] Vue.js Course Understand the Trends in JavaScript Frameworks</p>
+      <p>[Step-by-Step] Vue.js Course Understand the Trends in JavaScript Frameworks</p>
     </header>
 
-    <section class="sd-section">
+    <section class="article-section">
       <h2>The applications using Options API and componentization</h2>
 
       <nav>

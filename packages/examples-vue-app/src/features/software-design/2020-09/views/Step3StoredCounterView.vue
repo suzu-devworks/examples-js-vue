@@ -37,7 +37,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sd-step3-counter sd-card">
+  <div class="sd-step3-counter article-example">
     <h3>Step 3-1: Example of the counter component with store</h3>
 
     <div class="container">
