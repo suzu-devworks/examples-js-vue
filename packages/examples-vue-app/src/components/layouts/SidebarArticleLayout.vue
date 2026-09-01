@@ -25,19 +25,33 @@ SidebarArticleLayout
   --article-layout-sidebar-width: 380px;
   --article-heading-indent: 1em hanging;
 
+  position: relative;
+  z-index: 0;
   width: 100%;
   min-height: 100vh;
+
+  &::after {
+    position: fixed;
+    inset: var(--layout-header-height) 0 var(--layout-footer-height) 0;
+    z-index: 1;
+    display: none;
+    content: '';
+    background-color: var(--app-surface-overlay);
+  }
 
   .sidebar-article-layout__sidebar {
     position: fixed;
     top: var(--layout-header-height);
     bottom: 0;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: var(--app-spacing-md);
     width: var(--article-layout-sidebar-width);
     padding: var(--app-spacing-md) var(--app-spacing-sm);
     overflow: hidden;
+    color: var(--app-color-text);
+    background-color: var(--app-surface-ground);
     border-right: solid 1px var(--app-surface-border);
   }
 

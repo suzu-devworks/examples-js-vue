@@ -22,7 +22,7 @@ import BlandLogo from './BlandLogo.vue'
 <style lang="css" scoped>
 .default-layout {
   --layout-header-height: 2.4rem;
-  --layout-footer-height: 2rem;
+  --layout-footer-height: 0;
   --layout-border-width: 2px;
   --layout-border: var(--layout-border-width) solid color-mix(in oklab, var(--app-color-brand) 20%, transparent);
   --layout-fixed-surface: color-mix(in oklab, var(--app-surface-ground) 70%, transparent);

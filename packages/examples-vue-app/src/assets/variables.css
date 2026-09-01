@@ -32,7 +32,7 @@
   --app-surface-ground: hsl(var(--neutral-base-light) 97%);
   --app-surface-section: hsl(var(--neutral-base-light) 95%);
   --app-surface-card: hsl(0deg 0% 100%);
-  --app-surface-overlay: hsl(0deg 0% 100%);
+  --app-surface-overlay: hsl(0deg 0% 14% / 0.4);
   --app-surface-border: hsl(var(--neutral-base-light) 88%);
   --app-surface-hover: hsl(var(--neutral-base-light) 95%);
   --app-surface-disabled: hsl(var(--neutral-base-light) 91%);
@@ -58,7 +58,7 @@
     --app-surface-ground: hsl(var(--neutral-base-dark) 11%);
     --app-surface-section: hsl(var(--neutral-base-dark) 17%);
     --app-surface-card: hsl(var(--neutral-base-dark) 14%);
-    --app-surface-overlay: hsl(var(--neutral-base-dark) 21%);
+    --app-surface-overlay: hsl(var(--neutral-base-dark) 100% / 0.4);
     --app-surface-border: hsl(217deg 12% 29%);
     --app-surface-hover: hsl(var(--neutral-base-dark) 17%);
     --app-surface-disabled: hsl(217deg 12% 29%);
