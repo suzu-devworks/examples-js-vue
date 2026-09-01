@@ -15,7 +15,7 @@
   --app-color-secondary: hsl(215deg 16% 47%);
   --app-color-on-secondary: hsl(220deg 13% 96%);
   --app-color-accent: hsl(295deg 58% 65%);
-  --app-color-on-accent: hsl(295deg 40% 18%);
+  --app-color-on-accent: hsl(220deg 13% 96%);
 
   /* 3. System status/signal (bright and clear adult pastel) */
   --app-color-info: hsl(196deg 68% 65%);

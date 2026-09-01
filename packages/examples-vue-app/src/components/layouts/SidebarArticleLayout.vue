@@ -1,5 +1,21 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { onBeforeRouteUpdate } from 'vue-router'
+
+const isSidebarOpen = ref(false)
+
+onBeforeRouteUpdate(() => {
+  isSidebarOpen.value = false
+})
+
+function toggleSidebar() {
+  isSidebarOpen.value = !isSidebarOpen.value
+}
+</script>
+
 <template>
   <div class="sidebar-article-layout">
+    <button type="button" :aria-expanded="isSidebarOpen" @click="toggleSidebar"><span>Menu</span></button>
     <aside class="sidebar-article-layout__sidebar">
       <slot name="sidebar" />
     </aside>
@@ -23,7 +39,11 @@ SidebarArticleLayout
   --article-layout-title-color: var(--app-color-brand);
   --article-layout-title-text-color: white;
   --article-layout-sidebar-width: 380px;
+  --article-layout-sidebar-shadow: 0 2px 5px var(--app-surface-overlay);
   --article-heading-indent: 1em hanging;
+  --article-layout-expander-width: 50px;
+  --article-layout-expander-mark-width: 20px;
+  --article-layout-expander-mark-spacing: 6px;
 
   position: relative;
   z-index: 0;
@@ -31,6 +51,7 @@ SidebarArticleLayout
   min-height: 100vh;
 
   &::after {
+    /* overlay */
     position: fixed;
     inset: var(--layout-header-height) 0 var(--layout-footer-height) 0;
     z-index: 1;
@@ -39,24 +60,108 @@ SidebarArticleLayout
     background-color: var(--app-surface-overlay);
   }
 
+  &:has(> button[aria-expanded='true'])::after {
+    /* only show overlay if sidebar exists */
+    display: block;
+  }
+
+  > button[aria-expanded] {
+    /* expander button */
+    position: fixed;
+    top: calc(var(--layout-header-height) + var(--app-spacing-md));
+    right: var(--app-spacing-md);
+    z-index: calc(var(--layout-z-index) + 1);
+    display: block;
+    width: var(--article-layout-expander-width);
+    height: var(--article-layout-expander-width);
+    font-size: 0;
+    color: var(--app-color-on-accent);
+    cursor: pointer;
+    background-color: var(--app-color-accent);
+    border: 0;
+    border-radius: var(--app-radius-full);
+    box-shadow: var(--article-layout-sidebar-shadow);
+
+    & > span,
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--article-layout-expander-mark-width);
+      height: 2px;
+      content: '';
+      background-color: var(--app-color-on-accent);
+      border-radius: 2px;
+      transform: translate(-50%, -50%);
+      transition:
+        transform 0.3s ease,
+        opacity 0.2s ease;
+    }
+
+    &::before {
+      top: calc(50% - var(--article-layout-expander-mark-spacing));
+    }
+
+    &::after {
+      top: calc(50% + var(--article-layout-expander-mark-spacing));
+    }
+  }
+
+  > button[aria-expanded='true'] {
+    &::before {
+      top: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    & > span {
+      opacity: 0;
+    }
+
+    &::after {
+      top: 50%;
+      transform: translateX(-50%) rotate(-45deg);
+    }
+  }
+
   .sidebar-article-layout__sidebar {
     position: fixed;
     top: var(--layout-header-height);
-    bottom: 0;
+    bottom: auto;
     z-index: 2;
     display: flex;
     flex-direction: column;
     gap: var(--app-spacing-md);
-    width: var(--article-layout-sidebar-width);
-    padding: var(--app-spacing-md) var(--app-spacing-sm);
+    width: 100%;
+    max-height: 0;
+    padding: var(--app-spacing-xs);
     overflow: hidden;
     color: var(--app-color-text);
     background-color: var(--app-surface-ground);
-    border-right: solid 1px var(--app-surface-border);
+    border-right: 0;
+    box-shadow: var(--article-layout-sidebar-shadow);
+    opacity: 0;
+    transform: translateY(-12px);
+    transition:
+      max-height 0.3s ease-in,
+      opacity 0.1s ease-in 0.2s,
+      transform 0.3s ease-in;
+  }
+
+  > button[aria-expanded='true'] {
+    & + .sidebar-article-layout__sidebar {
+      max-height: 100vh;
+      opacity: 1;
+      transform: translateY(0);
+      transition:
+        max-height 0.4s ease-out,
+        opacity 0.3s ease-out,
+        transform 0.4s ease-out;
+    }
   }
 
   .sidebar-article-layout__content {
-    padding-left: var(--article-layout-sidebar-width);
+    padding-left: 0;
   }
 
   :deep(.article-sidebar-introduction),
@@ -91,7 +196,7 @@ SidebarArticleLayout
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    min-height: 0;
+    min-height: 70vh;
     padding: var(--app-spacing-sm);
     overflow: hidden;
 
@@ -149,6 +254,32 @@ SidebarArticleLayout
           text-indent: var(--article-heading-indent);
         }
       }
+    }
+  }
+
+  @media (width >= 768px) {
+    &:has(> button[aria-expanded='true'])::after {
+      display: none;
+    }
+
+    > button[aria-expanded] {
+      display: none;
+    }
+
+    .sidebar-article-layout__sidebar {
+      bottom: 0;
+      width: var(--article-layout-sidebar-width);
+      max-height: none;
+      padding: var(--app-spacing-md) var(--app-spacing-sm);
+      border-right: solid 1px var(--app-surface-border);
+      box-shadow: none;
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .sidebar-article-layout__content {
+      padding-left: var(--article-layout-sidebar-width);
     }
   }
 }
