@@ -5,7 +5,7 @@ import type { IMenu } from '@/types'
 
 const menu: IMenu = {
   title: 'Vue guide',
-  description: 'The implementation is based on the documentation from the official Vue.js website.',
+  description: 'The content is based on the documentation from the official Vue.js website.',
   groups: [
     {
       title: 'Vue Guide (official)',
