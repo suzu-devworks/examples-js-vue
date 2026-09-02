@@ -47,6 +47,7 @@ SidebarArticleLayout
 }
 
 .article-example {
+  align-items: start;
   background-color: var(--app-surface-card);
 }
 

@@ -73,6 +73,7 @@ export default defineComponent({
   }
 
   .message {
+    width: 100%;
     padding: var(--app-spacing-md);
     background-color: var(--app-surface-card);
     border: 1px solid var(--app-surface-border);
