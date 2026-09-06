@@ -4,11 +4,45 @@ const root = '/vue'
 const routes: RouteRecordRaw[] = [
   {
     path: `${root}`,
-    component: () => import('./views/IndexView.vue'),
+    redirect: '/vue/components/registration',
   },
   {
     path: `${root}/components`,
-    component: () => import('./views/ComponentsInDepthView.vue'),
+    component: () => import('./views/index.vue'),
+    children: [
+      {
+        path: '',
+        redirect: '/vue/components/registration',
+      },
+      {
+        path: `registration`,
+        component: () => import('./components-in-depth/views/RegistrationView.vue'),
+      },
+      {
+        path: `props`,
+        component: () => import('./components-in-depth/views/PropsView.vue'),
+      },
+      {
+        path: `events`,
+        component: () => import('./components-in-depth/views/EventsView.vue'),
+      },
+      {
+        path: `v-models`,
+        component: () => import('./components-in-depth/views/VModelsView.vue'),
+      },
+      {
+        path: `fallthrough`,
+        component: () => import('./components-in-depth/views/FallthroughView.vue'),
+      },
+      {
+        path: `slots`,
+        component: () => import('./components-in-depth/views/SlotsView.vue'),
+      },
+      {
+        path: `provide-inject`,
+        component: () => import('./components-in-depth/views/ProvideInjectView.vue'),
+      },
+    ],
   },
 ]
 
