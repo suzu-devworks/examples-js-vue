@@ -8,7 +8,7 @@
   "[html]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
-  "[javascript][typescript]": {
+  "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "source.fixAll.oxc": "explicit",

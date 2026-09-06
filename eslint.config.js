@@ -13,6 +13,17 @@ export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
     languageOptions: { globals: globals.browser },
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+        },
+      ],
+    },
   },
   tseslint.configs.recommended,
   pluginVue.configs['flat/essential'],
@@ -32,6 +43,8 @@ export default defineConfig([
           ignores: ['index', 'App'],
         },
       ],
+      'vue/attribute-hyphenation': ['error', 'always'],
+      'vue/v-on-event-hyphenation': ['error', 'always', { autofix: true }],
     },
   },
   ...oxlint.configs['flat/all'],
