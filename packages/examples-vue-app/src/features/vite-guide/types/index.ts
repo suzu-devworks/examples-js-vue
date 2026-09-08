@@ -1,3 +1,3 @@
 // aggregates.
-export type { IWorkerResponseMessage } from './worker1'
+export type { IWorkerMessage } from './worker'
 export type { NamedValue } from './named-value'

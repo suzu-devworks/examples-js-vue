@@ -34,6 +34,14 @@ SidebarArticleLayout
     border-radius: var(--app-border-radius-sm);
   }
 
+  pre {
+    width: 100%;
+  }
+
+  pre > code {
+    padding: 0;
+  }
+
   button {
     color: var(--app-color-on-primary);
     background-color: var(--app-color-primary);
@@ -52,6 +60,7 @@ SidebarArticleLayout
   align-items: flex-start;
   width: 100%;
   padding: var(--app-spacing-md);
+  overflow: hidden;
   border: solid 1px var(--app-surface-border);
   border-radius: var(--app-radius-md);
 }

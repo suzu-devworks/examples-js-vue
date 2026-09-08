@@ -4,15 +4,25 @@ const root = '/vite'
 const routes: RouteRecordRaw[] = [
   {
     path: `${root}`,
-    component: () => import('./views/IndexView.vue'),
+    redirect: '/vite/guide/env-and-mode',
   },
   {
-    path: `${root}/worker`,
-    component: () => import('./views/WebWorkerView.vue'),
-  },
-  {
-    path: `${root}/env`,
-    component: () => import('./views/EnvVariables.vue'),
+    path: `${root}/guide`,
+    component: () => import('./views/index.vue'),
+    children: [
+      {
+        path: '',
+        redirect: '/vite/guide/env-and-mode',
+      },
+      {
+        path: 'env-and-mode',
+        component: () => import('./views/EnvAndModeView.vue'),
+      },
+      {
+        path: 'features',
+        component: () => import('./views/FeaturesView.vue'),
+      },
+    ],
   },
 ]
 
