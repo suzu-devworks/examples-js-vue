@@ -25,9 +25,9 @@ export default defineComponent({
     <h3>Step 2-1: Example of the first component</h3>
 
     <div class="container">
-      <MyCounter name="Counter 1" :initCount="5" @emitUp="getEvent" class="counter" />
-      <MyCounter name="Counter 2" :initCount="10" @emitUp="getEvent" class="counter" />
-      <MyCounter name="Counter 3" :initCount="15" @emitUp="getEvent" class="counter" />
+      <MyCounter name="Counter 1" :init-count="5" @emit-up="getEvent" class="counter" />
+      <MyCounter name="Counter 2" :init-count="10" @emit-up="getEvent" class="counter" />
+      <MyCounter name="Counter 3" :init-count="15" @emit-up="getEvent" class="counter" />
     </div>
     <div class="message">
       <p>Emitted stacks:</p>

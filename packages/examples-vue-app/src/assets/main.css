@@ -47,7 +47,11 @@ h3 {
 code,
 pre {
   font-family: var(--app-font-mono);
-  font-size: 0.875em; /* Correction to align height with surrounding text */
+  font-size: var(--app-text-sm); /* Correction to align height with surrounding text */
+}
+
+pre {
+  line-height: var(--app-leading-snug);
 }
 
 small,

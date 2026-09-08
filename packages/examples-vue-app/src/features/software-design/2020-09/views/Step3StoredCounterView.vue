@@ -26,7 +26,6 @@ export default defineComponent({
     ...mapState(useGlobalCounterStore, { myOwnName: 'globalCount' }),
   },
   methods: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     getEvent(__payload: { name?: string; counted: number }) {
       this.primitiveStore.globalCount++
       //this.$store.commit("IncrementGlobal")
@@ -41,7 +40,7 @@ export default defineComponent({
     <h3>Step 3-1: Example of the counter component with store</h3>
 
     <div class="container">
-      <MyCounter name="With store" :initCount="5" @emitUp="getEvent" class="counter" />
+      <MyCounter name="With store" :init-count="5" @emit-up="getEvent" class="counter" />
     </div>
 
     <div class="message">
