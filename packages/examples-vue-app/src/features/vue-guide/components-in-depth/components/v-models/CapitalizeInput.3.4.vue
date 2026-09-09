@@ -21,6 +21,6 @@ function emitValue(event: Event) {
 
 <template>
   <div class="my-input registered-component">
-    <input type="text" :value="modelValue" @input="emitValue" />
+    <input type="text" :value="modelValue" @input="emitValue" name="text" />
   </div>
 </template>

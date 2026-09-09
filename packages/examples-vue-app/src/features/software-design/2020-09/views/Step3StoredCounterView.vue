@@ -45,7 +45,7 @@ export default defineComponent({
 
     <div class="message">
       <ul>
-        <li>Primitive: <input type="text" v-model="primitiveStore.globalCount" /></li>
+        <li>Primitive: <input type="text" v-model="primitiveStore.globalCount" name="count" /></li>
         <li>Pinia(globalCountStore.globalCount): {{ globalCountStore.globalCount }}</li>
         <li>Pinia(globalCount): {{ globalCount }}</li>
         <li>Pinia(myOwnName): {{ myOwnName }}</li>

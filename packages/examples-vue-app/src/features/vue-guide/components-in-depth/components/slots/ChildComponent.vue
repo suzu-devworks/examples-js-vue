@@ -8,8 +8,8 @@ const text = ref('Hello')
 <template>
   <div class="child-component registered-component">
     <div class="input-container">
-      <input type="number" v-model="counter" />
-      <input type="text" v-model="text" />
+      <input type="number" v-model="counter" name="count" />
+      <input type="text" v-model="text" name="text" />
     </div>
     <slot :text="text" :count="counter"></slot>
   </div>

@@ -26,7 +26,7 @@ const myText = ref('')
     <p><code>v-model</code> can be used on a component to implement a two-way binding.</p>
 
     <div class="article-example">
-      <input type="text" v-model="message" />
+      <input type="text" v-model="message" name="message" />
       <ChildComponent v-model="message" />
     </div>
   </section>
@@ -37,13 +37,13 @@ const myText = ref('')
 
     <div class="article-example">
       <h3>Pass it using <code>v-model:title="..."</code> with the argument specified:</h3>
-      <input type="text" v-model="bookTitle" />
+      <input type="text" v-model="bookTitle" name="bookTitle" />
       <MyComponent v-model:title="bookTitle" />
     </div>
 
     <div class="article-example">
       <h3>Added support for <code>undefined</code> in numeric arguments:</h3>
-      <input type="number" v-model="twoWayCounter" />
+      <input type="number" v-model="twoWayCounter" name="count" />
       <TwoWayCounter v-model="twoWayCounter" />
     </div>
   </section>
@@ -54,8 +54,8 @@ const myText = ref('')
 
     <div class="article-example">
       <div class="horizontal-form">
-        <input type="text" v-model="parson.firstName" />
-        <input type="text" v-model="parson.lastName" />
+        <input type="text" v-model="parson.firstName" name="firstName" />
+        <input type="text" v-model="parson.lastName" name="lastName" />
       </div>
       <UserName v-model:first-name="parson.firstName" v-model:last-name="parson.lastName" />
     </div>

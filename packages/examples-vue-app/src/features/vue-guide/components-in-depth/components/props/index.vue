@@ -64,7 +64,7 @@ const onCallbackAsync = async (value: Date) => {
     </p>
 
     <div class="article-example">
-      <input type="text" v-model="foo" />
+      <input type="text" v-model="foo" name="foo" />
       <DestructuringComponent :foo="foo" />
     </div>
   </section>
@@ -164,7 +164,7 @@ const onCallbackAsync = async (value: Date) => {
 
     <div class="article-example">
       <h3>The prop is passed in as a raw value that needs to be transformed</h3>
-      <input v-model="size" />
+      <input v-model="size" name="size" />
       <OneWayComponent :size="size" />
     </div>
 
