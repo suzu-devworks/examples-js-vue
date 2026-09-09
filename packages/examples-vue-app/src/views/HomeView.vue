@@ -7,7 +7,7 @@ import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
     <main>
       <header>
         <div class="brand-logo">
-          <img alt="" class="brand-logo-icon" src="@/assets/logo.svg" />
+          <img alt="" class="brand-logo-icon" src="@/assets/logo.svg" width="261" height="226" />
           <div class="brand-logo-content">
             <h1>examples-vue-app</h1>
             <p>This project covers topics such as how to implement the basic features of Vue.js.</p>
@@ -27,6 +27,20 @@ import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
           <article>
             <h2>&#x1f4d8; Articles of Software Design</h2>
             <p>This content is based on the feature article from the Software Design.</p>
+          </article>
+        </RouterLink>
+
+        <RouterLink to="/vue" class="article-item">
+          <article>
+            <h2><img src="@/assets/logo.svg" width="16" height="16" />Vue guide</h2>
+            <p>The content is based on the documentation from the official Vue.js website.</p>
+          </article>
+        </RouterLink>
+
+        <RouterLink to="/vite" class="article-item">
+          <article>
+            <h2><img src="@/assets/vite.svg" width="16" height="16" />Vite Guide</h2>
+            <p>This content is based on the documentation from the official Vite website.</p>
           </article>
         </RouterLink>
       </div>
@@ -129,7 +143,16 @@ import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
       }
 
       h2 {
+        display: flex;
+        gap: var(--app-spacing-xs);
+        align-items: center;
         font-size: var(--article-item-title-size);
+
+        img {
+          display: block;
+          width: var(--article-item-title-size);
+          height: var(--article-item-title-size);
+        }
       }
     }
   }

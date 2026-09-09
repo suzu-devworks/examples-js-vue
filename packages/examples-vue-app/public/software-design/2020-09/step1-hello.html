@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -9,8 +10,8 @@
         <p>Hello {{world}}</p>
         <p>Counter: {{count}}</p>
         <p v-if="count == 5">見えたよ！</p>
-        <input v-model="world" /><br />
-        <input type="number" v-model="count" />
+        <input v-model="world" name="world" /><br />
+        <input type="number" v-model="count" name="count" />
       </main>
     </div>
 

@@ -26,7 +26,6 @@ export default defineComponent({
     ...mapState(useGlobalCounterStore, { myOwnName: 'globalCount' }),
   },
   methods: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     getEvent(__payload: { name?: string; counted: number }) {
       this.primitiveStore.globalCount++
       //this.$store.commit("IncrementGlobal")
@@ -37,16 +36,16 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sd-step3-counter sd-card">
+  <div class="sd-step3-counter article-example">
     <h3>Step 3-1: Example of the counter component with store</h3>
 
     <div class="container">
-      <MyCounter name="With store" :initCount="5" @emitUp="getEvent" class="counter" />
+      <MyCounter name="With store" :init-count="5" class="counter" @emit-up="getEvent" />
     </div>
 
     <div class="message">
       <ul>
-        <li>Primitive: <input type="text" v-model="primitiveStore.globalCount" /></li>
+        <li>Primitive: <input v-model="primitiveStore.globalCount" type="text" name="count" /></li>
         <li>Pinia(globalCountStore.globalCount): {{ globalCountStore.globalCount }}</li>
         <li>Pinia(globalCount): {{ globalCount }}</li>
         <li>Pinia(myOwnName): {{ myOwnName }}</li>
@@ -73,6 +72,7 @@ export default defineComponent({
   }
 
   .message {
+    width: 100%;
     padding: var(--app-spacing-md);
     background-color: var(--app-surface-card);
     border: 1px solid var(--app-surface-border);

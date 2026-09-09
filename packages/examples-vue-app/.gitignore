@@ -37,3 +37,8 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# The Vite documentation specifies a rule to include `.env` in the repository
+# while ignoring `.env.local`.
+!.env
+.env.local

@@ -14,7 +14,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sd-step2-pagination sd-card">
+  <div class="sd-step2-pagination article-example">
     <h3>Step 2-2: Pagination using RouterLink</h3>
     <p>Current page: {{ $route.params.page }}</p>
 

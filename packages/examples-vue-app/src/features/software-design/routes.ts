@@ -16,11 +16,11 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: 'step1',
-        component: import('./2020-09/views/Step1View.vue'),
+        component: () => import('./2020-09/views/Step1View.vue'),
       },
       {
         path: 'step2',
-        component: import('./2020-09/views/Step2View.vue'),
+        component: () => import('./2020-09/views/Step2View.vue'),
         children: [
           {
             path: '',
@@ -39,7 +39,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: 'step3',
-        component: import('./2020-09/views/Step3View.vue'),
+        component: () => import('./2020-09/views/Step3View.vue'),
         children: [
           {
             path: '',

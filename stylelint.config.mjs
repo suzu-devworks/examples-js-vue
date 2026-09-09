@@ -15,5 +15,12 @@ export default {
   rules: {
     'alpha-value-notation': 'number',
     'comment-empty-line-before': ['always', { except: ['first-nested'], ignore: ['after-comment'] }],
+    // Allows BEM naming convention (kebab-case + __element + --modifier)
+    'selector-class-pattern': [
+      '^[a-z]([-]?[a-z0-9]+)*(__[a-z0-9]([-]?[a-z0-9]+)*)?(--[a-z0-9]([-]?[a-z0-9]+)*)?$',
+      {
+        resolveNestedSelectors: true, // When supporting nesting (&__element) such as Sass
+      },
+    ],
   },
 }

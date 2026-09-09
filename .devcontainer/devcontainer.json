@@ -9,15 +9,18 @@
     "source=node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
   "postCreateCommand": "/bin/sh ./.devcontainer/postCreateCommand.sh",
+  "remoteEnv": {
+    "VITE_SOME_KEY": "this value defined in devcontainer.json",
+    "NON_VITE_SOME_KEY": "this value defined in devcontainer.json"
+  },
   "remoteUser": "vscode",
   "features": {
     "ghcr.io/devcontainers/features/copilot-cli": {},
-    "ghcr.io/devcontainers/features/github-cli": {},
+    "ghcr.io/devcontainers/features/github-cli:1.1.2": {},
     "ghcr.io/devcontainers/features/node": {
       "nodeGypDependencies": true,
       "version": "26",
-      "npmVersion": "latest",
-      "pnpmVersion": "latest",
+      "pnpmVersion": "none",
       "nvmVersion": "latest"
     }
   },

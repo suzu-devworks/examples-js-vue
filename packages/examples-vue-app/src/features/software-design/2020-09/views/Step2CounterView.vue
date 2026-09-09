@@ -21,13 +21,13 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sd-step2-counter sd-card">
+  <div class="sd-step2-counter article-example">
     <h3>Step 2-1: Example of the first component</h3>
 
     <div class="container">
-      <MyCounter name="Counter 1" :initCount="5" @emitUp="getEvent" class="counter" />
-      <MyCounter name="Counter 2" :initCount="10" @emitUp="getEvent" class="counter" />
-      <MyCounter name="Counter 3" :initCount="15" @emitUp="getEvent" class="counter" />
+      <MyCounter name="Counter 1" :init-count="5" class="counter" @emit-up="getEvent" />
+      <MyCounter name="Counter 2" :init-count="10" class="counter" @emit-up="getEvent" />
+      <MyCounter name="Counter 3" :init-count="15" class="counter" @emit-up="getEvent" />
     </div>
     <div class="message">
       <p>Emitted stacks:</p>
@@ -56,6 +56,7 @@ export default defineComponent({
   }
 
   .message {
+    width: 100%;
     padding: var(--app-spacing-md);
     background-color: var(--app-surface-card);
     border: 1px solid var(--app-surface-border);

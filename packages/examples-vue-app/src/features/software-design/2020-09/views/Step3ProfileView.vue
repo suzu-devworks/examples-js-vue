@@ -20,13 +20,13 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sd-step3-profile sd-card">
+  <div class="sd-step3-profile article-example">
     <h3>Step 3-2: Example of Fetch component with store</h3>
 
-    <div class="sd-step3-profile-loading" v-if="globalProfileStore.loading">
+    <div v-if="globalProfileStore.loading" class="sd-step3-profile-loading">
       <p>Loading...</p>
     </div>
-    <div class="sd-step3-profile-error" v-if="globalProfileStore.error">
+    <div v-if="globalProfileStore.error" class="sd-step3-profile-error">
       <p>Error: {{ globalProfileStore.error }}</p>
     </div>
     <p v-if="!globalProfileStore.loading && !globalProfileStore.error">GitHub profile data fetched successfully!</p>
