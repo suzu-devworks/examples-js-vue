@@ -10,7 +10,7 @@ let worker: Worker | null = null
 
 function startWorker(): void {
   if (!worker) {
-    worker = new Worker(new URL('../workers/worker.js', import.meta.url), {
+    worker = new Worker(new URL('../worker.js', import.meta.url), {
       type: 'module',
     })
 
