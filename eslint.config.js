@@ -10,6 +10,7 @@ import tseslint from 'typescript-eslint'
 
 export default defineConfig([
   js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
     languageOptions: { globals: globals.browser },
@@ -25,7 +26,7 @@ export default defineConfig([
       ],
     },
   },
-  tseslint.configs.recommended,
+
   pluginVue.configs['flat/recommended'],
   {
     files: ['**/*.vue'],
