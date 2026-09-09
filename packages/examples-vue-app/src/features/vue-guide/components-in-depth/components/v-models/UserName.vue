@@ -5,8 +5,8 @@ const lastName = defineModel<string>('lastName')
 
 <template>
   <div class="user-name-component registered-component">
-    <input type="text" v-model="firstName" name="firstName" />
-    <input type="text" v-model="lastName" name="lastName" />
+    <input v-model="firstName" type="text" name="firstName" />
+    <input v-model="lastName" type="text" name="lastName" />
   </div>
 </template>
 

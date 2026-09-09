@@ -26,7 +26,7 @@ if (props.list) {
     <div v-if="foo !== undefined" class="one-way-component-item">
       <p>foo: {{ props.foo }}</p>
       <!-- eslint-disable-next-line vue/no-mutating-props -->
-      <input type="text" v-model="props.foo" name="foo" />
+      <input v-model="props.foo" type="text" name="foo" />
     </div>
 
     <div v-if="initialCounter !== undefined" class="one-way-component-item">

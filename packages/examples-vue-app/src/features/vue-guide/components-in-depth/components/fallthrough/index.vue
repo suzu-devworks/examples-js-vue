@@ -109,7 +109,7 @@ const counter8 = ref(8)
 
     <div class="article-example">
       <div class="registered-component">
-        <MultipleRootLayout id="custom-layout" @click="() => counter7++" class="clickable success" />
+        <MultipleRootLayout id="custom-layout" class="clickable success" @click="() => counter7++" />
       </div>
       <p>Click Count: {{ counter7 }}</p>
     </div>

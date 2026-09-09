@@ -69,8 +69,8 @@ function onChangeStartWorker(): void {
     <header>
       <label>
         <input
-          type="checkbox"
           v-model="starting"
+          type="checkbox"
           switch
           role="switch"
           name="start-worker"
@@ -82,7 +82,7 @@ function onChangeStartWorker(): void {
     <textarea :value="message.join('\n')" name="message" readonly></textarea>
 
     <footer>
-      <input type="text" v-model="data" name="data" />
+      <input v-model="data" type="text" name="data" />
       <button @click="sendMessage">Execute</button>
     </footer>
   </div>

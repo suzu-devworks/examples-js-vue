@@ -26,7 +26,7 @@ export default defineConfig([
     },
   },
   tseslint.configs.recommended,
-  pluginVue.configs['flat/essential'],
+  pluginVue.configs['flat/recommended'],
   {
     files: ['**/*.vue'],
     languageOptions: { parserOptions: { parser: tseslint.parser } },
@@ -37,14 +37,13 @@ export default defineConfig([
           order: ['script', 'template', 'style'],
         },
       ],
+      'vue/v-on-event-hyphenation': ['error', 'always', { autofix: true }],
       'vue/multi-word-component-names': [
         'error',
         {
           ignores: ['index', 'App'],
         },
       ],
-      'vue/attribute-hyphenation': ['error', 'always'],
-      'vue/v-on-event-hyphenation': ['error', 'always', { autofix: true }],
     },
   },
   ...oxlint.configs['flat/all'],

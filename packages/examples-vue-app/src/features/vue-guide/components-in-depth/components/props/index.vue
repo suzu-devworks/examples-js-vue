@@ -64,7 +64,7 @@ const onCallbackAsync = async (value: Date) => {
     </p>
 
     <div class="article-example">
-      <input type="text" v-model="foo" name="foo" />
+      <input v-model="foo" type="text" name="foo" />
       <DestructuringComponent :foo="foo" />
     </div>
   </section>
@@ -143,7 +143,7 @@ const onCallbackAsync = async (value: Date) => {
       <BlogPost title="foo" v-bind="{ title: 'bar' }" />
 
       <p>All handlers for the same event will be called:</p>
-      <BlogPost class="clickable" @click="onClick(1)" v-bind="{ onClick: () => onClick(2) }" />
+      <BlogPost class="clickable" v-bind="{ onClick: () => onClick(2) }" @click="onClick(1)" />
       <p>Click Count: {{ counter }}</p>
     </div>
   </section>

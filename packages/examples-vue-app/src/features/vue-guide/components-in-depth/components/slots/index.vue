@@ -145,7 +145,7 @@ const currentTab = ref('overview')
           dynamic slot name
           v-slot:[currentTab] can also be abbreviated as #[currentTab]
         -->
-        <template v-slot:[currentTab]>
+        <template #[currentTab]>
           <div v-if="currentTab === 'overview'">
             <h3>Summary content</h3>
             <p>A summary of the product is displayed here.</p>

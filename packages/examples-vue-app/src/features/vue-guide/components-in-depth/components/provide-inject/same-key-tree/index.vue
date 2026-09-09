@@ -12,7 +12,7 @@ provide('message', message)
   <div class="tree-component registered-component">
     <details open>
       <summary>🌴Root</summary>
-      <input type="text" name="message" v-model="message" />
+      <input v-model="message" type="text" name="message" />
       <ul>
         <li><LeafNode /></li>
         <li><BranchNode initial="this is branch message" /></li>

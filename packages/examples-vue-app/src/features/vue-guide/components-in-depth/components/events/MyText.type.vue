@@ -19,6 +19,6 @@ const binder = computed({
 
 <template>
   <div class="my-text registered-component">
-    <input type="text" v-model="binder" @change="emit('change', ++counter)" name="text" />
+    <input v-model="binder" type="text" name="text" @change="emit('change', ++counter)" />
   </div>
 </template>

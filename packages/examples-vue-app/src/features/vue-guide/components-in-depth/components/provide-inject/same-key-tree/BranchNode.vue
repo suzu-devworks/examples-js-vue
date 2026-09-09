@@ -15,7 +15,7 @@ provide('message', message)
   <div class="branch-node">
     <details open>
       <summary>🪾Branch</summary>
-      <input type="text" name="message" v-model="message" />
+      <input v-model="message" type="text" name="message" />
       <ul>
         <li><LeafNode /></li>
         <li><LeafNode /></li>

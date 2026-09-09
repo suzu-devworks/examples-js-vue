@@ -12,6 +12,6 @@ const [model, modifiers] = defineModel<string>({
 
 <template>
   <div class="my-input registered-component">
-    <input type="text" v-model="model" name="text" />
+    <input v-model="model" type="text" name="text" />
   </div>
 </template>

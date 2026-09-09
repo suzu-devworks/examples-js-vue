@@ -40,12 +40,12 @@ export default defineComponent({
     <h3>Step 3-1: Example of the counter component with store</h3>
 
     <div class="container">
-      <MyCounter name="With store" :init-count="5" @emit-up="getEvent" class="counter" />
+      <MyCounter name="With store" :init-count="5" class="counter" @emit-up="getEvent" />
     </div>
 
     <div class="message">
       <ul>
-        <li>Primitive: <input type="text" v-model="primitiveStore.globalCount" name="count" /></li>
+        <li>Primitive: <input v-model="primitiveStore.globalCount" type="text" name="count" /></li>
         <li>Pinia(globalCountStore.globalCount): {{ globalCountStore.globalCount }}</li>
         <li>Pinia(globalCount): {{ globalCount }}</li>
         <li>Pinia(myOwnName): {{ myOwnName }}</li>

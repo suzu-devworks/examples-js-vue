@@ -7,7 +7,7 @@ const id = useId()
 </script>
 
 <template>
-  <div class="leaf-node" :id="id">
+  <div :id="id" class="leaf-node">
     <span>🍃Leaf:</span>
     <input type="text" name="message" :value="message" readonly />
   </div>

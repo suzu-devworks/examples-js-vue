@@ -4,6 +4,6 @@ const title = defineModel<string>('title', { required: true })
 
 <template>
   <div class="my-component registered-component">
-    <input type="text" v-model="title" name="title" />
+    <input v-model="title" type="text" name="title" />
   </div>
 </template>
