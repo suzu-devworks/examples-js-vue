@@ -10,7 +10,8 @@ const message = ref('hello drilling.')
 <template>
   <div class="tree-component registered-component">
     <details open>
-      <summary>🌲Root <input type="text" name="message" v-model="message" /></summary>
+      <summary>🌲Root</summary>
+      <input type="text" name="message" v-model="message" />
       <ul>
         <li><LeafNode :message="message" /></li>
         <li><BranchNode :message="message" /></li>
@@ -26,9 +27,13 @@ const message = ref('hello drilling.')
     padding: 0 var(--app-spacing-sm);
     background-color: color-mix(in srgb, var(--app-color-primary) 20%, var(--app-surface-section));
     border-radius: var(--app-radius-sm);
+  }
 
-    > span {
-      padding: var(--app-spacing-sm);
+  :deep(details),
+  details {
+    > input[type='text'] {
+      margin-bottom: 0.5em;
+      margin-left: 2em;
     }
   }
 

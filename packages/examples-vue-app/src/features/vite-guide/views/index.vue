@@ -4,51 +4,28 @@ import SidebarArticleLayout from '@/components/layouts/SidebarArticleLayout.vue'
 import type { IMenu } from '@/types'
 
 const menu: IMenu = {
-  title: 'Vue guide',
-  description: 'The content is based on the documentation from the official Vue.js website.',
+  title: 'Vite guide',
+  description: 'This content is based on the documentation from the official Vite website.',
   groups: [
     {
-      title: 'Vue Guide (official)',
+      title: 'Vite Guide (official)',
       items: [
         {
-          link: 'https://ja.vuejs.org/guide/quick-start.html',
-          title: 'Quick Start',
+          link: 'https://ja.vite.dev/guide/',
+          title: 'Getting Started',
         },
       ],
     },
     {
-      title: 'Components In-Depth',
+      title: 'Guide',
       items: [
         {
-          to: '/vue/components/registration',
-          title: 'Registration',
+          to: '/vite/guide/features',
+          title: 'Features',
         },
         {
-          to: '/vue/components/props',
-          title: 'Props',
-        },
-        {
-          to: '/vue/components/events',
-          title: 'Events',
-        },
-        {
-          to: '/vue/components/v-models',
-          title: 'Component v-model',
-        },
-        {
-          to: '/vue/components/fallthrough',
-          title: 'Fallthrough Attributes',
-        },
-        {
-          to: '/vue/components/slots',
-          title: 'Slots',
-        },
-        {
-          to: '/vue/components/provide-inject',
-          title: 'Provide / Inject',
-        },
-        {
-          title: 'Async Components',
+          to: '/vite/guide/env-and-mode',
+          title: 'Env Variables and Modes',
         },
       ],
     },

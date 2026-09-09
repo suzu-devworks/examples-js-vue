@@ -7,3 +7,6 @@ echo "DIR:" ${script_dir}
 echo
 
 sudo chown vscode node_modules
+
+# Install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | SHELL=/bin/bash sh -

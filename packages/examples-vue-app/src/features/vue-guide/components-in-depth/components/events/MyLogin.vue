@@ -29,8 +29,8 @@ const password = ref('')
 <template>
   <div class="my-login registered-component">
     <form @submit.prevent="submitForm(email, password)">
-      <input v-model="email" type="email" placeholder="Email" />
-      <input v-model="password" type="password" placeholder="Password" autocomplete="off" />
+      <input v-model="email" type="email" placeholder="Email" autocomplete="off" name="email" />
+      <input v-model="password" type="password" placeholder="Password" autocomplete="off" name="password" />
       <button type="submit">Submit</button>
     </form>
   </div>

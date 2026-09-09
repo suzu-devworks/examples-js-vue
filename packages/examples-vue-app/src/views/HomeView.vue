@@ -33,7 +33,14 @@ import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
         <RouterLink to="/vue" class="article-item">
           <article>
             <h2><img src="@/assets/logo.svg" width="16" height="16" />Vue guide</h2>
-            <p>The implementation is based on the documentation from the official Vue.js website.</p>
+            <p>The content is based on the documentation from the official Vue.js website.</p>
+          </article>
+        </RouterLink>
+
+        <RouterLink to="/vite" class="article-item">
+          <article>
+            <h2><img src="@/assets/vite.svg" width="16" height="16" />Vite Guide</h2>
+            <p>This content is based on the documentation from the official Vite website.</p>
           </article>
         </RouterLink>
       </div>

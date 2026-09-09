@@ -15,31 +15,31 @@ const routes: RouteRecordRaw[] = [
         redirect: '/vue/components/registration',
       },
       {
-        path: `registration`,
+        path: 'registration',
         component: () => import('./components-in-depth/views/RegistrationView.vue'),
       },
       {
-        path: `props`,
+        path: 'props',
         component: () => import('./components-in-depth/views/PropsView.vue'),
       },
       {
-        path: `events`,
+        path: 'events',
         component: () => import('./components-in-depth/views/EventsView.vue'),
       },
       {
-        path: `v-models`,
+        path: 'v-models',
         component: () => import('./components-in-depth/views/VModelsView.vue'),
       },
       {
-        path: `fallthrough`,
+        path: 'fallthrough',
         component: () => import('./components-in-depth/views/FallthroughView.vue'),
       },
       {
-        path: `slots`,
+        path: 'slots',
         component: () => import('./components-in-depth/views/SlotsView.vue'),
       },
       {
-        path: `provide-inject`,
+        path: 'provide-inject',
         component: () => import('./components-in-depth/views/ProvideInjectView.vue'),
       },
     ],

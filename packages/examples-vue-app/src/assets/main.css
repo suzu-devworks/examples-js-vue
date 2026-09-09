@@ -135,3 +135,46 @@ button,
     background-color: color-mix(in srgb, var(--app-color-accent) 85%, #000);
   }
 }
+
+[switch] {
+  --switch-radius: var(--app-radius-full);
+  --switch-padding: 2px;
+  --switch-track-background-default: var(--app-surface-disabled);
+  --switch-track-background-checked: var(--app-color-primary);
+  --switch-thumb-foreground: #fcfcfc;
+
+  display: inline flex;
+  inline-size: 2.5em;
+  block-size: 1.25em;
+  vertical-align: bottom;
+  appearance: unset;
+  cursor: pointer;
+  background-color: var(--switch-track-background-default);
+  border: var(--switch-padding) solid transparent;
+  border-radius: var(--switch-radius);
+  transition-duration: 150ms;
+  transition-property: background-color;
+
+  &::before {
+    content: '';
+    transition-timing-function: linear;
+    transition-duration: inherit;
+    transition-property: flex-grow;
+  }
+
+  &::after {
+    block-size: 100%;
+    aspect-ratio: 1;
+    content: '';
+    background: conic-gradient(var(--switch-thumb-foreground) 0 0), CanvasText;
+    border-radius: calc(var(--switch-radius) - var(--switch-padding));
+  }
+
+  &:checked {
+    background-color: var(--switch-track-background-checked);
+  }
+
+  &:checked::before {
+    flex-grow: 1;
+  }
+}
