@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import { route as routeOfRouterGuide } from '@/features/router-guide'
 import { route as routeOfSoftwareDesign } from '@/features/software-design'
 import { route as routeOfTemplate } from '@/features/template'
 import { route as routeOfViteGuide } from '@/features/vite-guide'
@@ -14,6 +15,7 @@ const router = createRouter({
     ...routeOfTemplate,
     ...routeOfSoftwareDesign,
     ...routeOfVueGuide,
+    ...routeOfRouterGuide,
     ...routeOfViteGuide,
   ],
 })
