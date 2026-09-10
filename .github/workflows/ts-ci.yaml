@@ -3,7 +3,9 @@ name: CI
 on:
   pull_request:
     paths:
-      - 'src/**'
+      - 'packages/**'
+      - 'package.json'
+      - 'pnpm-*.yaml'
   workflow_dispatch:
 
 permissions: {}
