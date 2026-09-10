@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
+
 import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
 import SidebarArticleLayout from '@/components/layouts/SidebarArticleLayout.vue'
+import GroupingMenu from '@/components/ui/GroupingMenu.vue'
+import { features } from '@/features'
 import type { IMenu } from '@/types'
 
+const route = useRoute()
+const activeMenu = features.find((menu) => route.path.startsWith(menu.to))
+
 const menu: IMenu = {
-  title: 'Vue guide',
-  description: 'The content is based on the documentation from the official Vue.js website.',
+  title: `${activeMenu?.title}`,
+  description: `${activeMenu?.description}`,
   groups: [
     {
       title: 'Vue Guide (official)',
@@ -67,27 +74,7 @@ const menu: IMenu = {
 
         <div class="article-sidebar-menu">
           <nav>
-            <template v-for="(group, index) in menu.groups" :key="index">
-              <section class="article-menu-section">
-                <header>
-                  <div class="article-menu-section__title">{{ group.title }}</div>
-                </header>
-                <ul>
-                  <li v-for="(item, itemIndex) in group.items" :key="itemIndex" class="article-menu-item">
-                    <RouterLink v-if="item.to" :to="item.to" class="open-in-router-view">{{ item.title }}</RouterLink>
-                    <a
-                      v-else-if="item.link"
-                      :href="item.link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="open-in-new"
-                      >{{ item.title }}</a
-                    >
-                    <span v-else class="static-label">{{ item.title }}</span>
-                  </li>
-                </ul>
-              </section>
-            </template>
+            <GroupingMenu :groups="menu.groups" />
           </nav>
         </div>
       </template>
