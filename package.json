@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpm --filter \"./packages/**\" --parallel --if-present build-only",
     "typecheck": "pnpm --filter \"./packages/**\" --parallel --if-present typecheck ",
     "lint": "pnpm lint:style & (pnpm lint:oxlint && pnpm lint:eslint)",
     "lint:eslint": "eslint . --cache",
