@@ -1,0 +1,184 @@
+{
+  "spots": [
+    {
+      "id": 1,
+      "name": "Odori Park",
+      "area": "Central Hokkaido (Sapporo)",
+      "category": "Park / Landmark",
+      "address": "Odori Nishi 1-12, Chuo-ku, Sapporo-shi, Hokkaido",
+      "location": {
+        "latitude": 43.0598,
+        "longitude": 141.3474
+      },
+      "features": [
+        "Sapporo Snow Festival Venue",
+        "TV Tower Location",
+        "Excellent Access"
+      ],
+      "rating": 4.3,
+      "best_season": "All Year (Winter & Summer)"
+    },
+    {
+      "id": 2,
+      "name": "Otaru Canal",
+      "area": "Central Hokkaido (Otaru)",
+      "category": "Historical Building / Streetscape",
+      "address": "5 Minatomachi, Otaru-shi, Hokkaido",
+      "location": {
+        "latitude": 43.1979,
+        "longitude": 141.0028
+      },
+      "features": [
+        "Gaslight Night View",
+        "Canal Cruise Available",
+        "Historic Brick Warehouses"
+      ],
+      "rating": 4.2,
+      "best_season": "All Year (Especially Winter)"
+    },
+    {
+      "id": 3,
+      "name": "Mount Hakodate Observatory",
+      "area": "Southern Hokkaido (Hakodate)",
+      "category": "Scenic View / Night View",
+      "address": "Hakodateyama, Hakodate-shi, Hokkaido",
+      "location": {
+        "latitude": 41.7592,
+        "longitude": 140.7042
+      },
+      "features": [
+        "Top 3 Night View in Japan",
+        "Ropeway Access",
+        "Panoramic View"
+      ],
+      "rating": 4.6,
+      "best_season": "All Year"
+    },
+    {
+      "id": 4,
+      "name": "Goryokaku Park",
+      "area": "Southern Hokkaido (Hakodate)",
+      "category": "Historical Site / Park",
+      "address": "44 Goryokakucho, Hakodate-shi, Hokkaido",
+      "location": {
+        "latitude": 41.7968,
+        "longitude": 140.7569
+      },
+      "features": [
+        "Star-Shaped Fort",
+        "Special Historic Site",
+        "Famous Cherry Blossom Spot"
+      ],
+      "rating": 4.4,
+      "best_season": "Spring / Winter"
+    },
+    {
+      "id": 5,
+      "name": "Farm Tomita",
+      "area": "Northern Hokkaido (Furano)",
+      "category": "Nature / Flower Field",
+      "address": "Kisen Kita 15-go, Nakafurano-cho, Sorachi-gun, Hokkaido",
+      "location": {
+        "latitude": 43.4181,
+        "longitude": 142.4285
+      },
+      "features": [
+        "Lavender Fields",
+        "Free Admission",
+        "Cafes & Souvenir Shops"
+      ],
+      "rating": 4.5,
+      "best_season": "Summer (July)"
+    },
+    {
+      "id": 6,
+      "name": "Shirogane Blue Pond",
+      "area": "Northern Hokkaido (Biei)",
+      "category": "Nature / Scenic View",
+      "address": "Shirogane, Biei-cho, Kamikawa-gun, Hokkaido",
+      "location": {
+        "latitude": 43.4934,
+        "longitude": 142.6143
+      },
+      "features": [
+        "Cobalt Blue Water",
+        "Withered Larch Trees",
+        "Night Illuminations"
+      ],
+      "rating": 4.2,
+      "best_season": "Early Summer / Autumn"
+    },
+    {
+      "id": 7,
+      "name": "Asahiyama Zoo",
+      "area": "Northern Hokkaido (Asahikawa)",
+      "category": "Zoo / Leisure",
+      "address": "Kuranuma, Higashiasahikawa-cho, Asahikawa-shi, Hokkaido",
+      "location": {
+        "latitude": 43.7684,
+        "longitude": 142.4801
+      },
+      "features": [
+        "Behavioral Exhibits",
+        "Penguin Walk",
+        "Polar Bear Enclosure"
+      ],
+      "rating": 4.5,
+      "best_season": "All Year (Winter is popular)"
+    },
+    {
+      "id": 8,
+      "name": "Lake Toya",
+      "area": "Central Hokkaido (Toyako)",
+      "category": "Nature / Lake / Hot Spring",
+      "address": "Toyako Onsen, Toyako-cho, Abuta-gun, Hokkaido",
+      "location": {
+        "latitude": 42.5939,
+        "longitude": 140.8421
+      },
+      "features": [
+        "Caldera Lake",
+        "Pleasure Boat Cruise",
+        "Long-Run Fireworks Display"
+      ],
+      "rating": 4.3,
+      "best_season": "Spring to Autumn"
+    },
+    {
+      "id": 9,
+      "name": "Shiretoko Goko Lakes",
+      "area": "Eastern Hokkaido (Shari)",
+      "category": "World Heritage / Nature",
+      "address": "Onnebetsumura, Shari-cho, Shari-gun, Hokkaido",
+      "location": {
+        "latitude": 44.1292,
+        "longitude": 145.0841
+      },
+      "features": [
+        "World Natural Heritage Site",
+        "Elevated Wooden Boardwalk",
+        "Brown Bear Safety Lecture Required"
+      ],
+      "rating": 4.6,
+      "best_season": "Early Summer / Autumn Leaves"
+    },
+    {
+      "id": 10,
+      "name": "Lake Mashu First Observatory",
+      "area": "Eastern Hokkaido (Teshikaga)",
+      "category": "Nature / Scenic View",
+      "address": "Mashu, Teshikaga-cho, Kawakami-gun, Hokkaido",
+      "location": {
+        "latitude": 43.5593,
+        "longitude": 144.5009
+      },
+      "features": [
+        "Mashu Blue Water",
+        "Mysterious Foggy Lake",
+        "Kamui Terrace Available"
+      ],
+      "rating": 4.5,
+      "best_season": "Summer (for Fog) or Winter (for Clear Skies)"
+    }
+  ]
+}

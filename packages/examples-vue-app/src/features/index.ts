@@ -19,6 +19,12 @@ const features = [
     description: 'The content is based on the documentation from the official Vue.js website.',
   },
   {
+    to: '/router',
+    imageUrl: vueLogo,
+    title: 'Vue Router Guide',
+    description: 'The content is based on the documentation from the official Vue Router website.',
+  },
+  {
     to: '/vite',
     imageUrl: viteLogo,
     title: 'Vite Guide',

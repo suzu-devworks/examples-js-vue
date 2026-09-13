@@ -1,10 +1,14 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
-  <a href="/" class="brand-logo">
+  <RouterLink to="/" class="brand-logo">
     <img alt="" aria-hidden="true" class="icon" src="@/assets/logo.svg" />
     <div class="content">
       <div class="title">examples-vue-app</div>
     </div>
-  </a>
+  </RouterLink>
 </template>
 
 <style lang="css" scoped>
