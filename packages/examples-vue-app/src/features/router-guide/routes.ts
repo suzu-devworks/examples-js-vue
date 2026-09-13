@@ -17,6 +17,7 @@ const routes: RouteRecordRaw[] = [
         path: '',
         redirect: '/router/guide/advanced/navigation-guards',
       },
+      // Navigation guards section
       {
         path: 'navigation-guards',
         component: () => import('./advanced/views/NavigationGuardsView.vue'),
@@ -43,6 +44,38 @@ const routes: RouteRecordRaw[] = [
         path: 'navigation-guards/about',
         component: () => import('./advanced/views/UserDetailsView.vue'),
         beforeEnter: [removeQueryParams],
+      },
+      // Route meta fields section
+      {
+        path: 'route-meta-fields',
+        component: () => import('./advanced/views/RouteMetaFieldsView.vue'),
+      },
+      {
+        path: 'route-meta-fields/posts',
+        component: () => import('./advanced/views/PostsLayoutView.vue'),
+        children: [
+          {
+            path: 'list',
+            name: 'router.route-meta-fields.posts-list',
+            component: () => import('./advanced/views/PostsListView.vue'),
+            // anybody can read the list of posts
+            meta: { requiresAuth: false },
+          },
+          {
+            path: 'new',
+            name: 'router.route-meta-fields.post-new',
+            component: () => import('./advanced/views/PostNewView.vue'),
+            // only authenticated users can create posts
+            meta: { requiresAuth: true },
+          },
+          {
+            path: ':id',
+            name: 'router.route-meta-fields.post-detail',
+            component: () => import('./advanced/views/PostsDetailView.vue'),
+            // anybody can read a post
+            meta: { requiresAuth: false },
+          },
+        ],
       },
     ],
   },

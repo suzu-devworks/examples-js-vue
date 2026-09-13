@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import { route as routeOfAuth, requireAuth } from '@/features/auth'
 import { route as routeOfRouterGuide } from '@/features/router-guide'
 import { route as routeOfSoftwareDesign } from '@/features/software-design'
 import { route as routeOfTemplate } from '@/features/template'
@@ -12,6 +13,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', component: HomeView },
+    ...routeOfAuth,
     ...routeOfTemplate,
     ...routeOfSoftwareDesign,
     ...routeOfVueGuide,
@@ -19,5 +21,7 @@ const router = createRouter({
     ...routeOfViteGuide,
   ],
 })
+
+router.beforeEach(requireAuth)
 
 export default router

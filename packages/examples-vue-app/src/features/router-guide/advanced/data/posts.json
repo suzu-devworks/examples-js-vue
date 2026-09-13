@@ -1,0 +1,25 @@
+  {
+    "posts": [
+      {
+        "id": 1,
+        "title": "Getting Started with Vue.js",
+        "content": "An introduction to key Vue concepts, including components, props, and reactivity.",
+        "author": "Taro Yamada",
+        "createdAt": "2026-09-01T10:00:00Z"
+      },
+      {
+        "id": 2,
+        "title": "Tips for Writing Safe Code in TypeScript",
+        "content": "Learn how to leverage type definitions to improve development efficiency and code quality.",
+        "author": "Hanako Sato",
+        "createdAt": "2026-09-05T14:30:00Z"
+      },
+      {
+        "id": 3,
+        "title": "REST API Design Best Practices",
+        "content": "A guide to endpoint naming conventions and using the correct HTTP status codes.",
+        "author": "Ichiro Suzuki",
+        "createdAt": "2026-09-10T09:15:00Z"
+      }
+    ]
+  }

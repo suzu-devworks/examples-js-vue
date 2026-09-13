@@ -30,6 +30,10 @@ const menu: IMenu = {
           to: '/router/guide/advanced/navigation-guards',
           title: 'Navigation Guards',
         },
+        {
+          to: '/router/guide/advanced/route-meta-fields',
+          title: 'Route Meta Fields',
+        },
       ],
     },
   ],
