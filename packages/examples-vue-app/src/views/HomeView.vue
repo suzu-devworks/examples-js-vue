@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
+import { features } from '@/features'
 </script>
 
 <template>
@@ -16,31 +17,13 @@ import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
       </header>
 
       <div class="articles">
-        <RouterLink to="/templates" class="article-item">
+        <RouterLink v-for="menu in features" :key="menu.to" class="article-item" :to="menu.to">
           <article>
-            <h2>&#x1f381; Template generated with create-vue</h2>
-            <p>This is a template page generated using the `create-vue` command.</p>
-          </article>
-        </RouterLink>
-
-        <RouterLink to="/software-design" class="article-item">
-          <article>
-            <h2>&#x1f4d8; Articles of Software Design</h2>
-            <p>This content is based on the feature article from the Software Design.</p>
-          </article>
-        </RouterLink>
-
-        <RouterLink to="/vue" class="article-item">
-          <article>
-            <h2><img src="@/assets/logo.svg" width="16" height="16" />Vue guide</h2>
-            <p>The content is based on the documentation from the official Vue.js website.</p>
-          </article>
-        </RouterLink>
-
-        <RouterLink to="/vite" class="article-item">
-          <article>
-            <h2><img src="@/assets/vite.svg" width="16" height="16" />Vite Guide</h2>
-            <p>This content is based on the documentation from the official Vite website.</p>
+            <h2>
+              <img v-if="menu.imageUrl" :src="menu.imageUrl" width="16" height="16" />
+              {{ menu.title }}
+            </h2>
+            <p>{{ menu.description }}</p>
           </article>
         </RouterLink>
       </div>

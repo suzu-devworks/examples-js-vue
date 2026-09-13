@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Smith",
+      "role": "Sender",
+      "email": "alice@example.com",
+      "description": "The traditional initiator of cryptographic communications."
+    },
+    {
+      "id": 2,
+      "name": "Bob Jones",
+      "role": "Receiver",
+      "email": "bob@example.com",
+      "description": "The intended recipient of Alice's secure messages."
+    },
+    {
+      "id": 3,
+      "name": "Eve Miller",
+      "role": "Eavesdropper",
+      "email": "eve@example.com",
+      "description": "A passive attacker attempting to intercept and read the communication."
+    }
+  ]
+}

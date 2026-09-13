@@ -15,19 +15,24 @@ const menu: IMenu = {
   description: `${activeMenu?.description}`,
   groups: [
     {
-      title: '[Step-by-Step] Vue.js Course Understand the Trends in JavaScript Frameworks - 2020-09',
+      title: 'Vue Router Guide (official)',
       items: [
         {
-          to: '/software-design/2020-09/step1',
-          title: 'Step 1: Experience reactive data binding',
+          link: 'https://router.vuejs.org/guide/',
+          title: 'Getting Started',
+        },
+      ],
+    },
+    {
+      title: 'Advanced',
+      items: [
+        {
+          to: '/router/guide/advanced/navigation-guards',
+          title: 'Navigation Guards',
         },
         {
-          to: '/software-design/2020-09/step2',
-          title: 'Step 2: Learn the basics of componentization and page navigation to build an SPA',
-        },
-        {
-          to: '/software-design/2020-09/step3',
-          title: 'Step 3: Address issues arising from component splitting',
+          to: '/router/guide/advanced/route-meta-fields',
+          title: 'Route Meta Fields',
         },
       ],
     },
