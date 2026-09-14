@@ -1,6 +1,10 @@
 packages:
   - "packages/*"
 
+overrides:
+  # nuxt@4.5.2
+  glob: "^13.0.0"
+
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true

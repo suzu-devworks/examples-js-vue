@@ -47,7 +47,14 @@ export default defineConfig([
       ],
     },
   },
+  // Added setting to exclude rules only under pages
+  {
+    files: ['**/pages/**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
   ...oxlint.configs['flat/all'],
   eslintConfigPrettier,
-  globalIgnores(['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**', '**/.nuxt/**']),
+  globalIgnores(['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**', '**/.nuxt/**', '**/.output/**']),
 ])
