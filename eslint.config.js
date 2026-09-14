@@ -49,5 +49,5 @@ export default defineConfig([
   },
   ...oxlint.configs['flat/all'],
   eslintConfigPrettier,
-  globalIgnores(['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**']),
+  globalIgnores(['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**', '**/.nuxt/**']),
 ])

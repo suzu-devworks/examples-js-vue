@@ -1,0 +1,20 @@
+{
+  "name": "examples-nuxt-quasar",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@quasar/extras": "^2.0.4",
+    "nuxt": "^4.5.2",
+    "nuxt-quasar-ui": "3.1.1",
+    "quasar": "^2.32.2",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
+  }
+}
