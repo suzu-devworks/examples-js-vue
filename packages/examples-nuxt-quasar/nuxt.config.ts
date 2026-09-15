@@ -4,7 +4,7 @@ import pkg from './package.json' with { type: 'json' }
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['nuxt-quasar-ui', '@pinia/nuxt'],
+  modules: ['nuxt-quasar-ui', '@pinia/nuxt', '@nuxt/eslint'],
   app: {
     head: {
       title: pkg.productName || 'Quasar App',
