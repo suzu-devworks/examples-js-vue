@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-import EssentialLink, { type EssentialLinkProps } from '@/components/EssentialLink.vue'
+import type { EssentialLinkProps } from '~/components/EssentialLink.vue'
 
 const linksList: EssentialLinkProps[] = [
   {
@@ -49,7 +47,6 @@ const linksList: EssentialLinkProps[] = [
 ]
 
 const leftDrawerOpen = ref(false)
-
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
@@ -60,9 +57,7 @@ function toggleLeftDrawer() {
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
+        <q-toolbar-title> Quasar + Nuxt 4 App </q-toolbar-title>
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
@@ -76,7 +71,7 @@ function toggleLeftDrawer() {
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <slot />
     </q-page-container>
   </q-layout>
 </template>

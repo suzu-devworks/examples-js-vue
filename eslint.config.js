@@ -49,7 +49,7 @@ export default defineConfig([
   },
   // Added setting to exclude rules only under pages
   {
-    files: ['**/pages/**/*.vue'],
+    files: ['**/pages/**/*.vue', '**/layouts/**/*.vue'],
     rules: {
       'vue/multi-word-component-names': 'off',
     },

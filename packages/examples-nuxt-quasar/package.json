@@ -1,8 +1,8 @@
 {
   "name": "examples-nuxt-quasar",
   "type": "module",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "A Quasar + Nuxt 4 Project",
+  "productName": "Quasar + Nuxt 4 App",
   "private": true,
   "scripts": {
     "build": "nuxt build",
