@@ -28,8 +28,8 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['@/assets/css/app.scss'],
+  css: ['@/css/app.scss'],
   quasar: {
-    sassVariables: '@/assets/css/quasar.variables.scss',
+    sassVariables: '@/css/quasar.variables.scss',
   },
 })
