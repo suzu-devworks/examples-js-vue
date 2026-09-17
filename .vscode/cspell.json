@@ -14,10 +14,12 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
-    "octcat",
     "dotenv",
+    "Nuxt",
+    "octcat",
     "oxlint",
     "pinia",
+    "quasarframework",
     "Vetur",
     "Vite",
     "vuex"

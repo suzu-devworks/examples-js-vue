@@ -13,6 +13,8 @@
     "coverage",
     "dist/",
     "temp/",
+    ".nuxt/",
+    ".output/",
     "LICENSE.md",
     "pnpm-lock.yaml",
     "pnpm-workspace.yaml",
