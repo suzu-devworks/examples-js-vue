@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { EssentialLinkProps } from '~/components/EssentialLink.vue'
+import type { EssentialLinkProps } from '@/components/EssentialLink.vue'
 
 const linksList: EssentialLinkProps[] = [
   {
@@ -71,6 +71,7 @@ function toggleLeftDrawer() {
     </q-drawer>
 
     <q-page-container>
+      <!-- <router-view /> -->
       <slot />
     </q-page-container>
   </q-layout>
