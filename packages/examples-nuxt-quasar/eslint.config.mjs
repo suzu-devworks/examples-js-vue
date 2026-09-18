@@ -1,8 +1,9 @@
-import rootConfig from '../../eslint.config.js'
+import rootConfig from '@examples/eslint-config'
+
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  rootConfig
+  rootConfig,
   // your custom flat configs go here, for example:
   // {
   //   files: ['**/*.ts', '**/*.tsx'],

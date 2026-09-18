@@ -4,10 +4,10 @@ Scaffolded with Vuetify CLI.
 
 ## ❗️ Documentation
 
-- Primary docs: https://vuetifyjs.com/
-- Getting started guide: https://vuetifyjs.com/en/getting-started/installation/
-- Community support: https://community.vuetifyjs.com/
-- Issue tracker: https://issues.vuetifyjs.com/
+- Primary docs: <https://vuetifyjs.com/>
+- Getting started guide: <https://vuetifyjs.com/en/getting-started/installation/>
+- Community support: <https://community.vuetifyjs.com/>
+- Issue tracker: <https://issues.vuetifyjs.com/>
 
 ## 🧱 Stack
 
@@ -71,9 +71,10 @@ pnpm build
 
 ## 💪 Support Vuetify Development
 
-This project uses Vuetify - an MIT licensed Open Source project. We are glad to welcome contributors and any support for ongoing development:
+This project uses Vuetify - an MIT licensed Open Source project.
+We are glad to welcome contributors and any support for ongoing development:
 
-- Contribute to Vuetify and ecosystem projects: https://github.com/vuetifyjs
-- Request enterprise support: https://support.vuetifyjs.com/
-- Sponsor on GitHub: https://github.com/sponsors/vuetifyjs
-- Support on Open Collective: https://opencollective.com/vuetify
+- Contribute to Vuetify and ecosystem projects: <https://github.com/vuetifyjs>
+- Request enterprise support: <https://support.vuetifyjs.com/>
+- Sponsor on GitHub: <https://github.com/sponsors/vuetifyjs>
+- Support on Open Collective: <https://opencollective.com/vuetify>

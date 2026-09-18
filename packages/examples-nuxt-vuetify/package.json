@@ -8,8 +8,10 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
+    "lint:eslint": "eslint",
+    "lint:fix": "pnpm lint:oxlint && pnpm lint:eslint --fix",
+    "lint:oxlint": "oxlint --type-aware ."
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
@@ -20,13 +22,16 @@
     "pinia": "^3.0.4"
   },
   "devDependencies": {
+    "@examples/eslint-config": "workspace:*",
     "@nuxt/fonts": "^0.14.0",
     "@tailwindcss/postcss": "^4.2.1",
     "sass": "^1.98.0",
     "tailwindcss": "^4.2.1",
-    "eslint": "^9.39.4",
+    "eslint": "catalog:",
     "@nuxt/eslint": "^1.15.2",
     "eslint-config-vuetify": "^4.3.4",
-    "@pinia/nuxt": "^0.11.3"
+    "@pinia/nuxt": "^0.11.3",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
   }
 }

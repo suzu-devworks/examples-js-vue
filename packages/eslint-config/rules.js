@@ -1,16 +1,9 @@
-// eslint.config.js
-
-import js from '@eslint/js'
-import eslintConfigPrettier from 'eslint-config-prettier'
 import oxlint from 'eslint-plugin-oxlint'
-import pluginVue from 'eslint-plugin-vue'
-import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
-import tseslint from 'typescript-eslint'
 
-export default defineConfig([
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
+export const oxlintRules = oxlint.configs['flat/all']
+
+export const sharedRules = [
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
     languageOptions: { globals: globals.browser },
@@ -26,11 +19,11 @@ export default defineConfig([
       ],
     },
   },
+]
 
-  pluginVue.configs['flat/recommended'],
+export const vueRules = [
   {
     files: ['**/*.vue'],
-    languageOptions: { parserOptions: { parser: tseslint.parser } },
     rules: {
       'vue/block-order': [
         'error',
@@ -47,14 +40,10 @@ export default defineConfig([
       ],
     },
   },
-  // Added setting to exclude rules only under pages
   {
     files: ['**/pages/**/*.vue', '**/layouts/**/*.vue'],
     rules: {
       'vue/multi-word-component-names': 'off',
     },
   },
-  ...oxlint.configs['flat/all'],
-  eslintConfigPrettier,
-  globalIgnores(['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**']),
-])
+]

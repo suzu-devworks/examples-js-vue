@@ -8,9 +8,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      link: [
-        { rel: 'stylesheet', href: '/layers.css' },
-      ],
+      link: [{ rel: 'stylesheet', href: '/layers.css' }],
     },
   },
 
@@ -20,9 +18,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: [
-    'assets/styles/tailwind.css',
-  ],
+  css: ['assets/styles/tailwind.css'],
 
   vuetify: {
     moduleOptions: {
@@ -55,7 +51,12 @@ export default defineNuxtConfig({
       display: {
         mobileBreakpoint: 'md',
         thresholds: {
-          xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920, xxl: 2560,
+          xs: 0,
+          sm: 600,
+          md: 960,
+          lg: 1280,
+          xl: 1920,
+          xxl: 2560,
         },
       },
     },

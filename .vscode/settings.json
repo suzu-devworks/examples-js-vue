@@ -16,15 +16,6 @@
     },
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
-  "[vue]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit",
-      "source.fixAll.oxc": "explicit",
-      "source.fixAll.stylelint": "explicit",
-      "source.format.oxc": "explicit"
-    },
-    "editor.defaultFormatter": "oxc.oxc-vscode"
-  },
   "[json][jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -34,11 +25,29 @@
     },
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[vue]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.oxc": "explicit",
+      "source.fixAll.stylelint": "explicit",
+      "source.format.oxc": "explicit"
+    },
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
   "css.validate": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "eslint.format.enable": false,
+  "eslint.run": "onSave",
   "eslint.useFlatConfig": true,
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./packages/*/"
+    }
+  ],
   "files.associations": {
     ".*ignore": "ignore",
     ".env.*": "properties"
@@ -51,12 +60,11 @@
   },
   "less.validate": false,
   "scss.validate": false,
+  "stylelint.packageManager": "pnpm",
+  "stylelint.run": "onSave",
   "stylelint.validate": [
     "css",
     "scss",
     "vue"
-  ],
-  "[typescript]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode"
-  }
+  ]
 }
