@@ -12,6 +12,8 @@ export default {
           },
         ],
         'custom-property-pattern': null,
+        // url() notation breaks `@reference` resolution across files in Tailwind CSS v4
+        'import-notation': 'string',
       },
     },
     {
