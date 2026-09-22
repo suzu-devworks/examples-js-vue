@@ -34,7 +34,7 @@ watch(
       console.warn(`Invalid prop value: ${newValue}`)
     }
   },
-  { immediate: true }
+  { immediate: true },
 )
 
 const _propE = propE

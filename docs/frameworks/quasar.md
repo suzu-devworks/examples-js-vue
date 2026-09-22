@@ -116,7 +116,6 @@ export default defineNuxtConfig({
     sassVariables: '@/css/quasar.variables.scss',
   },
 })
-
 ```
 
 `quasar.variables.scss` is a little special and is used to override Quasar's theme variables.
@@ -133,7 +132,7 @@ export default defineNuxtConfig({
 ### `index.html` to `nuxt.config.ts`
 
 Contents written in Quasar's `index.html` must be migrated to `nuxt.config.ts` in Nuxt.
- For example, meta tags and link tags are set in the `head` property.
+For example, meta tags and link tags are set in the `head` property.
 
 ```ts
 import pkg from './package.json' with { type: 'json' }
@@ -203,7 +202,6 @@ I will change `<router-view />` to `<slot />`.
 
 ```vue
 <template>
-
   <q-page-container>
     <!-- <router-view /> -->
     <slot />
@@ -253,7 +251,7 @@ import rootConfig from '../../eslint.config.js'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  rootConfig
+  rootConfig,
   // your custom flat configs go here, for example:
   // {
   //   files: ['**/*.ts', '**/*.tsx'],
