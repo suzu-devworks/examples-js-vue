@@ -152,7 +152,7 @@ I leave the formatting completely to prettier, so I don't use eslint's format.
   "scripts": {
     "lint": "pnpm lint:style && pnpm lint:eslint",
     "lint:eslint": "eslint . --cache",
-    "lint:style": "stylelint --cache \"**/*.{css,scss}\""
+    "lint:style": "stylelint --cache \"**/*.{css,scss,vue}\""
   }
 }
 ```
@@ -169,7 +169,48 @@ To lint, enter the following settings:
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "stylelint.packageManager": "pnpm",
+  "stylelint.run": "onSave",
   "stylelint.validate": ["css", "scss", "vue"]
+}
+```
+
+### Tailwind CSS v4
+
+Allow Tailwind CSS at-rules in `tailwind.css`:
+
+```js
+/** @type {import("stylelint").Config} */
+export default {
+  overrides: [
+    {
+      files: ['**/tailwind.css'],
+      rules: {
+        'at-rule-no-unknown': [
+          true,
+          {
+            ignoreAtRules: ['apply', 'custom-variant', 'reference', 'source', 'theme', 'utility'],
+          },
+        ],
+        'custom-property-pattern': null,
+      },
+    },
+  ],
+}
+```
+
+For Tailwind at-rules in Vue SCSS blocks, add this to the `**/*.vue` override:
+
+```js
+{
+  rules: {
+    'scss/at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['apply', 'custom-variant', 'reference', 'source', 'theme', 'utility'],
+      },
+    ],
+  },
 }
 ```
 

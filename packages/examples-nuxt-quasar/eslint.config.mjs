@@ -1,6 +1,5 @@
-import { globalIgnores } from 'eslint/config'
+import rootConfig from '@examples/eslint-config'
 
-import rootConfig from '../../eslint.config.js'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
@@ -15,5 +14,4 @@ export default withNuxt(
   // {
   //   ...
   // }
-  globalIgnores(['**/.nuxt/**', '**/.output/**'])
 )

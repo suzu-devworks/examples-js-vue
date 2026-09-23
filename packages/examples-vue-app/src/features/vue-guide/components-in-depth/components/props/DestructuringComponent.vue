@@ -19,7 +19,7 @@ watch(
   (newValue, oldValue) => {
     // console.log(`foo changed from ${oldValue} to ${newValue}`)
     message.value = `foo changed from ${oldValue} to ${newValue}`
-  }
+  },
 )
 </script>
 

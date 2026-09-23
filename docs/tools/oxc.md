@@ -96,7 +96,7 @@ output tp `.oxfmtrc.json`:
   "printWidth": 120,
   "semi": false,
   "singleQuote": true,
-  "trailingComma": "es5",
+  "trailingComma": "all",
   "useTabs": false,
   "sortPackageJson": false,
   "ignorePatterns": [
@@ -157,10 +157,57 @@ The official documentation lists it as `always` but I think `explicit` is fine.
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "source.format.oxc": "explicit", // run formatter first
-      "source.fixAll.oxc": "explicit" // run lint fixes after
+      "source.fixAll.oxc": "explicit", // run lint fixes after
+      "source.fixAll.stylelint": "explicit"
     },
     "editor.defaultFormatter": "oxc.oxc-vscode"
-  }
+  },
+  "eslint.run": "onSave",
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./packages/*/"
+    }
+  ],
+  "stylelint.packageManager": "pnpm",
+  "stylelint.run": "onSave",
+  "stylelint.validate": ["css", "scss", "vue"]
+}
+```
+
+Use `eslint.workingDirectories` and `stylelint.packageManager` to resolve package-local tools in pnpm workspaces.
+
+### [stylelint] Tailwind CSS v4 at-rules
+
+Allow Tailwind CSS v4 at-rules in `tailwind.css`:
+
+```js
+export default {
+  overrides: [
+    {
+      files: ['**/tailwind.css'],
+      rules: {
+        'at-rule-no-unknown': [
+          true,
+          {
+            ignoreAtRules: ['apply', 'custom-variant', 'reference', 'source', 'theme', 'utility'],
+          },
+        ],
+        'custom-property-pattern': null,
+      },
+    },
+  ],
+}
+```
+
+### [oxfmt] ESLint rule conflict
+
+Disable `vue/script-indent` to prevent Oxfmt and ESLint from undoing each other's changes:
+
+```js
+{
+  rules: {
+    'vue/script-indent': 'off',
+  },
 }
 ```
 
@@ -168,6 +215,44 @@ When specifying `sortImports` with `oxfmt`, the behavior differs,
 so I recommend against setting `"source.organizeImports": "explicit"`.
 
 I've decided not to worry about the lack of a space after the CSS asset import.
+
+### [pnpm workspace] Catalog and scripts
+
+Define shared versions in `pnpm-workspace.yaml`:
+
+```yaml
+catalog:
+  eslint: '^10.10.0'
+  oxlint: '^1.83.0'
+  oxlint-tsgolint: '^7.0.2001'
+```
+
+Each application package owns the lint commands and dependencies:
+
+```json
+{
+  "scripts": {
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
+    "lint:oxlint": "oxlint --type-aware ."
+  },
+  "devDependencies": {
+    "eslint": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
+  }
+}
+```
+
+Run package lint scripts from the workspace root:
+
+```json
+{
+  "scripts": {
+    "lint": "pnpm lint:style & pnpm lint:packages",
+    "lint:packages": "pnpm --filter \"./packages/**\" --if-present lint"
+  }
+}
+```
 
 ## Run
 
