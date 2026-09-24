@@ -1,21 +1,33 @@
+<script setup lang="ts">
+import { useMenu } from '../../composables/wireframes/useMenu'
+
+const { menuItems } = useMenu()
+</script>
+
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" class="wireframes">
     <v-system-bar>
       <v-spacer />
 
       <v-icon>mdi-square</v-icon>
-
       <v-icon>mdi-circle</v-icon>
-
       <v-icon>mdi-triangle</v-icon>
     </v-system-bar>
 
-    <v-navigation-drawer color="grey-lighten-3" rail>
-      <v-avatar class="d-block text-center mx-auto mt-4" color="grey-darken-1" size="36" />
+    <v-navigation-drawer color="grey-lighten-3" expand-on-hover permanent rail>
+      <v-list class="bg-transparent">
+        <v-list-item class="px-[10px]" subtitle="xxxxx@gmail.com" title="XXXXX XXXXX">
+          <template #prepend>
+            <v-avatar color="grey-darken-1" :size="36" />
+          </template>
+        </v-list-item>
+      </v-list>
 
-      <v-divider class="mx-3 my-5" />
+      <v-divider class="mx-3 my-2" />
 
-      <v-avatar v-for="n in 6" :key="n" class="d-block text-center mx-auto mb-9" color="grey-lighten-1" size="28" />
+      <v-list class="bg-transparent" density="compact" nav>
+        <v-list-item v-for="link in menuItems" :key="link.to" link v-bind="link" />
+      </v-list>
     </v-navigation-drawer>
 
     <v-navigation-drawer width="244">

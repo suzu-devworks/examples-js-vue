@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useInbox } from '~/composables/wireframes/useInbox'
+import { useInbox } from '../../composables/wireframes/useInbox'
 
 definePageMeta({
   layout: 'wireframes-inbox',
@@ -10,6 +10,8 @@ const { cards } = useInbox()
 
 <template>
   <v-container class="py-8 px-6" fluid>
+    <h1>Inbox Wireframe</h1>
+
     <v-row>
       <v-col v-for="card in cards" :key="card.title" cols="12">
         <v-card>
@@ -19,15 +21,11 @@ const { cards } = useInbox()
             <template v-for="n in 6" :key="n">
               <v-list-item>
                 <template #prepend>
-                  <v-avatar class="profile-avatar" />
+                  <v-avatar color="grey-darken-1" />
                 </template>
 
-                <!-- <v-list-item-title :title="`Message ${n}`" /> -->
                 <v-list-item-title>{{ `Message ${n}` }}</v-list-item-title>
 
-                <!-- <v-list-item-subtitle
-                      title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus distinctio similique"
-                    /> -->
                 <v-list-item-subtitle>{{
                   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus distinctio similique'
                 }}</v-list-item-subtitle>

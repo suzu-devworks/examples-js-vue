@@ -1,5 +1,5 @@
-import type { InboxCard, InboxLink } from '~/stores/wireframes/inbox'
-import { useInboxStore } from '~/stores/wireframes/inbox'
+import type { InboxCard, InboxLink } from '../../stores/wireframes/inbox'
+import { useInboxStore } from '../../stores/wireframes/inbox'
 
 export function useInbox() {
   const inboxStore = useInboxStore()

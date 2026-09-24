@@ -14,14 +14,13 @@ definePageMeta({
 
             <v-divider class="my-2" />
 
-            <v-list-item class="profile-sheet" link title="Refresh" />
+            <v-list-item color="grey-lighten-4" link title="Refresh" />
           </v-list>
         </v-sheet>
       </v-col>
 
       <v-col>
-        <v-sheet min-height="70vh" rounded="lg">
-          <!--  -->
+        <v-sheet class="p-4" min-height="70vh" rounded="lg">
           <h1>Constrained Wireframe</h1>
         </v-sheet>
       </v-col>
