@@ -11,7 +11,8 @@
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint",
     "lint:fix": "pnpm lint:oxlint && pnpm lint:eslint --fix",
-    "lint:oxlint": "oxlint --type-aware ."
+    "lint:oxlint": "oxlint --type-aware .",
+    "typecheck": "nuxt typecheck"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
