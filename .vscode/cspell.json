@@ -17,13 +17,14 @@
     "dotenv",
     "Nuxt",
     "octcat",
+    "opsz",
     "oxlint",
     "pinia",
-    "quasarframework",
     "Vetur",
     "Vite",
     "Vuetify",
-    "vuex"
+    "vuex",
+    "wght"
   ],
   "ignoreWords": [],
   "import": []

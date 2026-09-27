@@ -13,6 +13,9 @@ export default withNuxt(
   {
     rules: {
       'vue/script-indent': 'off',
+      'vue/max-attributes-per-line': 'off',
+      'vue/no-multiple-template-root': 'off',
+      '@stylistic/space-before-function-paren': 'off',
     },
   },
 )

@@ -4,5 +4,11 @@
     {
       "path": "./packages/examples-vue-app"
     },
+    {
+      "path": "./packages/examples-nuxt-quasar"
+    },
+    {
+      "path": "./packages/examples-nuxt-vuetify"
+    }
   ]
 }

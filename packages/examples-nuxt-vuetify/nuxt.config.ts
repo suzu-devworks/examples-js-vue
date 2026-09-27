@@ -40,7 +40,7 @@ export default defineNuxtConfig({
       theme: {
         // default 'system' requires `ssr: false` to avoid hydration warnings
         defaultTheme: 'dark',
-
+        // use tailwindcss for utility classes
         utilities: false,
 
         themes: {

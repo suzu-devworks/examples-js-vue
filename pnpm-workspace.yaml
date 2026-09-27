@@ -2,9 +2,9 @@ packages:
   - "packages/*"
 
 catalog:
-  eslint: "^10.10.0"
-  oxlint: "^1.83.0"
-  oxlint-tsgolint: "^7.0.2001"
+  eslint: ^10.11.0
+  oxlint: ^1.85.0
+  oxlint-tsgolint: ^7.0.2003
 
 overrides:
   # nuxt@4.5.2
