@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
   $meta: {
-    name: 'interactions',
+    name: 'shared',
   },
+
+  modules: ['@pinia/nuxt'],
 })

@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   },
 
   // Nuxt layers configuration
-  extends: ['../layers/base'],
+  extends: ['~~/layers/base', '../examples-nuxt-shared'],
 
   postcss: {
     plugins: {

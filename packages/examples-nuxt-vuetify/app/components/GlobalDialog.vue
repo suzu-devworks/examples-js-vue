@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useGlobalDialog } from '../composables/interactions/useGlobalDialog'
+import { useGlobalDialog } from '#imports'
 
 const { isOpen, dialogOptions, closeDialog } = useGlobalDialog()
 
