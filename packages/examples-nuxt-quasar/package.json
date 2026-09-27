@@ -5,7 +5,8 @@
   "productName": "Quasar + Nuxt 4 App",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "pnpm build:app",
+    "build:app": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
