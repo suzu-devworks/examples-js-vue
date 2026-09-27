@@ -26,6 +26,7 @@ const { cards } = useInbox()
 
                 <v-list-item-title>{{ `Message ${n}` }}</v-list-item-title>
 
+                <!-- spell-checker: words amet consectetur adipisicing elit Nihil repellendus distinctio similique -->
                 <v-list-item-subtitle>{{
                   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus distinctio similique'
                 }}</v-list-item-subtitle>
