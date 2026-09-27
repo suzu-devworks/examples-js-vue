@@ -6,4 +6,6 @@ import { NuxtLayout, NuxtPage } from '#components'
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+
+  <GlobalDialog />
 </template>

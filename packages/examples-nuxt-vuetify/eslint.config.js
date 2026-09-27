@@ -16,6 +16,7 @@ export default withNuxt(
       'vue/max-attributes-per-line': 'off',
       'vue/no-multiple-template-root': 'off',
       '@stylistic/space-before-function-paren': 'off',
+      '@stylistic/arrow-parens': 'off',
     },
   },
 )

@@ -2,6 +2,7 @@
 const menuItems = [
   { to: '/', title: 'Home', prependIcon: 'mdi-home' },
   { to: '/wireframes', title: 'Wireframes', prependIcon: 'mdi-responsive' },
+  { to: '/interactions', title: 'Interactions', prependIcon: 'mdi-message-processing' },
 ]
 
 const { mdAndUp } = useDisplay()

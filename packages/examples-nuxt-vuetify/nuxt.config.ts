@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     },
   },
 
+  // Nuxt layers configuration
+  extends: ['../layers/base'],
+
   postcss: {
     plugins: {
       '@tailwindcss/postcss': {},
