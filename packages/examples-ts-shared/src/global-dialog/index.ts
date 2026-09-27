@@ -4,7 +4,6 @@ export interface DialogOptions {
   confirmText?: string
   cancelText?: string
   persistent?: boolean
-  type?: 'info' | 'warning' | 'error' | 'success'
 }
 
 class GlobalDialogCore {
@@ -33,7 +32,6 @@ class GlobalDialogCore {
         confirmText: 'OK',
         cancelText: 'Cancel',
         persistent: false,
-        type: 'info',
         ...options,
       },
     }
