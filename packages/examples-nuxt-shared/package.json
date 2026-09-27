@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^1.0.2",
+    "examples-vue-shared": "workspace:*",
     "pinia": "^4.0.3"
   },
   "devDependencies": {
