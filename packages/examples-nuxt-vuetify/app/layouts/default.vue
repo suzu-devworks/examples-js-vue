@@ -2,6 +2,7 @@
 const menuItems = [
   { to: '/', title: 'Home', prependIcon: 'mdi-home' },
   { to: '/wireframes', title: 'Wireframes', prependIcon: 'mdi-responsive' },
+  { to: '/interactions', title: 'Interactions', prependIcon: 'mdi-message-processing' },
 ]
 
 const { mdAndUp } = useDisplay()
@@ -15,7 +16,7 @@ const drawer = ref(mdAndUp)
 
       <v-app-bar-title>examples-vue-vuetify</v-app-bar-title>
 
-      <v-btn class="m-2" icon="mdi-theme-light-dark" @click="$vuetify.theme.cycle()" />
+      <v-btn class="ma-2" icon="mdi-theme-light-dark" @click="$vuetify.theme.cycle()" />
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer">
@@ -28,13 +29,5 @@ const drawer = ref(mdAndUp)
     <v-main>
       <NuxtPage />
     </v-main>
-
-    <v-btn
-      class="m-2"
-      icon="mdi-theme-light-dark"
-      location="top right"
-      position="absolute"
-      @click="$vuetify.theme.cycle()"
-    />
   </v-app>
 </template>

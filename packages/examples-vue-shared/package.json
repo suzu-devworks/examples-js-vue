@@ -1,0 +1,31 @@
+{
+  "name": "examples-vue-shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "pnpm build:shared",
+    "build:shared": "vue-tsc --noEmit false --declaration --outDir dist",
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
+    "lint:eslint": "eslint .",
+    "lint:oxlint": "oxlint --type-aware .",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "vue": "^3.5.43"
+  },
+  "devDependencies": {
+    "@examples/eslint-config": "workspace:*",
+    "eslint": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "typescript": "~6.0.3",
+    "vue-tsc": "^3.3.11"
+  }
+}

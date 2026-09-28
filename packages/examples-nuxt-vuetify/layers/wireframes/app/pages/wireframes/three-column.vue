@@ -21,7 +21,7 @@ const { menuItems } = useMenu()
       </v-col>
 
       <v-col cols="12" md="8">
-        <v-sheet class="p-4" min-height="70vh" rounded="lg">
+        <v-sheet class="pa-4" min-height="70vh" rounded="lg">
           <h1>Three Column Wireframe</h1>
         </v-sheet>
       </v-col>

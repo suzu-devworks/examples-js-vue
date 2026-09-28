@@ -21,13 +21,13 @@
     <v-footer app color="grey" height="44" />
 
     <v-navigation-drawer floating>
-      <div class="flex px-2 my-2">
-        <v-btn class="grow" color="grey" height="40" variant="flat" />
+      <div class="d-flex px-2 my-2">
+        <v-btn class="flex-grow-1" color="grey" height="40" variant="flat" />
         <v-avatar class="ms-2" color="surface-variant" rounded variant="flat" />
       </div>
 
-      <div class="flex px-2 my-2 items-center">
-        <v-btn class="grow mx-2" color="grey-lighten-4" height="40" variant="flat" />
+      <div class="d-flex px-2 my-2 align-center">
+        <v-btn class="flex-grow-1 mx-2" color="grey-lighten-4" height="40" variant="flat" />
         <v-avatar color="surface-variant" size="18" />
         <v-avatar class="ms-1" color="surface-variant" size="18" />
       </div>

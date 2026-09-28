@@ -1,5 +1,5 @@
 .wireframes {
-  .bg-grey {
+  /* .bg-grey {
     background-color: #9e9e9e;
   }
 
@@ -42,9 +42,9 @@
   .bg-surface-variant {
     color: rgb(238 238 238);
     background-color: rgb(66 66 66);
-  }
+  } */
 
-  &.v-theme--dark {
+  /* &.v-theme--dark {
     .bg-grey-lighten-2,
     .bg-grey-lighten-3 {
       background-color: rgb(18 18 18);
@@ -54,5 +54,5 @@
     .bg-grey-lighten-5 {
       background-color: rgb(33 33 33);
     }
-  }
+  } */
 }

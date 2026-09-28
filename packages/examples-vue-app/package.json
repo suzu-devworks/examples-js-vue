@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "run-p typecheck \"build-only {@}\" --",
+    "build": "pnpm build:app",
+    "build:app": "vite build",
+    "build:checks": "run-p typecheck \"build {@}\" --",
     "preview": "vite preview --host 0.0.0.0",
-    "build-only": "vite build",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint . --cache",
     "lint:oxlint": "oxlint --type-aware .",
@@ -29,7 +30,7 @@
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "sass-embedded": "^1.105.0",
-    "typescript": "6.*",
+    "typescript": "~6.0.3",
     "vite": "^8.3.1",
     "vite-plugin-vue-devtools": "^8.2.1",
     "vue-tsc": "^3.3.11"
