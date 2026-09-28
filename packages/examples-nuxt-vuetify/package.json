@@ -9,6 +9,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint",
     "lint:fix": "pnpm lint:oxlint && pnpm lint:eslint --fix",
@@ -28,11 +30,15 @@
     "@examples/eslint-config": "workspace:*",
     "@nuxt/eslint": "^1.17.0",
     "@nuxt/fonts": "^0.14.0",
+    "@nuxt/test-utils": "^4.3.2",
     "@pinia/nuxt": "^1.0.2",
+    "@vue/test-utils": "^2.5.1",
     "eslint": "catalog:",
     "eslint-config-vuetify": "^4.7.2",
+    "happy-dom": "^20.14.5",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
-    "sass": "^1.105.0"
+    "sass": "^1.105.0",
+    "vitest": "^5.0.2"
   }
 }

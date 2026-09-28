@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "pnpm -r --if-present test",
     "build": "pnpm build:shared && pnpm build:app",
     "build:shared": "pnpm -r --if-present build:shared",
     "build:app": "pnpm -r --parallel --if-present build:app",
     "typecheck": "pnpm build:shared && pnpm -r --parallel --if-present typecheck",
     "lint": "pnpm lint:style & pnpm lint:packages",
+    "lint:markdown": "pnpm dlx markdownlint-cli2",
     "lint:packages": "pnpm -r --if-present lint",
     "lint:style": "stylelint --cache \"**/*.{css,scss,vue}\"",
     "format": "oxfmt --write ."
