@@ -15,7 +15,7 @@ watch(isOpen, (newVal) => {
   <ClientOnly>
     <v-dialog v-model="isOpen" max-width="450" :persistent="dialogOptions.persistent">
       <v-card>
-        <v-card-title class="text-xs font-bold pt-4 px-6">
+        <v-card-title class="text-title-small font-weight-bold pt-4 px-6">
           {{ dialogOptions.title }}
         </v-card-title>
 
@@ -30,7 +30,7 @@ watch(isOpen, (newVal) => {
             {{ dialogOptions.cancelText }}
           </v-btn>
 
-          <v-btn class="px-4 bg-primary text-on-primary" variant="elevated" @click="closeDialog(true)">
+          <v-btn class="px-4" color="primary" variant="elevated" @click="closeDialog(true)">
             {{ dialogOptions.confirmText }}
           </v-btn>
         </v-card-actions>

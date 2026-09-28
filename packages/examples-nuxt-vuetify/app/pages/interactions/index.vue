@@ -15,13 +15,19 @@ async function handleAction() {
 </script>
 
 <template>
-  <v-container>
+  <v-container class="d-flex flex-column ga-4">
     <h1>Interactions Page</h1>
 
-    <v-sheet class="p-4">
-      <v-btn class="bg-primary text-on-primary" @click="handleAction">Open Dialog</v-btn>
+    <v-sheet class="pa-4" :elevation="1" rounded>
+      <h2 class="mt-0">Global Dialog</h2>
 
-      <div class="mt-4 flex flex-wrap gap-2">
+      <v-btn color="primary" @click="handleAction">Open Dialog</v-btn>
+    </v-sheet>
+
+    <v-sheet class="pa-4" :elevation="1" rounded>
+      <h2 class="mt-0">Global Toast</h2>
+
+      <div class="mt-4 d-flex flex-wrap ga-2">
         <v-btn color="success" @click="toast.success('Operation completed.')"> Success </v-btn>
 
         <v-btn color="info" @click="toast.info('Here is some information.')"> Info </v-btn>

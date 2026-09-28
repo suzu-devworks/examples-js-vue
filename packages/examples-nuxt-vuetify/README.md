@@ -35,7 +35,6 @@ Scaffolded with Vuetify CLI.
 
 - ESLint
 - Pinia
-- Tailwind CSS
 - Client Hints
 
 ## 💿 Install

@@ -15,14 +15,6 @@ export default defineNuxtConfig({
   // Nuxt layers configuration
   extends: ['~~/layers/base', '../examples-nuxt-shared'],
 
-  postcss: {
-    plugins: {
-      '@tailwindcss/postcss': {},
-    },
-  },
-
-  css: ['assets/styles/tailwind.css'],
-
   vuetify: {
     moduleOptions: {
       prefixComposables: ['useLayout'],
@@ -43,8 +35,6 @@ export default defineNuxtConfig({
       theme: {
         // default 'system' requires `ssr: false` to avoid hydration warnings
         defaultTheme: 'dark',
-        // use tailwindcss for utility classes
-        utilities: false,
 
         themes: {
           light: {},

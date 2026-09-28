@@ -19,10 +19,10 @@ const drawer = ref(null)
     </v-system-bar>
 
     <v-navigation-drawer v-model="drawer">
-      <v-sheet class="p-4" color="grey-lighten-4">
+      <v-sheet class="pa-4" color="grey-lighten-4">
         <v-avatar class="mb-4" color="grey-darken-1" size="64" />
 
-        <div>john@google.com</div>
+        <div>xxxxx@google.com</div>
       </v-sheet>
 
       <v-divider />
