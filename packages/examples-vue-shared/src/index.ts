@@ -1,2 +1,1 @@
-export * from 'examples-ts-shared'
-export * from './global-dialog/index'
+export * from './global-dialog'

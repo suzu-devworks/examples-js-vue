@@ -1,23 +1,2 @@
-import { coreDialog, type DialogOptions } from 'examples-ts-shared'
-import { onScopeDispose, ref, readonly } from 'vue'
-
-export function useGlobalDialog() {
-  const isOpen = ref(false)
-  const dialogOptions = ref<DialogOptions>({ title: '', text: '' })
-
-  // Real-time synchronization (binding) of pure state changes in the first layer to Vue refs
-  const unsubscribe = coreDialog.subscribe((state) => {
-    isOpen.value = state.isOpen
-    dialogOptions.value = state.options
-  })
-
-  // Clean up the subscription when the component is unmounted or the scope is disposed
-  onScopeDispose(unsubscribe)
-
-  return {
-    isOpen: readonly(isOpen),
-    dialogOptions: readonly(dialogOptions),
-    openDialog: (options: DialogOptions) => coreDialog.open(options),
-    closeDialog: (result: boolean) => coreDialog.close(result),
-  }
-}
+export * from './core'
+export * from './useGlobalDialog'

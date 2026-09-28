@@ -11,18 +11,12 @@ class GlobalDialogCore {
   private listeners = new Set<(state: typeof this.state) => void>()
   private resolvePromise: ((value: boolean) => void) | null = null
 
-  /**
-   * Mechanism for monitoring state changes from the outside.
-   */
   subscribe(listener: (state: typeof this.state) => void) {
     this.listeners.add(listener)
-    listener({ ...this.state }) // Immediate notification of current status upon registration
-    return () => this.listeners.delete(listener) // return release function
+    listener({ ...this.state })
+    return () => this.listeners.delete(listener)
   }
 
-  /**
-   * Open the dialog with the specified options and return a promise that resolves with the result.
-   */
   open(options: DialogOptions): Promise<boolean> {
     this.resolvePromise?.(false)
 
@@ -41,16 +35,14 @@ class GlobalDialogCore {
     })
   }
 
-  /**
-   * Close the dialog and resolve the promise with the result.
-   */
   close(result: boolean) {
     this.state.isOpen = false
     this.listeners.forEach((listener) => listener({ ...this.state }))
     if (this.resolvePromise) {
       this.resolvePromise(result)
-      this.resolvePromise = null // Clear references to prevent memory leaks
+      this.resolvePromise = null
     }
   }
 }
+
 export const coreDialog = new GlobalDialogCore()
