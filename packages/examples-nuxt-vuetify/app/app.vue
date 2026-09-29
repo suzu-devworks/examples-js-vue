@@ -9,4 +9,5 @@ import { NuxtLayout, NuxtPage } from '#components'
 
   <GlobalDialog />
   <GlobalToast />
+  <GlobalLoading />
 </template>
