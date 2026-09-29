@@ -43,7 +43,7 @@ const { isLoading } = useGlobalLoading()
 
 @media (prefers-reduced-motion: reduce) {
   .loading-spinner {
-    animation-duration: 2s;
+    animation: none;
   }
 }
 </style>
