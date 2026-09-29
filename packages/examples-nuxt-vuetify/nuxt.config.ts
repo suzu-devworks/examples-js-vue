@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // ssr: false,
-  modules: ['@nuxt/fonts', 'vuetify-nuxt-module', '@nuxt/eslint', '@pinia/nuxt'],
+  modules: ['@nuxt/fonts', 'vuetify-nuxt-module', '@nuxt/eslint', '@pinia/nuxt', '@nuxt/test-utils/module'],
 
   app: {
     head: {
@@ -12,13 +12,8 @@ export default defineNuxtConfig({
     },
   },
 
-  postcss: {
-    plugins: {
-      '@tailwindcss/postcss': {},
-    },
-  },
-
-  css: ['assets/styles/tailwind.css'],
+  // Nuxt layers configuration
+  extends: ['~~/layers/base', '../examples-nuxt-shared'],
 
   vuetify: {
     moduleOptions: {
@@ -40,8 +35,6 @@ export default defineNuxtConfig({
       theme: {
         // default 'system' requires `ssr: false` to avoid hydration warnings
         defaultTheme: 'dark',
-        // use tailwindcss for utility classes
-        utilities: false,
 
         themes: {
           light: {},

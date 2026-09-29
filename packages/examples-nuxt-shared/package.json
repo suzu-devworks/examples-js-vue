@@ -1,0 +1,26 @@
+{
+  "name": "examples-nuxt-shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:deps": "pnpm --filter examples-vue-shared build",
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
+    "lint:eslint": "eslint",
+    "lint:oxlint": "oxlint --type-aware .",
+    "postinstall": "nuxt prepare",
+    "typecheck": "pnpm build:deps && nuxt prepare && nuxt typecheck"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^1.0.2",
+    "examples-vue-shared": "workspace:*",
+    "pinia": "^4.0.3"
+  },
+  "devDependencies": {
+    "@examples/eslint-config": "workspace:*",
+    "eslint": "catalog:",
+    "nuxt": "^4.5.2",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
+  }
+}

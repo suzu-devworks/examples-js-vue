@@ -20,7 +20,7 @@ definePageMeta({
       </v-col>
 
       <v-col>
-        <v-sheet class="p-4" min-height="70vh" rounded="lg">
+        <v-sheet class="pa-4" min-height="70vh" rounded="lg">
           <h1>Constrained Wireframe</h1>
         </v-sheet>
       </v-col>

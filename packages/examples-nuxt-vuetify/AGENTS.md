@@ -10,4 +10,4 @@
 
 - Framework: Nuxt 4
 - UI Library: Vuetify
-- Enabled Features: ESLint, Pinia, Tailwind CSS, Client Hints
+- Enabled Features: ESLint, Pinia

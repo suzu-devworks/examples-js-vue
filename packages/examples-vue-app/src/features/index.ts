@@ -30,6 +30,11 @@ const features = [
     title: 'Vite Guide',
     description: 'This content is based on the documentation from the official Vite website.',
   },
+  {
+    to: '/interactions',
+    title: '💬 Global Dialog and Toast',
+    description: 'Use the shared interaction library from a Vue application.',
+  },
 ]
 
 export { features }
