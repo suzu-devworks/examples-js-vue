@@ -30,7 +30,7 @@ const links = [
 <template>
   <v-container class="fill-height d-flex flex-column justify-center" max-width="1100">
     <div>
-      <v-img class="mb-4 font-weight-bold" height="150" src="@/assets/logo.png" />
+      <v-img alt="Vuetify logo" class="mb-4 font-weight-bold" height="150" src="@/assets/logo.png" />
 
       <div class="mb-8 text-center">
         <div class="text-body-medium font-weight-light mb-n1">Welcome to</div>
