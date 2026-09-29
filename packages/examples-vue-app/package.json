@@ -15,6 +15,7 @@
     "typecheck": "vue-tsc --build"
   },
   "dependencies": {
+    "examples-vue-shared": "workspace:*",
     "pinia": "^4.0.3",
     "vue": "^3.5.43",
     "vue-router": "^5.3.1"

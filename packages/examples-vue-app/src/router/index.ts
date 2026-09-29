@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import { route as routeOfAuth, requireAuth } from '@/features/auth'
+import { route as routeOfInteractions } from '@/features/interactions'
 import { route as routeOfRouterGuide } from '@/features/router-guide'
 import { route as routeOfSoftwareDesign } from '@/features/software-design'
 import { route as routeOfTemplate } from '@/features/template'
@@ -14,6 +15,7 @@ const router = createRouter({
   routes: [
     { path: '/', component: HomeView },
     ...routeOfAuth,
+    ...routeOfInteractions,
     ...routeOfTemplate,
     ...routeOfSoftwareDesign,
     ...routeOfVueGuide,

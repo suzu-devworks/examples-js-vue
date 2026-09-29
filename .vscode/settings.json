@@ -66,5 +66,8 @@
     "css",
     "scss",
     "vue"
-  ]
+  ],
+  "chat.tools.terminal.autoApprove": {
+    "pnpm": true
+  }
 }
