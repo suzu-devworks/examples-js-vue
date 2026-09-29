@@ -1,7 +1,60 @@
 <script setup lang="ts">
 import { useGlobalDialog } from 'examples-vue-shared'
+import { nextTick, ref, watch } from 'vue'
 
 const { isOpen, dialogOptions, closeDialog } = useGlobalDialog()
+const dialogPanel = ref<HTMLElement | null>(null)
+let previouslyFocusedElement: HTMLElement | null = null
+
+watch(isOpen, async (open) => {
+  if (open) {
+    const activeElement = document.activeElement
+    previouslyFocusedElement = activeElement instanceof HTMLElement ? activeElement : null
+
+    await nextTick()
+    getFocusableElements()[0]?.focus()
+    return
+  }
+
+  await nextTick()
+  previouslyFocusedElement?.focus()
+  previouslyFocusedElement = null
+})
+
+function getFocusableElements() {
+  return Array.from(
+    dialogPanel.value?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ) ?? [],
+  )
+}
+
+function _handleDialogKeydown(event: KeyboardEvent) {
+  if (event.key === 'Escape') {
+    event.preventDefault()
+    dismissDialog()
+    return
+  }
+
+  if (event.key !== 'Tab') {
+    return
+  }
+
+  const focusableElements = getFocusableElements()
+  const firstElement = focusableElements[0]
+  const lastElement = focusableElements.at(-1)
+
+  if (!firstElement || !lastElement) {
+    event.preventDefault()
+    dialogPanel.value?.focus()
+  } else if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault()
+    lastElement.focus()
+  } else if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault()
+    firstElement.focus()
+  }
+}
 
 function dismissDialog() {
   if (!dialogOptions.value.persistent) {
@@ -12,8 +65,16 @@ function dismissDialog() {
 
 <template>
   <Teleport to="body">
-    <div v-if="isOpen" class="dialog-backdrop" @click.self="dismissDialog" @keydown.esc="dismissDialog">
-      <section class="dialog-panel" role="dialog" aria-modal="true" aria-labelledby="global-dialog-title">
+    <div v-if="isOpen" class="dialog-backdrop" @click.self="dismissDialog">
+      <section
+        ref="dialogPanel"
+        class="dialog-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="global-dialog-title"
+        tabindex="-1"
+        @keydown="_handleDialogKeydown"
+      >
         <h2 id="global-dialog-title">{{ dialogOptions.title }}</h2>
         <p>{{ dialogOptions.text }}</p>
 
