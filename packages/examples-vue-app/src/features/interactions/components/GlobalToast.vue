@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useGlobalToast, type ToastQueueItem } from 'examples-vue-shared'
-import { onScopeDispose, watch } from 'vue'
+import { computed, onScopeDispose, watch } from 'vue'
 
 const { queue, updateQueue } = useGlobalToast()
+const totalVisible = 3
+const visibleItems = computed(() => queue.value.slice(0, totalVisible))
 const timers = new Map<ToastQueueItem, ReturnType<typeof setTimeout>>()
 
 function dismiss(item: ToastQueueItem) {
@@ -10,12 +12,12 @@ function dismiss(item: ToastQueueItem) {
 }
 
 watch(
-  queue,
+  visibleItems,
   (items) => {
-    const activeItems = new Set(items)
+    const visibleSet = new Set(items)
 
     for (const [item, timer] of timers) {
-      if (!activeItems.has(item)) {
+      if (!visibleSet.has(item)) {
         clearTimeout(timer)
         timers.delete(item)
       }
@@ -30,7 +32,7 @@ watch(
       }
     }
   },
-  { immediate: true },
+  { flush: 'post', immediate: true },
 )
 
 onScopeDispose(() => {
@@ -42,9 +44,9 @@ onScopeDispose(() => {
 
 <template>
   <Teleport to="body">
-    <ol v-if="queue.length" class="toast-stack" aria-label="Notifications" aria-live="polite">
+    <ol v-if="visibleItems.length" class="toast-stack" aria-label="Notifications" aria-live="polite">
       <li
-        v-for="(item, index) in queue.slice(-3)"
+        v-for="(item, index) in visibleItems"
         :key="index"
         class="toast-item"
         :style="{
