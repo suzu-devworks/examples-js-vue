@@ -1,21 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useOpener } from 'examples-vue-shared'
 import { onBeforeRouteUpdate } from 'vue-router'
 
-const isSidebarOpen = ref(false)
+const { isOpen, close, toggle } = useOpener(false)
 
-onBeforeRouteUpdate(() => {
-  isSidebarOpen.value = false
-})
-
-function toggleSidebar() {
-  isSidebarOpen.value = !isSidebarOpen.value
-}
+onBeforeRouteUpdate(() => close())
 </script>
 
 <template>
   <div class="sidebar-article-layout">
-    <button type="button" :aria-expanded="isSidebarOpen" @click="toggleSidebar"><span>Menu</span></button>
+    <button type="button" :aria-expanded="isOpen" @click="toggle"><span>Menu</span></button>
     <aside class="sidebar-article-layout__sidebar">
       <slot name="sidebar" />
     </aside>
