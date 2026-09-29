@@ -5,15 +5,14 @@
   "productName": "Quasar + Nuxt 4 App",
   "private": true,
   "scripts": {
-    "build": "pnpm build:app",
-    "build:app": "nuxt build",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint .",
     "lint:oxlint": "oxlint --type-aware .",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {

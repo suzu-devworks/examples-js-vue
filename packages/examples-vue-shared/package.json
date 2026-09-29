@@ -10,8 +10,7 @@
     }
   },
   "scripts": {
-    "build": "pnpm build:shared",
-    "build:shared": "vue-tsc --noEmit false --declaration --outDir dist",
+    "build": "vue-tsc --noEmit false --declaration --outDir dist",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint .",
     "lint:oxlint": "oxlint --type-aware .",

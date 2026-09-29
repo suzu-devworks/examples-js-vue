@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:deps": "pnpm --filter examples-vue-shared build",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint",
     "lint:oxlint": "oxlint --type-aware .",
     "postinstall": "nuxt prepare",
-    "typecheck": "nuxt prepare && nuxt typecheck"
+    "typecheck": "pnpm build:deps && nuxt prepare && nuxt typecheck"
   },
   "dependencies": {
     "@pinia/nuxt": "^1.0.2",

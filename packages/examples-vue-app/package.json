@@ -4,15 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "pnpm build:app",
-    "build:app": "vite build",
+    "build": "pnpm build:deps && vite build",
     "build:checks": "run-p typecheck \"build {@}\" --",
-    "preview": "vite preview --host 0.0.0.0",
+    "build:deps": "pnpm --filter examples-vue-shared build",
+    "dev": "pnpm build:deps && vite --host 0.0.0.0",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint . --cache",
     "lint:oxlint": "oxlint --type-aware .",
-    "typecheck": "vue-tsc --build"
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "pnpm build:deps && vue-tsc --build"
   },
   "dependencies": {
     "examples-vue-shared": "workspace:*",
