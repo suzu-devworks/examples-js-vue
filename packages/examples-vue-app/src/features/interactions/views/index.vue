@@ -8,10 +8,6 @@ import SidebarArticleLayout from '@/components/layouts/SidebarArticleLayout.vue'
 import { features } from '@/features'
 import type { IMenu } from '@/types'
 
-import GlobalDialog from '../components/GlobalDialog.vue'
-import GlobalLoading from '../components/GlobalLoading.vue'
-import GlobalToast from '../components/GlobalToast.vue'
-
 const { openDialog } = useGlobalDialog()
 const { toast } = useGlobalToast()
 const { isLoading, withLoading } = useGlobalLoading()
@@ -176,10 +172,6 @@ async function handleCopy() {
           <button class="button-primary" type="button" @click="handleCopy">Copy text</button>
         </section>
       </main>
-
-      <GlobalDialog />
-      <GlobalLoading />
-      <GlobalToast />
     </SidebarArticleLayout>
   </DefaultLayout>
 </template>
