@@ -34,7 +34,7 @@ const links = [
 
       <div class="mb-8 text-center">
         <div class="text-body-medium font-weight-light mb-n1">Welcome to</div>
-        <div class="text-display-medium font-weight-bold">Vuetify</div>
+        <h1 class="text-display-medium font-weight-bold">Vuetify</h1>
       </div>
 
       <v-row>
