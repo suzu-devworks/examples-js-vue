@@ -10,6 +10,11 @@ updates:
     directory: '/'
     schedule:
       interval: weekly
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-minor
+          - version-update:semver-patch
 
   - package-ecosystem: 'github-actions'
     directory: '/'
@@ -18,5 +23,5 @@ updates:
     ignore:
       - dependency-name: '*'
         update-types:
-          # - version-update:semver-minor
+          - version-update:semver-minor
           - version-update:semver-patch

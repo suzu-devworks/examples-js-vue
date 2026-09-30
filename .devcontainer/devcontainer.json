@@ -17,9 +17,9 @@
   },
   "remoteUser": "vscode",
   "features": {
-    "ghcr.io/devcontainers/features/copilot-cli": {},
+    "ghcr.io/devcontainers/features/copilot-cli:1.1.3": {},
     "ghcr.io/devcontainers/features/github-cli:1.1.3": {},
-    "ghcr.io/devcontainers/features/node": {
+    "ghcr.io/devcontainers/features/node:2.1.0": {
       "nodeGypDependencies": true,
       "version": "26",
       "pnpmVersion": "none",
