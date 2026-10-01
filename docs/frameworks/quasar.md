@@ -14,7 +14,7 @@ Create a new project using Nuxt:
 
 ```bash
 pnpm create nuxt@latest examples-nuxt-quasar
-cd. examples-nuxt-quasar
+cd examples-nuxt-quasar
 ```
 
 Add `nuxt-quasar-ui` dependency to your project

@@ -41,7 +41,8 @@
         "jock.svg",
         "Vue.volar",
         "ms-ossdata.vscode-pgsql",
-        "ReneSaarsoo.sql-formatter-vsc"
+        "ReneSaarsoo.sql-formatter-vsc",
+        "Prisma.prisma"
       ]
     },
     "settings": {
