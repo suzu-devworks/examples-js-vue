@@ -1,4 +1,4 @@
-import { prisma } from '../server/prisma'
+import { prisma } from '../server/utils/db'
 
 async function main() {
   // Delete all existing users and posts to start fresh

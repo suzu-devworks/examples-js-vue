@@ -48,10 +48,10 @@ async function main() {
     },
   })
 
+  console.log({ alice, bob })
+
   // Insert a user directly using raw SQL to demonstrate raw queries
   await prisma.$executeRaw`INSERT INTO "User" ("id", "email", "name") VALUES (3, 'foo@example.com', 'Foo') ON CONFLICT DO NOTHING;`
-
-  console.log({ alice, bob })
 }
 
 main()

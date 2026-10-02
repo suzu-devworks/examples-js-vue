@@ -61,19 +61,17 @@ Check ESM support in `package.json`:
 Next, set up your Prisma ORM project by creating your Prisma Schema file with the following command:
 
 ```bash
-pnpm prisma init --output ../server/prisma
+pnpm prisma init --output ../server/generated/prisma
 ```
 
 If the automatically activated agent skills are getting in the way:
 
 ```bash
-pnpm prisma init --output ../server/prisma --no-skills
+pnpm prisma init --output ../server/generated/prisma --no-skills
 ```
 
 > [!WARNING]
 > In any case, even if you output it using pnpm-workspace, it won't be placed in the standard location.
-
-## Quickstart
 
 ### Setup Database
 
@@ -90,20 +88,19 @@ However, since I have already gone to the trouble of setting up a PostgreSQL con
 DATABASE_URL="postgresql://user:password@localhost:5432/database"
 ```
 
-Create a `schema.prisma` file in the `prisma` directory (e.g., `../server/prisma/schema.prisma`) and define your data model.
+### Define your Prisma Schema
 
 For example:
 
 ```prisma
 generator client {
   provider = "prisma-client"
-  output   = "../server/prisma"
+  output   = "../server/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
 }
-
 
 model User {
   id    Int     @id @default(autoincrement())
@@ -122,7 +119,7 @@ model Post {
 }
 ```
 
-### Create and apply your first migration
+### Create and apply your first migration and generate Prisma Client
 
 Create your first migration to set up the database tables:
 
@@ -138,24 +135,7 @@ Now run the following command to generate the Prisma Client:
 pnpm prisma generate
 ```
 
-This command generates client code in `server/prisma`.
-
-### Instantiate Prisma Client
-
-Create the code for generating the Prisma Client (a factory?):
-
-```ts
-// server/lib/prisma.ts
-import 'dotenv/config'
-import { PrismaPg } from '@prisma/adapter-pg'
-
-import { PrismaClient } from '../prisma/client'
-const connectionString = `${process.env.DATABASE_URL}`
-const adapter = new PrismaPg({ connectionString })
-const prisma = new PrismaClient({ adapter })
-
-export { prisma }
-```
+This command generates client code in `server/generated/prisma`.
 
 ### Create Test script
 
@@ -163,7 +143,7 @@ Next is the script for verifying the connection:
 
 ```ts
 // scripts/test-prisma.ts
-import { prisma } from './lib/prisma'
+import { prisma } from './server/prisma'
 
 async function main() {
   // Delete all existing users and posts to start fresh
@@ -215,7 +195,40 @@ Run the script:
 pnpm dlx tsx scripts/test-prisma.ts
 ```
 
-## Explore your data with Prisma Studio
+## Seeding the Database
+
+The seeding function allows you to populate a database with initial data or prepare data required for the development environment.
+
+To execute seeding, you need to specify the command in the `seed` key within the `migrations` object in `prisma7.config.ts`.
+
+```ts
+// prisma7.config.ts
+import { defineConfig } from 'prisma/config'
+
+export default defineConfig({
+  migrations: {
+    seed: 'tsx prisma/seed.ts',
+  },
+})
+```
+
+If you intend to run it using tsx, install that command as well.
+
+```bash
+pnpm add -D tsx
+```
+
+I won't go into the seed script here; I think it's better to look at the actual file.
+
+- [seed script](../../packages/examples-nuxt-prisma/prisma/seed.ts)
+
+To seed the database, run the db seed CLI command:
+
+```bash
+pnpm prisma db seed
+```
+
+## Prisma Studio
 
 Prisma Studio is a visual editor for your database. Launch it with:
 

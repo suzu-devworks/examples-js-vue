@@ -12,7 +12,6 @@
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "prisma:generate": "pnpm prisma generate",
-    "prisma:reset": "pnpm prisma migrate reset",
     "prisma:seed": "pnpm prisma db seed",
     "prisma:studio": "pnpm prisma studio",
     "typecheck": "nuxt typecheck"
