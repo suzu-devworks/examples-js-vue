@@ -6,11 +6,15 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint .",
     "lint:oxlint": "oxlint --type-aware .",
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
+    "prisma:generate": "pnpm prisma generate",
+    "prisma:reset": "pnpm prisma migrate reset",
+    "prisma:seed": "pnpm prisma db seed",
+    "prisma:studio": "pnpm prisma studio",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
@@ -32,6 +36,7 @@
     "eslint": "catalog:",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
-    "prisma": "^7.10.0"
+    "prisma": "^7.10.0",
+    "tsx": "^4.23.15"
   }
 }
