@@ -23,18 +23,18 @@
   "devDependencies": {
     "@examples/eslint-config": "workspace:*",
     "@tsconfig/node24": "^24.0.5",
-    "@types/node": "^26.6.3",
+    "@types/node": "^26.6.4",
     "@vitejs/plugin-vue": "^6.0.9",
     "@vue/tsconfig": "^0.9.1",
     "eslint": "catalog:",
     "npm-run-all2": "^9.0.3",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
-    "sass-embedded": "^1.105.0",
+    "sass-embedded": "^1.105.1",
     "typescript": "~6.0.3",
-    "vite": "^8.3.1",
+    "vite": "^8.3.2",
     "vite-plugin-vue-devtools": "^8.2.1",
-    "vue-tsc": "^3.3.11"
+    "vue-tsc": "^3.3.12"
   },
   "engines": {
     "node": "^22.18.0 || >=24.12.0"
