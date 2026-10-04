@@ -26,7 +26,7 @@ async function removeUser(userId: number) {
   <div>
     <h1>Users</h1>
     <form @submit.prevent="addUser">
-      <input v-model="name" placeholder="Name" required />
+      <input v-model="name" type="text" placeholder="Name" required />
       <input v-model="email" type="email" placeholder="Email" required />
       <button type="submit">Add</button>
     </form>
