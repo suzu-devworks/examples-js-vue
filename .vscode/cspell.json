@@ -21,6 +21,7 @@
     "opsz",
     "oxlint",
     "pinia",
+    "Timestamptz",
     "Vetur",
     "Vite",
     "Vuetify",

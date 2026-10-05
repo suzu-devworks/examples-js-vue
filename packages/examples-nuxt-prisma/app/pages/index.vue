@@ -20,6 +20,10 @@ async function removeUser(userId: number) {
   await $fetch(`/api/users/${userId}`, { method: 'DELETE' })
   await refresh()
 }
+
+function formatDate(date: Date) {
+  return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`
+}
 </script>
 
 <template>
@@ -64,10 +68,15 @@ async function removeUser(userId: number) {
           User list ({{ users?.length ?? 0 }})
         </h2>
         <ul v-if="users?.length" class="divide-y divide-slate-100">
-          <li v-for="user in users" :key="user.id" class="flex items-center justify-between gap-4 py-2.5">
-            <div class="min-w-0">
+          <li v-for="user in users" :key="user.id" class="flex items-center gap-4 py-2.5">
+            <div class="grow min-w-0">
               <p class="truncate text-sm font-medium">{{ user.name }}</p>
               <p class="mt-1 truncate text-sm text-slate-500">{{ user.email }}</p>
+            </div>
+            <div class="min-w-0">
+              <time class="text-xs text-slate-400" :datetime="user.createdAt">
+                {{ formatDate(new Date(user.createdAt)) }}
+              </time>
             </div>
             <button
               class="shrink-0 rounded-md border-transparent bg-transparent px-2.5 py-1.5 text-sm text-slate-500 shadow-none hover:border-red-100 hover:bg-red-50 hover:text-red-700 disabled:cursor-not-allowed disabled:border-transparent disabled:bg-transparent disabled:text-slate-300"

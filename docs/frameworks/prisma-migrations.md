@@ -243,3 +243,9 @@ Datasource "db": PostgreSQL database "prisma", schema "public" at "postgres:5432
 
 No pending migrations to apply.
 ```
+
+## Renaming tables or modifying the database schema
+
+Please note that migrating changes to table names (`@@map`) or schemas (`@@schema`) typically involves a DROP-CREATE operation.
+
+If necessary, please adjust the process to use RENAME or copy the data instead.
