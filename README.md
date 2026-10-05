@@ -28,3 +28,10 @@ services, and databases you wish to use.
 
 - [TypeScript (Node.js)](./.devcontainer/): It is used in standard Node.js development
 - [TypeScript (Node.js with PostgreSQL)](./.devcontainer/pgsql/): Use this when using a PostgreSQL database
+
+If you are using a devcontainer that includes PostgreSQL,
+please generate a random database password using the following script before starting it up:
+
+```bash
+./.devcontainer/scripts/generate-password.sh
+```
