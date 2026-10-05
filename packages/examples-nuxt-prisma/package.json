@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "pnpm prisma:generate && nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint:eslint": "eslint .",
@@ -14,7 +14,7 @@
     "prisma:generate": "pnpm prisma generate",
     "prisma:seed": "pnpm prisma db seed",
     "prisma:studio": "pnpm prisma studio",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "pnpm prisma:generate && nuxt typecheck"
   },
   "dependencies": {
     "@pinia/nuxt": "1.0.2",
