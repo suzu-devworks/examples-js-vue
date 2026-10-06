@@ -35,6 +35,11 @@ const features = [
     title: '💬 Global Dialog and Toast',
     description: 'Use the shared interaction library from a Vue application.',
   },
+  {
+    to: '/vee-validate',
+    title: '✅ vee-validate',
+    description: 'Form validation with vee-validate using zod and yup schemas.',
+  },
 ]
 
 export { features }

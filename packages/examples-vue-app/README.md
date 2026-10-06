@@ -11,6 +11,7 @@ Try the basic structure of a Vue 3 SPA (Vite, Pinia, Vue Router) and how to cons
 
 - Vue 3 / Vite
 - Pinia / Vue Router
+- vee-validate (form validation)
 - TypeScript (`vue-tsc`)
 
 ## Related packages

@@ -12,8 +12,8 @@
   /* 2. Button & action (calm pastel tone) */
   --app-color-primary: hsl(145deg 61% 34%);
   --app-color-on-primary: hsl(220deg 13% 96%);
-  --app-color-secondary: hsl(215deg 16% 47%);
-  --app-color-on-secondary: hsl(220deg 13% 96%);
+  --app-color-secondary: hsl(215deg 16% 90%);
+  --app-color-on-secondary: hsl(215deg 16% 25%);
   --app-color-accent: hsl(295deg 58% 65%);
   --app-color-on-accent: hsl(220deg 13% 96%);
 
@@ -53,6 +53,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --app-color-secondary: hsl(215deg 12% 29%);
+    --app-color-on-secondary: hsl(220deg 13% 90%);
+
     /* 4. Neutral (dark mode) */
     --neutral-base-dark: 210deg 14%;
     --app-surface-ground: hsl(var(--neutral-base-dark) 11%);

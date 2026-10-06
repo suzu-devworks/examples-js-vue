@@ -53,6 +53,15 @@ SidebarArticleLayout
     }
   }
 
+  button.button-secondary {
+    color: var(--app-color-on-secondary);
+    background-color: var(--app-color-secondary);
+
+    &:hover:not(:disabled) {
+      background-color: color-mix(in srgb, var(--app-color-secondary) 85%, #000);
+    }
+  }
+
   a {
     padding: 0;
     text-decoration: underline;
