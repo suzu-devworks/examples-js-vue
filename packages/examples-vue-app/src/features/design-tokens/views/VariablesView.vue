@@ -330,10 +330,7 @@ onUnmounted(() => {
                   color: `var(${token.sampleColor || token.textColor || '--app-color-text-emphasis'})`,
                 }"
               >
-                <span
-                  v-if="group.title === 'Text' || token.name === '--app-control-text'"
-                  class="swatch-color__mode"
-                >
+                <span v-if="group.title === 'Text' || token.name === '--app-control-text'" class="swatch-color__mode">
                   TEXT COLOR
                 </span>
                 <span>{{ token.label }}</span>
@@ -538,8 +535,8 @@ onUnmounted(() => {
 
 .brand-banner__token {
   display: grid;
-  justify-items: end;
   gap: var(--app-spacing-xs);
+  justify-items: end;
 }
 
 .brand-banner__token > span {
