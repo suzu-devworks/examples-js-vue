@@ -3,7 +3,7 @@ packages:
 
 catalog:
   eslint: ^10.11.0
-  oxlint: ^1.85.0
+  oxlint: ^1.86.0
   oxlint-tsgolint: ^7.0.2003
 
 overrides:
@@ -12,5 +12,8 @@ overrides:
 
 allowBuilds:
   '@parcel/watcher': true
+  '@prisma/engines': true
   esbuild: true
+  prisma: true
   unrs-resolver: true
+  workerd: true

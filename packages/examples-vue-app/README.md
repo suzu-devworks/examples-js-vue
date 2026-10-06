@@ -1,45 +1,31 @@
-# packages/examples-vue-app
+# examples-vue-app
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 single-page application built with Vite.
 
-## Recommended IDE Setup
+## Purpose
 
-[VS Code](https://code.visualstudio.com/) +
-[Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Try the basic structure of a Vue 3 SPA (Vite, Pinia, Vue Router) and how to consume
+`examples-vue-shared` from an application.
 
-## Recommended Browser Setup
+## Stack
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Vue 3 / Vite
+- Pinia / Vue Router
+- TypeScript (`vue-tsc`)
 
-## Type Support for `.vue` Imports in TS
+## Related packages
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc`
-for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-to make the TypeScript language service aware of `.vue` types.
+- [examples-vue-shared](../examples-vue-shared/README.md)
 
-## Customize configuration
+## Getting started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Run from the repository root:
 
 ```sh
 pnpm install
+pnpm --filter examples-vue-app dev
 ```
 
-### Compile and Hot-Reload for Development
+## Notes
 
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
+- ESLint setup: see [@examples/eslint-config](../eslint-config/README.md).

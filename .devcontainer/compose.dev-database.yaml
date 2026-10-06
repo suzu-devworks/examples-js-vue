@@ -1,0 +1,11 @@
+services:
+  dev-database:
+    extends:
+      file: compose.dev.yaml
+      service: dev
+    secrets:
+      - db_password
+
+secrets:
+  db_password:
+    file: ./.db_password

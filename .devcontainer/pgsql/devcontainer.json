@@ -1,0 +1,63 @@
+{
+  "name": "TypeScript (Node.js with PostgreSQL)",
+  "dockerComposeFile": [
+    "../compose.yaml",
+    "../compose.dev-database.yaml"
+  ],
+  "service": "dev-database",
+  "runServices": [
+    "dev-database",
+    "pgsql"
+  ],
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "mounts": [
+    "source=node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=${localEnv:HOME}/.copilot/instructions,target=/home/vscode/.copilot/instructions,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.copilot/skills,target=/home/vscode/.copilot/skills,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "/bin/sh ./.devcontainer/postCreateCommand.sh",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/copilot-cli:1.1.3": {},
+    "ghcr.io/devcontainers/features/github-cli:1.1.3": {},
+    "ghcr.io/devcontainers/features/node:2.1.0": {
+      "nodeGypDependencies": true,
+      "version": "26",
+      "pnpmVersion": "none",
+      "nvmVersion": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "streetsidesoftware.code-spell-checker",
+        "DavidAnson.vscode-markdownlint",
+        "christian-kohler.npm-intellisense",
+        "oxc.oxc-vscode",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "DotJoshJohnson.xml",
+        "jock.svg",
+        "Vue.volar",
+        "ms-ossdata.vscode-pgsql",
+        "ReneSaarsoo.sql-formatter-vsc",
+        "Prisma.prisma"
+      ]
+    },
+    "settings": {
+      "[sql]": {
+        "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+      },
+      // SQL Formatter settings
+      "SQL-Formatter-VSCode.dataTypeCase": "upper",
+      "SQL-Formatter-VSCode.functionCase": "upper",
+      "SQL-Formatter-VSCode.identifierCase": "lower",
+      "SQL-Formatter-VSCode.keywordCase": "upper",
+      "SQL-Formatter-VSCode.dialect": "postgresql",
+      "SQL-Formatter-VSCode.expressionWidth": 120
+    }
+  }
+}

@@ -17,5 +17,21 @@ perspective and may contain inaccuracies.
 - Nuxt
 - Quasar and Vuetify
 - TypeScript in Vue applications
+- Prisma ORM with a PostgreSQL database
 - Shared ESLint configuration and development tooling
 - Project setup and framework notes
+
+## What should I prepare before development?
+
+This repository provides multiple development container environments. Please select the libraries,
+services, and databases you wish to use.
+
+- [TypeScript (Node.js)](./.devcontainer/): It is used in standard Node.js development
+- [TypeScript (Node.js with PostgreSQL)](./.devcontainer/pgsql/): Use this when using a PostgreSQL database
+
+If you are using a devcontainer that includes PostgreSQL,
+please generate a random database password using the following script before starting it up:
+
+```bash
+./.devcontainer/scripts/generate-password.sh
+```

@@ -23,14 +23,14 @@
     "nuxt": "^4.5.2",
     "pinia": "^4.0.3",
     "vue": "^3.5.43",
-    "vuetify": "^4.2.2",
+    "vuetify": "^4.2.3",
     "vuetify-nuxt-module": "^1.0.0-rc.6"
   },
   "devDependencies": {
     "@examples/eslint-config": "workspace:*",
     "@nuxt/eslint": "^1.17.0",
     "@nuxt/fonts": "^0.14.0",
-    "@nuxt/test-utils": "^4.3.2",
+    "@nuxt/test-utils": "^4.3.3",
     "@pinia/nuxt": "^1.0.2",
     "@vue/test-utils": "^2.5.1",
     "eslint": "catalog:",
@@ -38,7 +38,7 @@
     "happy-dom": "^20.14.5",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
-    "sass": "^1.105.0",
-    "vitest": "^5.0.2"
+    "sass": "^1.105.1",
+    "vitest": "^5.0.3"
   }
 }

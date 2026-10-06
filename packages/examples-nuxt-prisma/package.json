@@ -1,0 +1,43 @@
+{
+  "name": "examples-nuxt-prisma",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "pnpm prisma:generate && nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "lint:eslint": "eslint .",
+    "lint:oxlint": "oxlint --type-aware .",
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview",
+    "prisma:generate": "pnpm prisma generate",
+    "prisma:seed": "pnpm prisma db seed",
+    "prisma:studio": "pnpm prisma studio",
+    "typecheck": "pnpm prisma:generate && nuxt typecheck"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "1.0.2",
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "dotenv": "^18.0.5",
+    "nuxt": "^4.5.2",
+    "pg": "^8.23.1",
+    "pinia": "^4.0.3",
+    "vue": "^3.5.43",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "1.17.0",
+    "@examples/eslint-config": "workspace:*",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/pg": "^8.23.1",
+    "eslint": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "prisma": "^7.10.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15"
+  }
+}

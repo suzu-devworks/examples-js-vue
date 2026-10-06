@@ -1,75 +1,26 @@
-# Nuxt Minimal Starter
+# examples-nuxt-quasar
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 4 application with Quasar.
 
-## Setup
+## Purpose
 
-Make sure to install dependencies:
+Try combining Nuxt 4 with Quasar 2 (`nuxt-quasar-ui`), including Sass variable customization.
 
-```bash
-# npm
-npm install
+## Stack
 
-# pnpm
+- Nuxt 4 / Vue 3
+- Quasar 2 (`nuxt-quasar-ui`)
+- Pinia
+
+## Getting started
+
+Run from the repository root:
+
+```sh
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm --filter examples-nuxt-quasar dev
 ```
 
-## Development Server
+## Notes
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- ESLint setup: see [@examples/eslint-config](../eslint-config/README.md).
