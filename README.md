@@ -16,6 +16,7 @@ perspective and may contain inaccuracies.
 - Vue 3 and Vite
 - Nuxt
 - Quasar and Vuetify
+- Form validation with vee-validate
 - TypeScript in Vue applications
 - Prisma ORM with a PostgreSQL database
 - Shared ESLint configuration and development tooling
