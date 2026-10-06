@@ -1,75 +1,32 @@
-# Nuxt Minimal Starter
+# examples-nuxt-prisma
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 4 application with Prisma and PostgreSQL.
 
-## Setup
+## Purpose
 
-Make sure to install dependencies:
+Try data access from Nuxt 4 server API routes (`server/api`) with Prisma 7 and PostgreSQL,
+including migrations and seeding.
 
-```bash
-# npm
-npm install
+## Stack
 
-# pnpm
+- Nuxt 4 / Vue 3
+- Prisma 7 (`prisma-client` generator) / PostgreSQL
+- Pinia
+
+## Getting started
+
+Requires a running PostgreSQL. Run from the repository root:
+
+```sh
+cp packages/examples-nuxt-prisma/.env.example packages/examples-nuxt-prisma/.env  # then edit DATABASE_URL
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm --filter examples-nuxt-prisma prisma:generate
+pnpm --filter examples-nuxt-prisma exec prisma migrate deploy
+pnpm --filter examples-nuxt-prisma prisma:seed
+pnpm --filter examples-nuxt-prisma dev
 ```
 
-## Development Server
+## Notes
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Environment variables: `DATABASE_URL` (and optionally `SHADOW_DATABASE_URL` for `prisma migrate dev`), loaded by `prisma7.config.ts`.
+- ESLint setup: see [@examples/eslint-config](../eslint-config/README.md).

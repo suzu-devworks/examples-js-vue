@@ -1,79 +1,33 @@
 # examples-nuxt-vuetify
 
-Scaffolded with Vuetify CLI.
+Nuxt 4 application with Vuetify.
 
-## ❗️ Documentation
+## Purpose
 
-- Primary docs: <https://vuetifyjs.com/>
-- Getting started guide: <https://vuetifyjs.com/en/getting-started/installation/>
-- Community support: <https://community.vuetifyjs.com/>
-- Issue tracker: <https://issues.vuetifyjs.com/>
+Try building a UI with Nuxt 4 and Vuetify 4, using Nuxt layers (`examples-nuxt-shared`)
+and testing with Vitest.
 
-## 🧱 Stack
+## Stack
 
-- Framework: Nuxt 4
-- UI Library: Vuetify
-- Language: TypeScript
-- Package manager: pnpm
-
-## 🧭 Start Here
-
-- Main entry: `app/app.vue`
-- Main app component: `app/app.vue`
-- Main styles: `app/assets/styles/`
-- Plugin setup: `app/plugins/`
-
-## 📁 Project Structure
-
-- `app/pages/` — application routes
-- `app/components/` — reusable Vue components
-- `app/assets/` — styles and static assets used in app
-- `app/plugins/` — Nuxt plugins
-- `public/` — static public files
-
-## ✨ Enabled Features
-
-- ESLint
+- Nuxt 4 / Vue 3
+- Vuetify 4 (`vuetify-nuxt-module`)
 - Pinia
-- Client Hints
+- Vitest (`@nuxt/test-utils`)
 
-## 💿 Install
+## Related packages
 
-Use your selected package manager (pnpm) to install dependencies:
+- [examples-nuxt-shared](../examples-nuxt-shared/README.md)
+- [examples-vue-shared](../examples-vue-shared/README.md)
 
-```bash
+## Getting started
+
+Run from the repository root:
+
+```sh
 pnpm install
+pnpm --filter examples-nuxt-vuetify dev
 ```
 
-## 🚀 Quick Start
+## Notes
 
-```bash
-pnpm install
-pnpm dev
-```
-
-## 🏗️ Build
-
-```bash
-pnpm build
-```
-
-## 🧪 Available Scripts
-
-- `pnpm build`
-- `pnpm dev`
-- `pnpm generate`
-- `pnpm preview`
-- `pnpm postinstall`
-- `pnpm lint`
-- `pnpm lint:fix`
-
-## 💪 Support Vuetify Development
-
-This project uses Vuetify - an MIT licensed Open Source project.
-We are glad to welcome contributors and any support for ongoing development:
-
-- Contribute to Vuetify and ecosystem projects: <https://github.com/vuetifyjs>
-- Request enterprise support: <https://support.vuetifyjs.com/>
-- Sponsor on GitHub: <https://github.com/sponsors/vuetifyjs>
-- Support on Open Collective: <https://opencollective.com/vuetify>
+- ESLint setup: see [@examples/eslint-config](../eslint-config/README.md).
