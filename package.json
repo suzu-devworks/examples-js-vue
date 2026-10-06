@@ -5,7 +5,7 @@
   "scripts": {
     "build": "pnpm -r --if-present build",
     "format": "oxfmt --write .",
-    "lint": "pnpm lint:style & pnpm lint:packages",
+    "lint": "pnpm lint:style && pnpm lint:packages",
     "lint:markdown": "pnpm dlx markdownlint-cli2",
     "lint:packages": "pnpm -r --if-present lint",
     "lint:style": "stylelint --cache \"**/*.{css,scss,vue}\"",
