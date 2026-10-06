@@ -27,7 +27,7 @@ h2,
 h3 {
   font-weight: var(--app-weight-bold);
   line-height: var(--app-leading-tight);
-  letter-spacing: var(--app-tracking-wide);
+  letter-spacing: var(--app-tracking-tight);
 }
 
 h1 {

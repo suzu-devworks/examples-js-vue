@@ -121,8 +121,10 @@
   --app-leading-tight: 1.2; /* For headings and compact UI */
   --app-leading-snug: 1.4; /* For labels, captions, and short text */
   --app-leading-normal: 1.7; /* For body text and long-form reading */
+  --app-leading-loose: 1.85; /* For spacious long-form reading */
 
   /* letter-spacing */
+  --app-tracking-tight: 0.02em; /* For compact text spacing */
   --app-tracking-normal: 0.05em; /* For main text (leave a little space) */
   --app-tracking-wide: 0.1em; /* For heading (produces a relaxed and luxurious feel) */
 }

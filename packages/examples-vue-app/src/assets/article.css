@@ -15,6 +15,8 @@ SidebarArticleLayout
   gap: var(--app-spacing-md);
   min-height: calc(100vh - var(--layout-header-height));
   padding: var(--app-spacing-md);
+  line-height: var(--app-leading-loose);
+  letter-spacing: var(--app-tracking-tight);
 
   > header h1 {
     margin-bottom: var(--app-spacing-md);
@@ -50,6 +52,17 @@ SidebarArticleLayout
       background-color: color-mix(in srgb, var(--app-color-primary) 85%, #000);
     }
   }
+
+  a {
+    padding: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }
 
 .article-section,
@@ -61,12 +74,16 @@ SidebarArticleLayout
   width: 100%;
   padding: var(--app-spacing-md);
   overflow: hidden;
-  border: solid 1px var(--app-surface-border);
-  border-radius: var(--app-radius-md);
 }
 
 .article-section {
-  background-color: var(--app-surface-section);
+  > h2,
+  > h3 {
+    width: 100%;
+    padding-inline-start: var(--app-spacing-sm);
+    margin-bottom: var(--app-spacing-xs);
+    border-inline-start: solid 4px var(--app-color-brand);
+  }
 
   li > a {
     display: block;
@@ -97,6 +114,8 @@ SidebarArticleLayout
 .article-example {
   align-items: start;
   background-color: var(--app-surface-card);
+  border: solid 1px var(--app-surface-border);
+  border-radius: var(--app-radius-sm);
 
   & > iframe {
     display: block;

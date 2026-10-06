@@ -23,9 +23,9 @@ import BlandLogo from './BlandLogo.vue'
 .default-layout {
   --layout-header-height: 2.4rem;
   --layout-footer-height: 0;
-  --layout-border-width: 2px;
-  --layout-border: var(--layout-border-width) solid color-mix(in oklab, var(--app-color-brand) 20%, transparent);
-  --layout-fixed-surface: color-mix(in oklab, var(--app-surface-ground) 70%, transparent);
+  --layout-border-width: 1px;
+  --layout-border: var(--layout-border-width) solid var(--app-surface-border);
+  --layout-fixed-surface: var(--app-surface-ground);
   --layout-z-index: 10;
 
   /* Positioning */
@@ -49,7 +49,6 @@ import BlandLogo from './BlandLogo.vue'
     overflow: hidden;
     background-color: var(--layout-fixed-surface);
     border-bottom: var(--layout-border);
-    backdrop-filter: blur(5px);
 
     .layout-header {
       display: flex;
@@ -90,7 +89,6 @@ import BlandLogo from './BlandLogo.vue'
     padding: var(--app-spacing-sm);
     background-color: var(--layout-fixed-surface);
     border-top: var(--layout-border);
-    backdrop-filter: blur(5px);
   }
 }
 </style>
