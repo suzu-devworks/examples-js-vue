@@ -10,13 +10,16 @@ type Token = {
 
 type ColorToken = Token & {
   textColor?: string
+  sampleBackground?: string
+  sampleColor?: string
 }
+
+const brandColorToken = '--app-color-brand'
 
 const colorGroups: { title: string; tokens: ColorToken[] }[] = [
   {
     title: 'Actions',
     tokens: [
-      { name: '--app-color-brand', label: 'Brand' },
       { name: '--app-color-primary', label: 'Primary', textColor: '--app-color-on-primary' },
       { name: '--app-color-secondary', label: 'Secondary', textColor: '--app-color-on-secondary' },
       { name: '--app-color-accent', label: 'Accent', textColor: '--app-color-on-accent' },
@@ -34,26 +37,68 @@ const colorGroups: { title: string; tokens: ColorToken[] }[] = [
   {
     title: 'Surfaces',
     tokens: [
-      { name: '--app-surface-ground', label: 'Ground' },
-      { name: '--app-surface-section', label: 'Section' },
-      { name: '--app-surface-card', label: 'Card' },
-      { name: '--app-surface-overlay', label: 'Overlay' },
-      { name: '--app-surface-border', label: 'Border' },
-      { name: '--app-surface-hover', label: 'Hover' },
-      { name: '--app-surface-disabled', label: 'Disabled' },
+      { name: '--app-surface-ground', label: 'Ground', sampleColor: '--app-color-text' },
+      { name: '--app-surface-section', label: 'Section', sampleColor: '--app-color-text' },
+      { name: '--app-surface-card', label: 'Card', sampleColor: '--app-color-text' },
+      { name: '--app-surface-overlay', label: 'Overlay', sampleColor: '--app-color-text' },
+      { name: '--app-surface-border', label: 'Border', sampleColor: '--app-color-text' },
+      { name: '--app-surface-hover', label: 'Hover', sampleColor: '--app-color-text' },
+      { name: '--app-surface-disabled', label: 'Disabled', sampleColor: '--app-color-text' },
     ],
   },
   {
-    title: 'Text & controls',
+    title: 'Text',
     tokens: [
-      { name: '--app-color-text-emphasis', label: 'Emphasis' },
-      { name: '--app-color-text', label: 'Text' },
-      { name: '--app-color-text-muted', label: 'Muted' },
-      { name: '--app-color-text-link', label: 'Link' },
-      { name: '--app-control-background', label: 'Control background' },
-      { name: '--app-control-background-hover', label: 'Control hover' },
-      { name: '--app-control-border', label: 'Control border' },
-      { name: '--app-control-text', label: 'Control text' },
+      {
+        name: '--app-color-text-emphasis',
+        label: 'Emphasis',
+        sampleBackground: '--app-surface-ground',
+        sampleColor: '--app-color-text-emphasis',
+      },
+      {
+        name: '--app-color-text',
+        label: 'Text',
+        sampleBackground: '--app-surface-ground',
+        sampleColor: '--app-color-text',
+      },
+      {
+        name: '--app-color-text-muted',
+        label: 'Muted',
+        sampleBackground: '--app-surface-ground',
+        sampleColor: '--app-color-text-muted',
+      },
+      {
+        name: '--app-color-text-link',
+        label: 'Link',
+        sampleBackground: '--app-surface-ground',
+        sampleColor: '--app-color-text-link',
+      },
+    ],
+  },
+  {
+    title: 'Controls',
+    tokens: [
+      {
+        name: '--app-control-background',
+        label: 'Control background',
+        sampleColor: '--app-control-text',
+      },
+      {
+        name: '--app-control-background-hover',
+        label: 'Control hover',
+        sampleColor: '--app-control-text',
+      },
+      {
+        name: '--app-control-border',
+        label: 'Control border',
+        sampleColor: '--app-control-text',
+      },
+      {
+        name: '--app-control-text',
+        label: 'Control text',
+        sampleBackground: '--app-control-background',
+        sampleColor: '--app-control-text',
+      },
     ],
   },
 ]
@@ -73,6 +118,7 @@ const layoutTokens: Token[] = [
 
 const tokenValues = ref<Record<string, string>>({})
 const allTokens = [
+  brandColorToken,
   ...colorGroups.flatMap((group) =>
     group.tokens.flatMap(({ name, textColor }) => (textColor ? [name, textColor] : [name])),
   ),
@@ -116,13 +162,16 @@ onUnmounted(() => {
             <span class="banner-label">BRAND COLOR</span>
             <strong>One system, every surface.</strong>
           </div>
-          <code>--app-color-brand</code>
+          <div class="brand-banner__token">
+            <code>{{ brandColorToken }}</code>
+            <span>{{ tokenValues[brandColorToken] || '—' }}</span>
+          </div>
         </div>
       </header>
 
       <section id="design" class="token-section" aria-labelledby="design-title">
         <div class="section-heading">
-          <span class="section-number">01</span>
+          <span class="section-marker" aria-hidden="true"></span>
           <div>
             <h2 id="design-title">Design</h2>
             <p>A preview of the visual language, from page headings to supporting details.</p>
@@ -158,14 +207,14 @@ onUnmounted(() => {
                 <strong>Typography examples</strong>
                 <small>Review the applied type styles</small>
               </span>
-              <span class="preview-list__arrow" aria-hidden="true">↗</span>
+              <span class="preview-list__arrow" aria-hidden="true">→</span>
             </a>
             <a class="preview-list__item" href="#colors">
               <span>
                 <strong>Color system</strong>
                 <small>Explore backgrounds and text colors</small>
               </span>
-              <span class="preview-list__arrow" aria-hidden="true">↗</span>
+              <span class="preview-list__arrow" aria-hidden="true">→</span>
             </a>
           </nav>
         </div>
@@ -173,7 +222,7 @@ onUnmounted(() => {
 
       <section id="typography" class="token-section" aria-labelledby="typography-title">
         <div class="section-heading">
-          <span class="section-number">02</span>
+          <span class="section-marker" aria-hidden="true"></span>
           <div>
             <h2 id="typography-title">Typography</h2>
             <p>Compare the type scale, weight, line height, and letter spacing in context.</p>
@@ -263,7 +312,7 @@ onUnmounted(() => {
 
       <section id="colors" class="token-section" aria-labelledby="colors-title">
         <div class="section-heading">
-          <span class="section-number">03</span>
+          <span class="section-marker" aria-hidden="true"></span>
           <div>
             <h2 id="colors-title">Color system</h2>
             <p>Color swatches use the same variables as the application UI, including their text colors.</p>
@@ -277,14 +326,19 @@ onUnmounted(() => {
               <div
                 class="swatch-color"
                 :style="{
-                  backgroundColor: `var(${token.name})`,
-                  color: token.textColor ? `var(${token.textColor})` : 'var(--app-color-text-emphasis)',
+                  backgroundColor: `var(${token.sampleBackground || token.name})`,
+                  color: `var(${token.sampleColor || token.textColor || '--app-color-text-emphasis'})`,
                 }"
               >
-                <span>{{ token.label }} text</span>
+                <span
+                  v-if="group.title === 'Text' || token.name === '--app-control-text'"
+                  class="swatch-color__mode"
+                >
+                  TEXT COLOR
+                </span>
+                <span>{{ token.label }}</span>
               </div>
               <div class="swatch-meta">
-                <strong>{{ token.label }}</strong>
                 <code>{{ token.name }}</code>
                 <span>{{ tokenValues[token.name] || '—' }}</span>
                 <small v-if="token.textColor"> Text: {{ tokenValues[token.textColor] || token.textColor }} </small>
@@ -296,7 +350,7 @@ onUnmounted(() => {
 
       <section id="layout" class="token-section" aria-labelledby="layout-title">
         <div class="section-heading">
-          <span class="section-number">04</span>
+          <span class="section-marker" aria-hidden="true"></span>
           <div>
             <h2 id="layout-title">Spacing &amp; shape</h2>
             <p>Consistent proportions for comfortable, clear interfaces.</p>
@@ -323,7 +377,7 @@ onUnmounted(() => {
 
       <section id="controls" class="token-section" aria-labelledby="controls-title">
         <div class="section-heading">
-          <span class="section-number">05</span>
+          <span class="section-marker" aria-hidden="true"></span>
           <div>
             <h2 id="controls-title">Controls</h2>
             <p>Actions, feedback states, and form elements using the token palette.</p>
@@ -482,6 +536,17 @@ onUnmounted(() => {
   border-radius: var(--app-radius-sm);
 }
 
+.brand-banner__token {
+  display: grid;
+  justify-items: end;
+  gap: var(--app-spacing-xs);
+}
+
+.brand-banner__token > span {
+  font-family: var(--app-font-mono);
+  font-size: var(--app-text-sm);
+}
+
 .token-section {
   padding-top: var(--section-gap);
   scroll-margin-top: var(--app-spacing-xl);
@@ -494,11 +559,12 @@ onUnmounted(() => {
   padding-bottom: var(--app-spacing-lg);
 }
 
-.section-number {
-  padding-top: 0.25rem;
-  font-family: var(--app-font-mono);
-  font-size: var(--app-text-sm);
-  color: var(--app-color-brand);
+.section-marker {
+  flex: 0 0 4px;
+  height: 1.35em;
+  margin-top: 0.2rem;
+  background: var(--app-color-brand);
+  border-radius: var(--app-radius-full);
 }
 
 .section-heading h2 {
@@ -746,6 +812,7 @@ onUnmounted(() => {
 }
 
 .swatch-color {
+  position: relative;
   display: flex;
   align-items: flex-end;
   min-height: 48px;
@@ -754,8 +821,18 @@ onUnmounted(() => {
   background-image: linear-gradient(135deg, transparent 50%, rgb(0 0 0 / 0.04) 50%);
 }
 
+.swatch-color__mode {
+  position: absolute;
+  top: var(--app-spacing-xs);
+  right: var(--app-spacing-xs);
+  font-size: 0.5625rem;
+  font-weight: var(--app-weight-bold);
+  letter-spacing: 0.04em;
+}
+
 .swatch-color span {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
+  font-weight: var(--app-weight-bold);
   text-shadow: 0 1px 2px color-mix(in srgb, var(--app-surface-card) 40%, transparent);
 }
 
@@ -763,11 +840,6 @@ onUnmounted(() => {
   display: grid;
   gap: 2px;
   padding: var(--app-spacing-xs);
-}
-
-.swatch-meta strong {
-  font-size: 0.75rem;
-  color: var(--app-color-text-emphasis);
 }
 
 .swatch-meta code,
@@ -1090,7 +1162,7 @@ onUnmounted(() => {
 .preview-list__item:hover .preview-list__arrow,
 .preview-list__item:focus-visible .preview-list__arrow {
   color: var(--app-color-text-link);
-  transform: translate(2px, -2px);
+  transform: translateX(2px);
 }
 
 .page-footer {

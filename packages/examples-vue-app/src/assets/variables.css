@@ -45,9 +45,9 @@
 
   /* 5. Basic text color (light mode) */
   --text-base-light: 214deg 40%;
-  --app-color-text-emphasis: hsl(var(--text-base-light) 14%);
+  --app-color-text-emphasis: hsl(220deg 50% 9%);
   --app-color-text: hsl(var(--text-base-light) 28%);
-  --app-color-text-muted: hsl(214deg 20% 48%);
+  --app-color-text-muted: hsl(214deg 16% 54%);
   --app-color-text-link: hsl(214deg 82% 51%);
 }
 
@@ -68,9 +68,9 @@
 
     /* 5. Basic text color (dark mode) */
     --text-base-dark: 210deg 24%;
-    --app-color-text-emphasis: hsl(var(--text-base-dark) 96%);
+    --app-color-text-emphasis: hsl(210deg 30% 98%);
     --app-color-text: hsl(var(--text-base-dark) 84%);
-    --app-color-text-muted: hsl(210deg 14% 65%);
+    --app-color-text-muted: hsl(210deg 12% 68%);
     --app-color-text-link: hsl(196deg 68% 65%);
   }
 }
