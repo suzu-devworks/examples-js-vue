@@ -8,6 +8,11 @@ const features = [
     description: 'This is a template page generated using the `create-vue` command.',
   },
   {
+    to: '/design-tokens',
+    title: '🎨 Design tokens',
+    description: 'Inspect the application colors, typography, layout tokens, and controls.',
+  },
+  {
     to: '/software-design',
     title: '📘 Articles of Software Design',
     description: 'This content is based on the feature article from the Software Design.',
