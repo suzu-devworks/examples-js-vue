@@ -4,15 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm build:deps && vite build",
+    "build": "vite build",
     "build:checks": "run-p typecheck \"build {@}\" --",
-    "build:deps": "pnpm --filter examples-vue-shared build",
-    "dev": "pnpm build:deps && vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint . --cache",
     "lint:oxlint": "oxlint --type-aware .",
     "preview": "vite preview --host 0.0.0.0",
-    "typecheck": "pnpm build:deps && vue-tsc --build"
+    "typecheck": "vue-tsc --build"
   },
   "dependencies": {
     "examples-vue-shared": "workspace:*",
@@ -34,10 +33,10 @@
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "sass-embedded": "^1.105.1",
-    "typescript": "~6.0.3",
+    "typescript": "catalog:",
     "vite": "^8.3.2",
     "vite-plugin-vue-devtools": "^8.2.1",
-    "vue-tsc": "^3.3.12"
+    "vue-tsc": "catalog:"
   },
   "engines": {
     "node": "^22.18.0 || >=24.12.0"

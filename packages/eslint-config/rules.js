@@ -1,7 +1,11 @@
+import eslintConfigPrettier from 'eslint-config-prettier'
 import oxlint from 'eslint-plugin-oxlint'
 import globals from 'globals'
 
 export const oxlintRules = oxlint.configs['flat/all']
+
+// Rules handled by oxlint or the formatter (oxfmt). Must be placed last.
+export const disabledRules = [...oxlintRules, eslintConfigPrettier]
 
 export const sharedRules = [
   {

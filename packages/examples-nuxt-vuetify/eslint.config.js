@@ -1,4 +1,4 @@
-import { oxlintRules, sharedRules, vueRules } from '@examples/eslint-config/rules'
+import { disabledRules, sharedRules, vueRules } from '@examples/eslint-config/rules'
 import vuetify from 'eslint-config-vuetify'
 
 import withNuxt from './.nuxt/eslint.config.mjs'
@@ -9,14 +9,12 @@ export default withNuxt(
   }),
   ...sharedRules,
   ...vueRules,
-  ...oxlintRules,
+  ...disabledRules,
   {
     rules: {
       'vue/script-indent': 'off',
       'vue/max-attributes-per-line': 'off',
       'vue/no-multiple-template-root': 'off',
-      '@stylistic/space-before-function-paren': 'off',
-      '@stylistic/arrow-parens': 'off',
     },
   },
 )

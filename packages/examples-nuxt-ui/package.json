@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint .",
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
+    "lint:eslint": "eslint",
+    "lint:oxlint": "oxlint --type-aware .",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
@@ -15,16 +17,20 @@
     "@iconify-json/simple-icons": "^1.2.98",
     "@nuxt/ui": "^4.11.3",
     "@pinia/nuxt": "1.0.2",
+    "examples-nuxt-shared": "workspace:*",
     "nuxt": "^4.5.2",
     "pinia": "^4.0.3",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@examples/eslint-config": "workspace:*",
     "@nuxt/eslint": "^1.17.0",
-    "eslint": "^10.12.0",
+    "eslint": "catalog:",
     "eslint-plugin-better-tailwindcss": "^4.7.0",
-    "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.12"
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "typescript": "catalog:",
+    "vue-tsc": "catalog:"
   },
   "packageManager": "pnpm@12.9.1"
 }
