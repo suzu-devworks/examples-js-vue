@@ -12,8 +12,8 @@
   /* 2. Button & action (calm pastel tone) */
   --app-color-primary: hsl(145deg 61% 34%);
   --app-color-on-primary: hsl(220deg 13% 96%);
-  --app-color-secondary: hsl(215deg 16% 47%);
-  --app-color-on-secondary: hsl(220deg 13% 96%);
+  --app-color-secondary: hsl(215deg 16% 90%);
+  --app-color-on-secondary: hsl(215deg 16% 25%);
   --app-color-accent: hsl(295deg 58% 65%);
   --app-color-on-accent: hsl(220deg 13% 96%);
 
@@ -45,14 +45,17 @@
 
   /* 5. Basic text color (light mode) */
   --text-base-light: 214deg 40%;
-  --app-color-text-emphasis: hsl(var(--text-base-light) 14%);
+  --app-color-text-emphasis: hsl(220deg 50% 9%);
   --app-color-text: hsl(var(--text-base-light) 28%);
-  --app-color-text-muted: hsl(214deg 20% 48%);
+  --app-color-text-muted: hsl(214deg 16% 54%);
   --app-color-text-link: hsl(214deg 82% 51%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --app-color-secondary: hsl(215deg 12% 29%);
+    --app-color-on-secondary: hsl(220deg 13% 90%);
+
     /* 4. Neutral (dark mode) */
     --neutral-base-dark: 210deg 14%;
     --app-surface-ground: hsl(var(--neutral-base-dark) 11%);
@@ -65,9 +68,9 @@
 
     /* 5. Basic text color (dark mode) */
     --text-base-dark: 210deg 24%;
-    --app-color-text-emphasis: hsl(var(--text-base-dark) 96%);
+    --app-color-text-emphasis: hsl(210deg 30% 98%);
     --app-color-text: hsl(var(--text-base-dark) 84%);
-    --app-color-text-muted: hsl(210deg 14% 65%);
+    --app-color-text-muted: hsl(210deg 12% 68%);
     --app-color-text-link: hsl(196deg 68% 65%);
   }
 }
@@ -121,8 +124,10 @@
   --app-leading-tight: 1.2; /* For headings and compact UI */
   --app-leading-snug: 1.4; /* For labels, captions, and short text */
   --app-leading-normal: 1.7; /* For body text and long-form reading */
+  --app-leading-loose: 1.85; /* For spacious long-form reading */
 
   /* letter-spacing */
+  --app-tracking-tight: 0.02em; /* For compact text spacing */
   --app-tracking-normal: 0.05em; /* For main text (leave a little space) */
   --app-tracking-wide: 0.1em; /* For heading (produces a relaxed and luxurious feel) */
 }

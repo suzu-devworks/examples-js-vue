@@ -8,6 +8,11 @@ const features = [
     description: 'This is a template page generated using the `create-vue` command.',
   },
   {
+    to: '/design-tokens',
+    title: '🎨 Design tokens',
+    description: 'Inspect the application colors, typography, layout tokens, and controls.',
+  },
+  {
     to: '/software-design',
     title: '📘 Articles of Software Design',
     description: 'This content is based on the feature article from the Software Design.',
@@ -34,6 +39,11 @@ const features = [
     to: '/interactions',
     title: '💬 Global Dialog and Toast',
     description: 'Use the shared interaction library from a Vue application.',
+  },
+  {
+    to: '/vee-validate',
+    title: '✅ vee-validate',
+    description: 'Form validation with vee-validate using zod and yup schemas.',
   },
 ]
 

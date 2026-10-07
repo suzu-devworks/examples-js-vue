@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import { route as routeOfAuth, requireAuth } from '@/features/auth'
+import { route as routeOfDesignTokens } from '@/features/design-tokens'
 import { route as routeOfInteractions } from '@/features/interactions'
 import { route as routeOfRouterGuide } from '@/features/router-guide'
 import { route as routeOfSoftwareDesign } from '@/features/software-design'
 import { route as routeOfTemplate } from '@/features/template'
+import { route as routeOfVeeValidate } from '@/features/vee-validate'
 import { route as routeOfViteGuide } from '@/features/vite-guide'
 import { route as routeOfVueGuide } from '@/features/vue-guide'
 
@@ -15,12 +17,14 @@ const router = createRouter({
   routes: [
     { path: '/', component: HomeView },
     ...routeOfAuth,
+    ...routeOfDesignTokens,
     ...routeOfInteractions,
     ...routeOfTemplate,
     ...routeOfSoftwareDesign,
     ...routeOfVueGuide,
     ...routeOfRouterGuide,
     ...routeOfViteGuide,
+    ...routeOfVeeValidate,
   ],
 })
 

@@ -40,7 +40,7 @@ import { RouterLink } from 'vue-router'
       font-size: var(--brand-title-size);
       font-weight: var(--app-weight-bold);
       line-height: var(--app-leading-tight);
-      letter-spacing: var(--app-tracking-wide);
+      letter-spacing: var(--app-tracking-normal);
     }
   }
 }
