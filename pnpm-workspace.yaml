@@ -16,4 +16,5 @@ allowBuilds:
   esbuild: true
   prisma: true
   unrs-resolver: true
+  vue-demi: true
   workerd: true
