@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { items } = useAppMenu()
+</script>
+
 <template>
   <UContainer>
     <UHeader>
@@ -8,6 +12,8 @@
 
         <TemplateMenu />
       </template>
+
+      <UNavigationMenu :items="items" variant="link" />
 
       <template #right>
         <UColorModeButton />
@@ -20,6 +26,10 @@
           color="neutral"
           variant="ghost"
         />
+      </template>
+
+      <template #body>
+        <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
       </template>
     </UHeader>
 

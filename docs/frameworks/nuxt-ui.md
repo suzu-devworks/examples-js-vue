@@ -40,13 +40,13 @@ Although often confused, the two serve completely different roles.
   Cannot be overridden by environment variables.
 
 - `nuxt.config.ts`:
-   System-wide Nuxt configuration Configures the system infrastructure, such as module integration, SSR settings,
-   and API secret keys (Runtime Config).
+  System-wide Nuxt configuration Configures the system infrastructure, such as module integration, SSR settings,
+  and API secret keys (Runtime Config).
 
 It seems you retrieve it using `useAppConfig`:
 
 ```ts
-const { header, footer } = useAppConfig();
+const { header, footer } = useAppConfig()
 ```
 
 I see—so it's for screen-specific literals. That makes sense.
