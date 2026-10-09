@@ -7,11 +7,11 @@ const { openDialog } = useGlobalDialog()
 const { toast } = useGlobalToast()
 const { isLoading, withLoading } = useGlobalLoading()
 const { isDirty, confirmLeave } = useUnsavedChanges()
-const { copyText } = useClipboard()
+const { copyText, pasteText } = useClipboard()
 
 const draft = ref('Edit this draft, then navigate to another page.')
 const initialDraft = draft.value
-const clipboardValue = 'Copied from the interactions example.'
+const clipboardValue = ref('Copied from the interactions example.')
 
 watch(draft, (value) => {
   isDirty.value = value !== initialDraft
@@ -37,8 +37,9 @@ async function handleLoading() {
 }
 
 async function handleCopy() {
-  if (await copyText(clipboardValue)) {
-    toast.success('Text copied to clipboard.')
+  if (await copyText(clipboardValue.value)) {
+    const pasteValue = await pasteText()
+    toast.success(`${pasteValue}`, { timeout: 3000 })
   } else {
     toast.error('Clipboard access is unavailable.')
   }
@@ -104,9 +105,9 @@ async function handleCopy() {
       </UCard>
 
       <UCard title="Clipboard">
-        <p class="mb-4">
-          <code>{{ clipboardValue }}</code>
-        </p>
+        <div class="mb-4">
+          <UInput v-model="clipboardValue" class="w-full" />
+        </div>
         <UButton label="Copy text" color="primary" @click="handleCopy" />
       </UCard>
     </UContainer>

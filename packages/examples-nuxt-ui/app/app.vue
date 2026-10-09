@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ToasterProps } from '@nuxt/ui'
+
 useHead({
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [{ rel: 'icon', href: '/favicon.ico' }],
@@ -19,7 +21,7 @@ useSeoMeta({
 })
 
 // toaster configuration
-const toaster = { max: 3, duration: 5000 }
+const toaster: ToasterProps = { max: 3, duration: 5000, position: 'top-right' }
 </script>
 
 <template>
