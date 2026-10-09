@@ -2,8 +2,8 @@
 const { openDialog } = useGlobalDialog()
 const { toast } = useGlobalToast()
 const { isLoading, withLoading } = useGlobalLoading()
-const { copyText } = useClipboard()
 const { isDirty, confirmLeave } = useUnsavedChanges()
+const { copyText } = useClipboard()
 const draft = ref('Edit this draft, then navigate to another page.')
 const initialDraft = draft.value
 const clipboardValue = 'Copied from the interactions example.'
@@ -20,9 +20,11 @@ async function handleAction() {
     text: 'Do you want to perform this operation? You can check the status of your store in Vue DevTools.',
   })
 
-  if (confirmed) {
-    toast.success('Operation completed.')
+  if (!confirmed) {
+    return
   }
+
+  toast.success('Operation completed.')
 }
 
 async function handleLoading() {

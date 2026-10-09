@@ -1,9 +1,11 @@
-import { useUnsavedChanges as useVueUnsavedChanges } from 'examples-vue-shared'
+import { useUnsavedChanges as useVueUnsavedChanges, type OpenDialog } from 'examples-vue-shared'
 
 import { useGlobalDialog } from './useGlobalDialog'
 
-export function useUnsavedChanges() {
-  const { openDialog } = useGlobalDialog()
+export type { DialogOptions, OpenDialog } from 'examples-vue-shared'
 
-  return useVueUnsavedChanges(openDialog)
+// Defaults to the shared global dialog; UI libraries with their own dialog can pass `openDialog`.
+export function useUnsavedChanges(openDialog?: OpenDialog) {
+  const open: OpenDialog = openDialog ?? (import.meta.client ? useGlobalDialog().openDialog : async () => true)
+  return useVueUnsavedChanges(open)
 }

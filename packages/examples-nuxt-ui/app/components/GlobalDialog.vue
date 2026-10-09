@@ -1,9 +1,19 @@
 <script setup lang="ts">
-const { title = 'Confirmation', description = 'This modal was opened programmatically with useOverlay.' } =
-  defineProps<{
-    title?: string
-    description?: string
-  }>()
+export interface GlobalDialogProps {
+  title?: string
+  description?: string
+  text?: string
+  confirmText?: string
+  cancelText?: string
+}
+
+const {
+  title = 'Confirmation',
+  description = 'This modal was opened programmatically with useOverlay.',
+  text = 'Do you want to perform this operation?',
+  confirmText = 'OK',
+  cancelText = 'Cancel',
+} = defineProps<GlobalDialogProps>()
 
 const emit = defineEmits<{ close: [boolean] }>()
 </script>
@@ -13,13 +23,13 @@ const emit = defineEmits<{ close: [boolean] }>()
     <UButton label="Open" color="neutral" variant="subtle" />
 
     <template #body>
-      <p>Do you want to perform this operation?</p>
+      <p>{{ text }}</p>
     </template>
 
     <template #footer>
       <div class="flex gap-2">
-        <UButton class="w-20 justify-center" variant="ghost" label="Cancel" @click="emit('close', false)" />
-        <UButton class="w-20 justify-center" label="OK" @click="emit('close', true)" />
+        <UButton class="min-w-20 justify-center" variant="ghost" :label="cancelText" @click="emit('close', false)" />
+        <UButton class="min-w-20 justify-center" :label="confirmText" @click="emit('close', true)" />
       </div>
     </template>
   </UModal>

@@ -28,5 +28,7 @@ const toaster = { max: 3, duration: 5000 }
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+
+    <GlobalLoading />
   </UApp>
 </template>

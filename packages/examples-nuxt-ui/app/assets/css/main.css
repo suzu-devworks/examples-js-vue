@@ -1,10 +1,6 @@
-/* stylelint-disable-next-line import-notation */
 @import 'tailwindcss';
-
-/* stylelint-disable-next-line import-notation */
 @import '@nuxt/ui';
 
-/* stylelint-disable-next-line at-rule-no-unknown */
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
   --color-green-50: #effdf5;
@@ -18,4 +14,10 @@
   --color-green-800: #016538;
   --color-green-900: #0a5331;
   --color-green-950: #052e16;
+}
+
+@layer base {
+  code {
+    @apply rounded-xs bg-neutral-100 px-1.5 font-mono text-sm dark:bg-neutral-700;
+  }
 }

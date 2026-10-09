@@ -1,22 +1,47 @@
 <script setup lang="ts">
-import { LazyGlobalDialog } from '#components'
-
 definePageMeta({
   title: 'Interactions',
 })
 
+const { openDialog } = useGlobalDialog()
 const { toast } = useGlobalToast()
+const { isLoading, withLoading } = useGlobalLoading()
+const { isDirty, confirmLeave } = useUnsavedChanges()
+const { copyText } = useClipboard()
 
-const overlay = useOverlay()
-const modal = overlay.create(LazyGlobalDialog)
+const draft = ref('Edit this draft, then navigate to another page.')
+const initialDraft = draft.value
+const clipboardValue = 'Copied from the interactions example.'
+
+watch(draft, (value) => {
+  isDirty.value = value !== initialDraft
+})
+
+onBeforeRouteLeave(confirmLeave)
 
 async function handleOpenDialog() {
-  const success = await modal.open({ title: 'Confirmation🤔' })
-  if (!success) {
+  const confirmed = await openDialog({
+    title: 'Confirmation🤔',
+    text: 'Do you want to perform this operation?',
+  })
+  if (!confirmed) {
     return
   }
 
   toast.success('Operation completed.')
+}
+
+async function handleLoading() {
+  await withLoading(() => new Promise((resolve) => setTimeout(resolve, 1200)))
+  toast.success('Loading finished.')
+}
+
+async function handleCopy() {
+  if (await copyText(clipboardValue)) {
+    toast.success('Text copied to clipboard.')
+  } else {
+    toast.error('Clipboard access is unavailable.')
+  }
 }
 </script>
 
@@ -27,16 +52,15 @@ async function handleOpenDialog() {
       <UCard title="Global Dialog">
         <p class="mb-4">
           A feature called
-          <code class="rounded-xs bg-neutral-100 px-1 font-mono text-sm dark:bg-neutral-700">useOverlay</code> is
-          provided by default, so let's use that.
+          <code>useOverlay</code> is provided by default, so let's use that.
         </p>
-        <UButton label="Open Dialog" color="secondary" @click="handleOpenDialog" />
+        <UButton label="Open Dialog" color="primary" @click="handleOpenDialog" />
       </UCard>
 
       <UCard title="Global Toast">
         <p class="mb-4">
           There is also a feature called
-          <code class="rounded-xs bg-neutral-100 px-1 font-mono text-sm dark:bg-neutral-700">useToast</code>.
+          <code>useToast</code>.
         </p>
         <div class="flex gap-2">
           <UButton
@@ -66,9 +90,25 @@ async function handleOpenDialog() {
         </div>
       </UCard>
 
-      <UCard title="Global Loading"></UCard>
-      <UCard title="Unsaved Changes"></UCard>
-      <UCard title="Clipboard"></UCard>
+      <UCard title="Global Loading">
+        <p class="mb-4">Show a shared loading overlay while an asynchronous operation is running.</p>
+        <UButton class="min-w-14 justify-center" color="primary" @click="handleLoading">
+          {{ isLoading ? 'Loading...' : 'Start loading' }}
+        </UButton>
+      </UCard>
+
+      <UCard title="Unsaved Changes">
+        <p class="mb-4">Try navigating away after editing this draft.</p>
+        <UTextarea v-model="draft" name="draft" label="Draft" :rows="3" class="mb-4 block" />
+        <p aria-live="polite">{{ isDirty ? 'Unsaved changes' : 'No unsaved changes' }}</p>
+      </UCard>
+
+      <UCard title="Clipboard">
+        <p class="mb-4">
+          <code>{{ clipboardValue }}</code>
+        </p>
+        <UButton label="Copy text" color="primary" @click="handleCopy" />
+      </UCard>
     </UContainer>
   </div>
 </template>

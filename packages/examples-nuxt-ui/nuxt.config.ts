@@ -13,4 +13,7 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2026-06-30',
+
+  // Nuxt layers configuration
+  extends: ['~~/layers/base', '../examples-nuxt-shared'],
 })
