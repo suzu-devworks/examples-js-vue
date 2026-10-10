@@ -3,20 +3,6 @@ export default {
   extends: ['stylelint-config-standard', 'stylelint-config-standard-vue', 'stylelint-config-recess-order'],
   overrides: [
     {
-      files: ['**/tailwind.css'],
-      rules: {
-        'at-rule-no-unknown': [
-          true,
-          {
-            ignoreAtRules: ['apply', 'custom-variant', 'reference', 'source', 'theme', 'utility'],
-          },
-        ],
-        'custom-property-pattern': null,
-        // url() notation breaks `@reference` resolution across files in Tailwind CSS v4
-        'import-notation': 'string',
-      },
-    },
-    {
       files: ['**/*.scss'],
       extends: ['stylelint-config-standard-scss'],
     },

@@ -68,6 +68,10 @@ class GlobalToastCore {
       left.length === right.length &&
       left.every((item, index) => {
         const nextItem = right[index]
+        if (!nextItem) {
+          return false
+        }
+
         return (
           item.text === nextItem.text &&
           item.color === nextItem.color &&

@@ -1,10 +1,9 @@
 import js from '@eslint/js'
-import eslintConfigPrettier from 'eslint-config-prettier'
 import pluginVue from 'eslint-plugin-vue'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import tseslint from 'typescript-eslint'
 
-import { oxlintRules, sharedRules, vueRules } from './rules.js'
+import { disabledRules, sharedRules, vueRules } from './rules.js'
 
 export default defineConfig([
   js.configs.recommended,
@@ -16,7 +15,6 @@ export default defineConfig([
   },
   ...sharedRules,
   ...vueRules,
-  ...oxlintRules,
-  eslintConfigPrettier,
+  ...disabledRules,
   globalIgnores(['**/node_modules/**', '**/dist/**', '**/build/**', '**/temp/**']),
 ])

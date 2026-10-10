@@ -2,7 +2,7 @@ import { ref } from 'vue'
 
 import type { DialogOptions } from '../global-dialog'
 
-type OpenDialog = (options: DialogOptions) => Promise<boolean>
+export type OpenDialog = (options: DialogOptions) => Promise<boolean>
 
 export function useUnsavedChanges(openDialog: OpenDialog) {
   const isDirty = ref(false)
