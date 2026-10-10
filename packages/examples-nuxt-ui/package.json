@@ -15,6 +15,7 @@
   "dependencies": {
     "@iconify-json/lucide": "^1.2.139",
     "@iconify-json/simple-icons": "^1.2.98",
+    "@internationalized/date": "^3.12.4",
     "@nuxt/ui": "^4.11.3",
     "@pinia/nuxt": "1.0.2",
     "examples-nuxt-shared": "workspace:*",

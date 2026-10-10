@@ -22,10 +22,17 @@ useSeoMeta({
 
 // toaster configuration
 const toaster: ToasterProps = { max: 3, duration: 5000, position: 'top-right' }
+
+// set locale based on browser settings
+const { state, initLocale } = useAppLocale()
+
+onMounted(() => {
+  initLocale()
+})
 </script>
 
 <template>
-  <UApp :toaster="toaster">
+  <UApp :toaster="toaster" :locale="state.current">
     <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage />

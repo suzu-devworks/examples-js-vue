@@ -3,6 +3,10 @@ const items = [
     label: 'Introduction',
     to: '/interactions',
   },
+  {
+    label: 'i18n',
+    to: '/i18n',
+  },
 ]
 
 export function useAppMenu() {
