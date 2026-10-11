@@ -1,4 +1,4 @@
-import { CalendarDate, parseDate } from '@internationalized/date'
+import { CalendarDate, parseDate, type DateValue } from '@internationalized/date'
 
 const DEFAULT_TIMEZONE = 'Asia/Tokyo'
 
@@ -16,7 +16,7 @@ export const dateConverter = {
   /**
    * Convert CalendarDate to Date
    */
-  fromCalendarDate(calendarDate: CalendarDate, timeZone: string = DEFAULT_TIMEZONE): Date {
+  fromCalendarDate(calendarDate: DateValue, timeZone: string = DEFAULT_TIMEZONE): Date {
     return calendarDate.toDate(timeZone)
   },
 

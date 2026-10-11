@@ -24,6 +24,7 @@ rm -fr examples-nuxt-ui/.github/
 rm -rf examples-nuxt-ui/pnpm-workspace.yaml
 rm -fr examples-nuxt-ui/pnpm-lock.yaml
 rm -fr examples-nuxt-ui/.editorconfig
+rm -fr examples-nuxt-ui/LICENSE
 ```
 
 ## What is `app.config.ts`？

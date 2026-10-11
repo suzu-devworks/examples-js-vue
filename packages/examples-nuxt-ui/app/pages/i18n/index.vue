@@ -3,14 +3,33 @@ import { getDayOfWeek, type DateValue } from '@internationalized/date'
 
 const { state: localeState, setLocale, supportedLocales } = useAppLocale()
 
-const value = shallowRef(dateConverter.toCalendarDate(new Date()))
+const today = computed(() => dateConverter.toCalendarDate(new Date()))
+const value = shallowRef(today.value)
+const placeholder = shallowRef(today.value)
 
 const jumpToToday = () => {
-  value.value = dateConverter.toCalendarDate(new Date())
+  value.value = today.value
+  placeholder.value = today.value
 }
 
-const getWeekday = (date: DateValue) => getDayOfWeek(date, 'ja-JP')
+// Fix the day-of-the-week numbering for the 'ja' locale.
+const getWeekday = (date: DateValue) => getDayOfWeek(date, 'ja')
+
 const showColors = shallowRef(false)
+
+const daysOfWeekArray = computed(() => dateUtility.getDaysOfWeekArray(localeState.value.current.code))
+const getDayOfWeekByName = (weekName: string) => {
+  return daysOfWeekArray.value.find((d) => d.narrow === weekName || d.short === weekName || d.long === weekName)
+}
+const defaultEmojiDays = ['☀️', '🌙', '🔥', '💧', '🌳', '🪙', '🪐']
+const localeEmojiDays = [
+  { locale: 'fa-IR', emojis: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '🕌', '🗓️'] },
+  { locale: 'uk', emojis: ['☀️', '🌱', '🛠️', '⚖️', '🌾', '☕', '🕯️'] },
+]
+const emojiDays = computed(() => {
+  return localeEmojiDays.find(({ locale }) => locale === localeState.value.current.code)?.emojis ?? defaultEmojiDays
+})
+const showEmojiDays = shallowRef(false)
 </script>
 
 <template>
@@ -32,12 +51,20 @@ const showColors = shallowRef(false)
           <div class="flex items-start justify-center rounded-md bg-slate-200 p-4 dark:bg-slate-800">
             <UCalendar
               v-model="value"
+              v-model:placeholder="placeholder"
+              type="date"
               class="rounded-md bg-white p-4 dark:bg-slate-900"
               :data-show-colors="showColors ? 'true' : null"
-              week-days-format="narrow"
+              weekday-format="short"
             >
               <template #week-day="{ day }">
-                <span class="text-lg">{{ day }}</span>
+                <!-- Loop hack for temporary variables -->
+                <template v-for="dayOfWeek in [getDayOfWeekByName(day)]" :key="dayOfWeek?.day">
+                  <UTooltip v-if="showEmojiDays" arrow :text="dayOfWeek!.long">
+                    <span :data-weekday="dayOfWeek!.day" class="text-lg">{{ emojiDays[dayOfWeek!.day] }}</span>
+                  </UTooltip>
+                  <span v-else :data-weekday="dayOfWeek!.day">{{ day }}</span>
+                </template>
               </template>
 
               <template #day="{ day }">
@@ -50,10 +77,16 @@ const showColors = shallowRef(false)
 
           <div class="flex flex-col gap-2">
             <div class="flex flex-col items-start justify-start gap-4 rounded-md p-4">
-              <UButton label="Today" @click="jumpToToday" />
+              <UFormField label="Jump to:">
+                <UButton label="Today" @click="jumpToToday" />
+              </UFormField>
 
               <UFormField label="Add color to weekends and holidays:">
                 <USwitch v-model="showColors" />
+              </UFormField>
+
+              <UFormField label="Customize the day of the week header:">
+                <USwitch v-model="showEmojiDays" />
               </UFormField>
             </div>
           </div>
@@ -82,7 +115,7 @@ const showColors = shallowRef(false)
       }
 
       [data-weekday='0'] {
-        @apply text-red-100 font-semibold dark:text-red-500;
+        @apply text-red-200 font-semibold dark:text-red-500;
       }
     }
   }
