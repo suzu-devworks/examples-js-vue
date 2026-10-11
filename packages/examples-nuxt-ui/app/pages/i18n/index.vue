@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import { CalendarDate } from '@internationalized/date'
+import { getDayOfWeek, type DateValue } from '@internationalized/date'
 
 const { state: localeState, setLocale, supportedLocales } = useAppLocale()
 
-const value2 = shallowRef(new CalendarDate(2022, 2, 3))
+const value = shallowRef(dateConverter.toCalendarDate(new Date()))
+
+const jumpToToday = () => {
+  value.value = dateConverter.toCalendarDate(new Date())
+}
+
+const getWeekday = (date: DateValue) => getDayOfWeek(date, 'ja-JP')
+const showColors = shallowRef(false)
 </script>
 
 <template>
@@ -22,12 +29,66 @@ const value2 = shallowRef(new CalendarDate(2022, 2, 3))
 
       <UCard title="Calendar">
         <div class="grid grid-cols-2 gap-2">
-          <div class="flex items-start justify-center rounded-md bg-slate-200 p-4">
-            <UCalendar v-model="value2" class="rounded-md bg-white p-4" />
+          <div class="flex items-start justify-center rounded-md bg-slate-200 p-4 dark:bg-slate-800">
+            <UCalendar
+              v-model="value"
+              class="rounded-md bg-white p-4 dark:bg-slate-900"
+              :data-show-colors="showColors ? 'true' : null"
+              week-days-format="narrow"
+            >
+              <template #week-day="{ day }">
+                <span class="text-lg">{{ day }}</span>
+              </template>
+
+              <template #day="{ day }">
+                <span :data-weekday="getWeekday(day)">
+                  {{ day.day }}
+                </span>
+              </template>
+            </UCalendar>
           </div>
-          <div class="flex flex-col gap-2"></div>
+
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-col items-start justify-start gap-4 rounded-md p-4">
+              <UButton label="Today" @click="jumpToToday" />
+
+              <UFormField label="Add color to weekends and holidays:">
+                <USwitch v-model="showColors" />
+              </UFormField>
+            </div>
+          </div>
         </div>
       </UCard>
     </UContainer>
   </div>
 </template>
+
+<style lang="css" scoped>
+@reference "~/assets/css/main.css";
+
+[data-show-colors] {
+  :deep([data-value]:not([data-outside-view], [data-today])) {
+    [data-weekday='6'] {
+      @apply text-blue-500 font-semibold;
+    }
+
+    [data-weekday='0'] {
+      @apply text-red-500 font-semibold;
+    }
+
+    &[data-selected] {
+      [data-weekday='6'] {
+        @apply text-blue-100 font-semibold dark:text-blue-500;
+      }
+
+      [data-weekday='0'] {
+        @apply text-red-100 font-semibold dark:text-red-500;
+      }
+    }
+  }
+
+  :deep([data-outside-view]) {
+    @apply text-neutral-300 dark:text-neutral-600;
+  }
+}
+</style>

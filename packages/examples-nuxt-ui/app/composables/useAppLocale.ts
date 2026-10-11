@@ -1,9 +1,9 @@
-import { ja, en_gb, fa_ir, uk } from '@nuxt/ui/locale'
+import { ja, en, fa_ir, uk } from '@nuxt/ui/locale'
 
 export type AppLocale = typeof ja
-const DEFAULT_LOCALE: AppLocale = en_gb
+const DEFAULT_LOCALE: AppLocale = en
 
-const supportedLocales: AppLocale[] = [en_gb, fa_ir, ja, uk]
+const supportedLocales: AppLocale[] = [en, fa_ir, ja, uk]
 const localeByCode = new Map(supportedLocales.map((l) => [l.code, l]))
 
 interface LocaleState {
