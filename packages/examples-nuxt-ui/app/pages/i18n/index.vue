@@ -1,35 +1,60 @@
 <script setup lang="ts">
+import type { CalendarDate } from '@internationalized/date'
 import { getDayOfWeek, type DateValue } from '@internationalized/date'
+
+definePageMeta({
+  title: 'i18n',
+})
 
 const { state: localeState, setLocale, supportedLocales } = useAppLocale()
 
-const today = computed(() => dateConverter.toCalendarDate(new Date()))
-const value = shallowRef(today.value)
-const placeholder = shallowRef(today.value)
+const value = shallowRef<CalendarDate | undefined>()
+const placeholder = shallowRef<CalendarDate | undefined>()
 
+// --- Jump to date in the calendar.
 const jumpToToday = () => {
-  value.value = today.value
-  placeholder.value = today.value
+  if (!import.meta.client) return
+
+  const today = dateConverter.toCalendarDate(new Date())
+  value.value = today
+  placeholder.value = today
 }
+onMounted(() => jumpToToday())
 
 // Fix the day-of-the-week numbering for the 'ja' locale.
 const getWeekday = (date: DateValue) => getDayOfWeek(date, 'ja')
-
-const showColors = shallowRef(false)
 
 const daysOfWeekArray = computed(() => dateUtility.getDaysOfWeekArray(localeState.value.current.code))
 const getDayOfWeekByName = (weekName: string) => {
   return daysOfWeekArray.value.find((d) => d.narrow === weekName || d.short === weekName || d.long === weekName)
 }
-const defaultEmojiDays = ['☀️', '🌙', '🔥', '💧', '🌳', '🪙', '🪐']
-const localeEmojiDays = [
+
+// --- Add color to weekends and holidays
+const showColors = shallowRef(false)
+
+// --- Customize the day of the week header
+const showEmojiDays = shallowRef(false)
+
+const emojiDaysDefault = ['☀️', '🌙', '🔥', '💧', '🌳', '🪙', '🪐']
+const emojiDaysPattern = [
   { locale: 'fa-IR', emojis: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '🕌', '🗓️'] },
   { locale: 'uk', emojis: ['☀️', '🌱', '🛠️', '⚖️', '🌾', '☕', '🕯️'] },
 ]
-const emojiDays = computed(() => {
-  return localeEmojiDays.find(({ locale }) => locale === localeState.value.current.code)?.emojis ?? defaultEmojiDays
+const localeEmojiDays = computed(() => {
+  return emojiDaysPattern.find(({ locale }) => locale === localeState.value.current.code)?.emojis ?? emojiDaysDefault
 })
-const showEmojiDays = shallowRef(false)
+
+// --- Specify custom holidays
+const holidays = useState<{ date: DateValue; name?: string }[]>('i18n.calender.holidays', () => [])
+onMounted(() => {
+  if (holidays.value.length > 0) return
+
+  var today = dateConverter.toCalendarDate(new Date())
+  holidays.value = [
+    { date: today.add({ days: 1 }), name: 'The next day' },
+    { date: today.add({ weeks: 1 }), name: 'The following week' },
+  ]
+})
 </script>
 
 <template>
@@ -61,7 +86,7 @@ const showEmojiDays = shallowRef(false)
                 <!-- Loop hack for temporary variables -->
                 <template v-for="dayOfWeek in [getDayOfWeekByName(day)]" :key="dayOfWeek?.day">
                   <UTooltip v-if="showEmojiDays" arrow :text="dayOfWeek!.long">
-                    <span :data-weekday="dayOfWeek!.day" class="text-lg">{{ emojiDays[dayOfWeek!.day] }}</span>
+                    <span :data-weekday="dayOfWeek!.day" class="text-lg">{{ localeEmojiDays[dayOfWeek!.day] }}</span>
                   </UTooltip>
                   <span v-else :data-weekday="dayOfWeek!.day">{{ day }}</span>
                 </template>
@@ -77,16 +102,20 @@ const showEmojiDays = shallowRef(false)
 
           <div class="flex flex-col gap-2">
             <div class="flex flex-col items-start justify-start gap-4 rounded-md p-4">
-              <UFormField label="Jump to:">
+              <UFormField label="Jump to:" class="w-full">
                 <UButton label="Today" @click="jumpToToday" />
               </UFormField>
 
-              <UFormField label="Add color to weekends and holidays:">
+              <UFormField label="Add color to weekends and holidays:" class="w-full">
                 <USwitch v-model="showColors" />
               </UFormField>
 
-              <UFormField label="Customize the day of the week header:">
+              <UFormField label="Customize the day of the week header:" class="w-full">
                 <USwitch v-model="showEmojiDays" />
+              </UFormField>
+
+              <UFormField label="Specify custom holidays:" class="w-full">
+                <DateList v-model="holidays" :input-default="value" use-naming />
               </UFormField>
             </div>
           </div>

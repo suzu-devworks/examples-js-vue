@@ -1,9 +1,8 @@
-import { CalendarDate, parseDate, type DateValue } from '@internationalized/date'
-
-const DEFAULT_TIMEZONE = 'Asia/Tokyo'
+import { CalendarDate, parseDate, getLocalTimeZone, type DateValue } from '@internationalized/date'
 
 /**
- * Mutual conversion utility based on JS standard `Date` object
+ * Mutual conversion utility based on JS standard `Date` object.
+ * Dates are interpreted in UTC so that results do not depend on the runtime's time zone.
  */
 export const dateConverter = {
   /**
@@ -16,8 +15,8 @@ export const dateConverter = {
   /**
    * Convert CalendarDate to Date
    */
-  fromCalendarDate(calendarDate: DateValue, timeZone: string = DEFAULT_TIMEZONE): Date {
-    return calendarDate.toDate(timeZone)
+  fromCalendarDate(calendarDate: DateValue, timeZone?: string): Date {
+    return calendarDate.toDate(timeZone ?? getLocalTimeZone())
   },
 
   /**
