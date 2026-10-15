@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DateValue, CalendarDate } from '@internationalized/date'
-import { getDayOfWeek } from '@internationalized/date'
+import { getDayOfWeek, startOfMonth, endOfMonth } from '@internationalized/date'
 
 useSeoMeta({
   title: 'i18n',
@@ -44,6 +44,43 @@ const localeEmojiDays = computed(() => {
   return emojiDaysPattern.find(({ locale }) => locale === localeState.value.current.code)?.emojis ?? emojiDaysDefault
 })
 
+// -- Japanese public holidays
+const showJapaneseHolidays = shallowRef(false)
+
+const { data, status } = useLazyAsyncData(
+  'japanese-holidays',
+  async () => {
+    if (!placeholder.value || !showJapaneseHolidays.value) {
+      return []
+    }
+    const base = placeholder.value
+    const start = startOfMonth(base.subtract({ months: 1 })).toString()
+    const end = endOfMonth(base.add({ months: 1 })).toString()
+
+    const response = await $fetch('/api/holidays', {
+      query: { start, end },
+    })
+
+    if (!('holidays' in response)) {
+      return []
+    }
+
+    return (
+      response.holidays?.map((r) => ({
+        date: dateConverter.toCalendarDate(new Date(r.date)),
+        name: r.name,
+      })) ?? []
+    )
+  },
+  {
+    // Monitor calendar changes and automatically refetch when they change
+    watch: [showJapaneseHolidays, placeholder],
+
+    // Allow operation only when switch is ON
+    enabled: showJapaneseHolidays,
+  },
+)
+
 // --- Specify custom holidays
 const holidays = useState<{ date: DateValue; name?: string }[]>('i18n.calender.holidays', () => [])
 onMounted(() => {
@@ -61,6 +98,11 @@ const holidaysMap = computed(() => {
   holidays.value.forEach((h) => {
     map[h.date.toString()] = h.name ?? ''
   })
+  if (status.value === 'success' && data.value) {
+    data.value.forEach((h: { date: DateValue; name?: string }) => {
+      map[h.date.toString()] = h.name ?? ''
+    })
+  }
   return map
 })
 const getHolidayName = (date: DateValue) => {
@@ -126,7 +168,11 @@ const getHolidayName = (date: DateValue) => {
                 <USwitch v-model="showEmojiDays" />
               </UFormField>
 
-              <UFormField label="Specify custom holidays:" class="w-full">
+              <UFormField label="Display Japanese public holidays:" class="w-full">
+                <USwitch v-model="showJapaneseHolidays" />
+              </UFormField>
+
+              <UFormField label="Add custom holidays:" class="w-full">
                 <DateList v-model="holidays" :input-default="value" use-naming />
               </UFormField>
             </div>
@@ -161,12 +207,12 @@ const getHolidayName = (date: DateValue) => {
         @apply text-red-200 font-semibold dark:text-red-500;
       }
     }
+  }
 
-    span[data-holiday-name]:hover::after {
-      content: attr(data-holiday-name);
+  span[data-holiday-name]:hover::after {
+    content: attr(data-holiday-name);
 
-      @apply absolute bottom-full mb-1 p-1 text-xs bg-gray-700 text-white rounded shadow-md whitespace-nowrap z-10;
-    }
+    @apply absolute bottom-full mb-1 p-1 text-xs bg-gray-700 text-white rounded shadow-md whitespace-nowrap z-10;
   }
 
   :deep([data-outside-view]) {
