@@ -12,7 +12,7 @@ useHead({
 const { seo } = useAppConfig()
 
 useSeoMeta({
-  titleTemplate: (title) => (title ? `%s - ` : '' + `${seo?.siteName}`),
+  titleTemplate: (title) => (title ? `%s - ` : '') + `${seo?.siteName}`,
   description: seo?.description,
   ogTitle: seo?.siteName,
   ogDescription: seo?.description,

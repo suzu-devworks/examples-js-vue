@@ -2,7 +2,7 @@
 import type { DateValue, CalendarDate } from '@internationalized/date'
 import { getDayOfWeek } from '@internationalized/date'
 
-definePageMeta({
+useSeoMeta({
   title: 'i18n',
 })
 
