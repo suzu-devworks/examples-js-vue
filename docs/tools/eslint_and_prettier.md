@@ -151,12 +151,13 @@ For pnpm workspaces, resolve package-local ESLint configurations and run ESLint 
 }
 ```
 
-Use `oxlintRules` and disable the Oxfmt-conflicting `vue/script-indent` rule:
+Use `disabledRules` (`oxlintRules` plus `eslint-config-prettier`) and disable the Oxfmt-conflicting
+`vue/script-indent` rule. Put `disabledRules` last so that it turns off the rules enabled by the framework preset:
 
 ```js
-import { oxlintRules, sharedRules, vueRules } from '@examples/eslint-config/rules'
+import { disabledRules, sharedRules, vueRules } from '@examples/eslint-config/rules'
 
-export default withNuxt(frameworkPreset, ...sharedRules, ...vueRules, ...oxlintRules, {
+export default withNuxt(frameworkPreset, ...sharedRules, ...vueRules, ...disabledRules, {
   rules: { 'vue/script-indent': 'off' },
 })
 ```
@@ -187,6 +188,7 @@ packages/
     "eslint": "^10.10.0"
   },
   "dependencies": {
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-oxlint": "^1.83.0"
   }
 }
@@ -195,15 +197,19 @@ packages/
 Export the shared ESLint preset from `packages/eslint-config/index.js`:
 
 ```js
-export default defineConfig([...sharedRules, ...vueRules, ...oxlintRules, eslintConfigPrettier])
+export default defineConfig([...sharedRules, ...vueRules, ...disabledRules])
 ```
 
 Export project-independent rule overrides from `packages/eslint-config/rules.js`:
 
 ```js
+import eslintConfigPrettier from 'eslint-config-prettier'
 import oxlint from 'eslint-plugin-oxlint'
 
 export const oxlintRules = oxlint.configs['flat/all']
+
+// Rules handled by oxlint or the formatter (Oxfmt).
+export const disabledRules = [...oxlintRules, eslintConfigPrettier]
 
 export const sharedRules = [
   // JavaScript, TypeScript, and Vue shared rules go here.
@@ -264,10 +270,10 @@ export default config
 For a framework preset that already registers ESLint plugins, import the shared rules and Oxc compatibility preset:
 
 ```js
-import { oxlintRules, sharedRules } from '@examples/eslint-config/rules'
+import { disabledRules, sharedRules } from '@examples/eslint-config/rules'
 import frameworkPreset from 'eslint-config-framework'
 
-export default [frameworkPreset, ...sharedRules, ...oxlintRules]
+export default [frameworkPreset, ...sharedRules, ...disabledRules]
 ```
 
 ## Run

@@ -10,9 +10,11 @@ into a standalone workspace package that other packages consume.
 ## Stack
 
 - Vue 3 (composables)
-- TypeScript, built with `vue-tsc`
+- TypeScript
 
 ## Notes
 
-- This is a library, so there is no dev server. Consumers run `build` through their own `build:deps` script.
+- This is a source package, so consumers resolve its TypeScript files directly and do not need to build it first.
+- `pnpm build` is available to generate declarations and JavaScript in `dist` when needed.
+- There is no dev server.
 - ESLint setup: see [@examples/eslint-config](../eslint-config/README.md).

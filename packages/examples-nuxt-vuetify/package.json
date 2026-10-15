@@ -3,19 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm build:deps && nuxt build",
-    "build:deps": "pnpm --filter examples-vue-shared build",
-    "dev": "pnpm build:deps && nuxt dev",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint",
-    "lint:fix": "pnpm lint:oxlint && pnpm lint:eslint --fix",
     "lint:oxlint": "oxlint --type-aware .",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "pnpm build:deps && nuxt typecheck"
+    "typecheck": "nuxt typecheck"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",

@@ -1,0 +1,37 @@
+{
+  "name": "examples-nuxt-ui",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "pnpm lint:oxlint && pnpm lint:eslint",
+    "lint:eslint": "eslint",
+    "lint:oxlint": "oxlint --type-aware .",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.139",
+    "@iconify-json/simple-icons": "^1.2.98",
+    "@internationalized/date": "^3.12.4",
+    "@nuxt/ui": "^4.11.3",
+    "@pinia/nuxt": "1.0.2",
+    "examples-nuxt-shared": "workspace:*",
+    "nuxt": "^4.5.2",
+    "pinia": "^4.0.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@examples/eslint-config": "workspace:*",
+    "@nuxt/eslint": "^1.17.0",
+    "eslint": "catalog:",
+    "eslint-plugin-better-tailwindcss": "^4.7.0",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "typescript": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "packageManager": "pnpm@12.9.1"
+}

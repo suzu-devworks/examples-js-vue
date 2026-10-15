@@ -5,21 +5,23 @@ Shared ESLint flat config for the packages in this workspace.
 ## Purpose
 
 Try sharing one ESLint setup (ESLint flat config, typescript-eslint, eslint-plugin-vue,
-Prettier compatibility, and oxlint de-duplication) across multiple packages.
+formatter compatibility, and oxlint de-duplication) across multiple packages.
 
 ## Stack
 
 - ESLint flat config (`defineConfig`)
 - typescript-eslint / eslint-plugin-vue
-- eslint-config-prettier
+- eslint-config-prettier (turns off the formatting rules the formatter, oxfmt, already handles)
 - eslint-plugin-oxlint (turns off the rules oxlint already covers)
 
 ## Exports
 
-| Entry                           | Description                                                                       |
-| ------------------------------- | --------------------------------------------------------------------------------- |
-| `@examples/eslint-config`       | Complete config (recommended sets + shared rules + Vue rules + oxlint + Prettier) |
-| `@examples/eslint-config/rules` | Individual parts: `sharedRules`, `vueRules`, `oxlintRules`                        |
+| Entry                           | Description                                                                     |
+| ------------------------------- | ------------------------------------------------------------------------------- |
+| `@examples/eslint-config`       | Complete config (recommended sets + shared rules + Vue rules + `disabledRules`) |
+| `@examples/eslint-config/rules` | Individual parts: `sharedRules`, `vueRules`, `oxlintRules`, `disabledRules`     |
+
+`disabledRules` is `oxlintRules` plus `eslint-config-prettier`: rules already covered by oxlint or by the formatter (oxfmt).
 
 ## Usage
 
@@ -42,13 +44,14 @@ export default rootConfig
 ### 3. Compose with another config (Nuxt, Vuetify, etc.)
 
 Use only the parts you need. See `examples-nuxt-vuetify`.
+Place `disabledRules` last so that it turns off formatting rules enabled by the other presets (for example `@stylistic/*`).
 
 ```js
-import { oxlintRules, sharedRules, vueRules } from '@examples/eslint-config/rules'
+import { disabledRules, sharedRules, vueRules } from '@examples/eslint-config/rules'
 
 import withNuxt from './.nuxt/eslint.config.mjs'
 
-export default withNuxt(...sharedRules, ...vueRules, ...oxlintRules)
+export default withNuxt(...sharedRules, ...vueRules, ...disabledRules)
 ```
 
 ### 4. Add scripts
@@ -64,4 +67,5 @@ export default withNuxt(...sharedRules, ...vueRules, ...oxlintRules)
 ## Notes
 
 - `eslint` is a peer dependency, so each consuming package installs it itself.
-- Run oxlint first. `oxlintRules` disables the ESLint rules that oxlint already checks.
+- Run oxlint first. `disabledRules` disables the ESLint rules that oxlint already checks and the formatting rules
+  owned by oxfmt.

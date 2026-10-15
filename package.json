@@ -7,10 +7,10 @@
     "format": "oxfmt --write .",
     "lint": "pnpm lint:style && pnpm lint:packages",
     "lint:markdown": "pnpm dlx markdownlint-cli2",
-    "lint:packages": "pnpm -r --if-present lint",
+    "lint:packages": "pnpm -r --workspace-concurrency=3 --if-present lint",
     "lint:style": "stylelint --cache \"**/*.{css,scss,vue}\"",
     "test": "pnpm -r --if-present test",
-    "typecheck": "pnpm -r --parallel --if-present typecheck"
+    "typecheck": "pnpm -r --workspace-concurrency=3 --if-present typecheck"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +36,6 @@
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-config-standard-vue": "^2.0.0",
     "stylelint-order": "^8.1.1",
-    "typescript": "^6.0.3"
+    "typescript": "catalog:"
   }
 }

@@ -11,13 +11,13 @@ import type { IMenu } from '@/types'
 const { openDialog } = useGlobalDialog()
 const { toast } = useGlobalToast()
 const { isLoading, withLoading } = useGlobalLoading()
-const { copyText } = useClipboard()
 const { isDirty, confirmLeave } = useUnsavedChanges(openDialog)
+const { copyText, pasteText } = useClipboard()
 const route = useRoute()
 const activeFeature = features.find((feature) => route.path.startsWith(feature.to))
 const draft = ref('Edit this draft, then navigate to another page.')
 const initialDraft = draft.value
-const clipboardValue = 'Copied from the interactions example.'
+const clipboardValue = ref('Copied from the interactions example.')
 
 watch(draft, (value) => {
   isDirty.value = value !== initialDraft
@@ -59,8 +59,9 @@ async function handleLoading() {
 }
 
 async function handleCopy() {
-  if (await copyText(clipboardValue)) {
-    toast.success('Text copied to clipboard.')
+  if (await copyText(clipboardValue.value)) {
+    const pasteValue = await pasteText()
+    toast.success(`${pasteValue}`, { timeout: 3000 })
   } else {
     toast.error('Clipboard access is unavailable.')
   }
@@ -168,7 +169,7 @@ async function handleCopy() {
             <h2 id="clipboard-heading">Clipboard</h2>
             <p>Copy text and report whether the browser allowed the operation.</p>
           </div>
-          <code>{{ clipboardValue }}</code>
+          <input v-model="clipboardValue" type="text" class="clipboard-input" name="clipboard-input" />
           <button class="button-primary" type="button" @click="handleCopy">Copy text</button>
         </section>
       </main>
@@ -202,6 +203,16 @@ async function handleCopy() {
 }
 
 .draft-input {
+  width: min(100%, 36rem);
+  padding: var(--app-spacing-sm);
+  font: inherit;
+  color: var(--app-color-text);
+  background-color: var(--app-surface-card);
+  border: 1px solid var(--app-surface-border);
+  border-radius: var(--app-radius-sm);
+}
+
+.clipboard-input {
   width: min(100%, 36rem);
   padding: var(--app-spacing-sm);
   font: inherit;
