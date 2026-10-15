@@ -161,16 +161,16 @@ const getHolidayName = (date: DateValue) => {
         @apply text-red-200 font-semibold dark:text-red-500;
       }
     }
+
+    span[data-holiday-name]:hover::after {
+      content: attr(data-holiday-name);
+
+      @apply absolute bottom-full mb-1 p-1 text-xs bg-gray-700 text-white rounded shadow-md whitespace-nowrap z-10;
+    }
   }
 
   :deep([data-outside-view]) {
     @apply text-neutral-300 dark:text-neutral-600;
-  }
-
-  span[data-holiday-name]:hover::after {
-    content: attr(data-holiday-name);
-
-    @apply absolute bottom-full mb-1 p-1 text-xs bg-gray-700 text-white rounded shadow-md whitespace-nowrap z-10;
   }
 }
 </style>
