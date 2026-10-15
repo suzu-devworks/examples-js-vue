@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { CalendarDate } from '@internationalized/date'
-import { getDayOfWeek, type DateValue } from '@internationalized/date'
+import type { DateValue, CalendarDate } from '@internationalized/date'
+import { getDayOfWeek } from '@internationalized/date'
 
 definePageMeta({
   title: 'i18n',
@@ -55,6 +55,18 @@ onMounted(() => {
     { date: today.add({ weeks: 1 }), name: 'The following week' },
   ]
 })
+
+const holidaysMap = computed(() => {
+  const map: Record<string, string> = {}
+  holidays.value.forEach((h) => {
+    map[h.date.toString()] = h.name ?? ''
+  })
+  return map
+})
+const getHolidayName = (date: DateValue) => {
+  const holiday = holidaysMap.value?.[date.toString()]
+  return holiday ?? undefined
+}
 </script>
 
 <template>
@@ -72,7 +84,7 @@ onMounted(() => {
       </UCard>
 
       <UCard title="Calendar">
-        <div class="grid grid-cols-2 gap-2">
+        <div class="grid gap-2 md:grid-cols-2">
           <div class="flex items-start justify-center rounded-md bg-slate-200 p-4 dark:bg-slate-800">
             <UCalendar
               v-model="value"
@@ -93,7 +105,7 @@ onMounted(() => {
               </template>
 
               <template #day="{ day }">
-                <span :data-weekday="getWeekday(day)">
+                <span :data-weekday="getWeekday(day)" :data-holiday-name="getHolidayName(day)">
                   {{ day.day }}
                 </span>
               </template>
@@ -134,7 +146,8 @@ onMounted(() => {
       @apply text-blue-500 font-semibold;
     }
 
-    [data-weekday='0'] {
+    [data-weekday='0'],
+    [data-holiday-name] {
       @apply text-red-500 font-semibold;
     }
 
@@ -143,7 +156,8 @@ onMounted(() => {
         @apply text-blue-100 font-semibold dark:text-blue-500;
       }
 
-      [data-weekday='0'] {
+      [data-weekday='0'],
+      [data-holiday-name] {
         @apply text-red-200 font-semibold dark:text-red-500;
       }
     }
@@ -151,6 +165,12 @@ onMounted(() => {
 
   :deep([data-outside-view]) {
     @apply text-neutral-300 dark:text-neutral-600;
+  }
+
+  span[data-holiday-name]:hover::after {
+    content: attr(data-holiday-name);
+
+    @apply absolute bottom-full mb-1 p-1 text-xs bg-gray-700 text-white rounded shadow-md whitespace-nowrap z-10;
   }
 }
 </style>
