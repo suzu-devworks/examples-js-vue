@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import type { DateValue, CalendarDate } from '@internationalized/date'
-import { getDayOfWeek, startOfMonth, endOfMonth } from '@internationalized/date'
+import {
+  getDayOfWeek,
+  startOfMonth,
+  endOfMonth,
+  today as _today,
+  getLocalTimeZone,
+  parseDate,
+} from '@internationalized/date'
 
 useSeoMeta({
   title: 'i18n',
@@ -11,15 +18,7 @@ const { state: localeState, setLocale, supportedLocales } = useAppLocale()
 const value = shallowRef<CalendarDate | undefined>()
 const placeholder = shallowRef<CalendarDate | undefined>()
 
-// --- Jump to date in the calendar.
-const jumpToToday = () => {
-  if (!import.meta.client) return
-
-  const today = dateConverter.toCalendarDate(new Date())
-  value.value = today
-  placeholder.value = today
-}
-onMounted(() => jumpToToday())
+const getToday = () => (import.meta.client ? _today(getLocalTimeZone()) : undefined)
 
 // Fix the day-of-the-week numbering for the 'ja' locale.
 const getWeekday = (date: DateValue) => getDayOfWeek(date, 'ja')
@@ -28,6 +27,16 @@ const daysOfWeekArray = computed(() => dateUtility.getDaysOfWeekArray(localeStat
 const getDayOfWeekByName = (weekName: string) => {
   return daysOfWeekArray.value.find((d) => d.narrow === weekName || d.short === weekName || d.long === weekName)
 }
+
+// --- Jump to date in the calendar.
+const jumpToToday = () => {
+  if (!import.meta.client) return
+
+  const today = getToday()
+  value.value = today
+  placeholder.value = today
+}
+onMounted(() => jumpToToday())
 
 // --- Add color to weekends and holidays
 const showColors = shallowRef(false)
@@ -67,7 +76,7 @@ const { data, status } = useLazyAsyncData(
 
     return (
       response.holidays?.map((r) => ({
-        date: dateConverter.toCalendarDate(new Date(r.date)),
+        date: parseDate(r.date),
         name: r.name,
       })) ?? []
     )
@@ -86,10 +95,10 @@ const holidays = useState<{ date: DateValue; name?: string }[]>('i18n.calender.h
 onMounted(() => {
   if (holidays.value.length > 0) return
 
-  var today = dateConverter.toCalendarDate(new Date())
+  var today = getToday()
   holidays.value = [
-    { date: today.add({ days: 1 }), name: 'The next day' },
-    { date: today.add({ weeks: 1 }), name: 'The following week' },
+    { date: today!.add({ days: 1 }), name: 'The next day' },
+    { date: today!.add({ weeks: 1 }), name: 'The following week' },
   ]
 })
 

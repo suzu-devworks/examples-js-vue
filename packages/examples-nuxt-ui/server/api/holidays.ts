@@ -6,8 +6,8 @@ import { FILE_NAME } from '../plugins/init-holidays'
 export default defineCachedEventHandler(
   async (event) => {
     const query = getQuery(event)
-    const startDate = query.start as string
-    const endDate = query.end as string
+    const startDate = query.start ? Temporal.PlainDate.from(query.start as string) : undefined
+    const endDate = query.end ? Temporal.PlainDate.from(query.end as string) : undefined
 
     const storage = useStorage('assets:server')
     try {
@@ -41,12 +41,13 @@ export default defineCachedEventHandler(
             const year = dateParts[0]!
             const month = dateParts[1]!.padStart(2, '0')
             const day = dateParts[2]!.padStart(2, '0')
-            const formattedDate = `${year}-${month}-${day}`
+            const formatted = `${year}-${month}-${day}`
+            const formattedDate = Temporal.PlainDate.from(formatted)
 
-            if (startDate && formattedDate < startDate) continue
-            if (endDate && formattedDate > endDate) continue
+            if (startDate && Temporal.PlainDate.compare(formattedDate, startDate) < 0) continue
+            if (endDate && Temporal.PlainDate.compare(formattedDate, endDate) > 0) continue
 
-            holidayDates.push({ date: formattedDate, name: holidayName })
+            holidayDates.push({ date: formatted, name: holidayName })
           }
         }
       }

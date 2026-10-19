@@ -101,7 +101,7 @@ function removeItem(item: IDateListItem) {
         <div class="grid min-h-10 w-full grid-cols-[155px_1fr_26px] items-center gap-1">
           <div class="flex items-center justify-start">
             <NuxtTime
-              :datetime="dateConverter.fromCalendarDate(item.date)"
+              :datetime="item.date.toString()"
               year="numeric"
               :month="format"
               day="numeric"

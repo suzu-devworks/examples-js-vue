@@ -13,21 +13,18 @@ export const dateUtility = {
     const longFormatter = new Intl.DateTimeFormat(locale, { weekday: 'long' })
 
     const { firstDay } = new Intl.Locale(locale).getWeekInfo()
-    const weekStartDay = firstDay === 7 ? 0 : firstDay
 
-    const today = new Date()
-    const daysSinceWeekStart =
-      today.getDay() >= weekStartDay ? today.getDay() - weekStartDay : today.getDay() - weekStartDay + 7
-    const weekStart = new Date(today)
-    weekStart.setDate(today.getDate() - daysSinceWeekStart)
+    // PlainDate.dayOfWeek is 1 (Monday) to 7 (Sunday), same as firstDay.
+    const today = Temporal.Now.plainDateISO()
+    const daysSinceWeekStart = today.dayOfWeek >= firstDay ? today.dayOfWeek - firstDay : today.dayOfWeek - firstDay + 7
+    const weekStart = today.subtract({ days: daysSinceWeekStart })
 
     return Array.from({ length: 7 }, (_, position) => {
-      const date = new Date(weekStart)
-      date.setDate(weekStart.getDate() + position)
+      const date = weekStart.add({ days: position })
 
       return {
         position,
-        day: date.getDay(),
+        day: date.dayOfWeek % 7,
         narrow: narrowFormatter.format(date),
         short: shortFormatter.format(date),
         long: longFormatter.format(date),
