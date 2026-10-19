@@ -9,19 +9,23 @@ updates:
   - package-ecosystem: 'devcontainers'
     directory: '/'
     schedule:
-      interval: weekly
-    ignore:
-      - dependency-name: '*'
+      interval: monthly
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
         update-types:
-          - version-update:semver-minor
-          - version-update:semver-patch
+          - minor
+          - patch
 
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
       interval: 'weekly'
-    ignore:
-      - dependency-name: '*'
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
         update-types:
-          - version-update:semver-minor
-          - version-update:semver-patch
+          - minor
+          - patch

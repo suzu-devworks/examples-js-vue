@@ -2,11 +2,11 @@ packages:
   - "packages/*"
 
 catalog:
-  eslint: ^10.11.0
-  oxlint: ^1.86.0
-  oxlint-tsgolint: ^7.0.2003
+  eslint: ^10.13.0
+  oxlint: ^1.88.0
+  oxlint-tsgolint: ^7.0.2004
   typescript: ~6.0.3
-  vue-tsc: ^3.3.12
+  vue-tsc: ^3.3.13
 
 overrides:
   # nuxt@4.5.2
