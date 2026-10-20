@@ -2,11 +2,11 @@
 const { openDialog } = useGlobalDialog()
 const { toast } = useGlobalToast()
 const { isLoading, withLoading } = useGlobalLoading()
-const { copyText } = useClipboard()
 const { isDirty, confirmLeave } = useUnsavedChanges()
+const { copyText, pasteText } = useClipboard()
 const draft = ref('Edit this draft, then navigate to another page.')
 const initialDraft = draft.value
-const clipboardValue = 'Copied from the interactions example.'
+const clipboardValue = ref('Copied from the interactions example.')
 
 watch(draft, (value) => {
   isDirty.value = value !== initialDraft
@@ -20,9 +20,11 @@ async function handleAction() {
     text: 'Do you want to perform this operation? You can check the status of your store in Vue DevTools.',
   })
 
-  if (confirmed) {
-    toast.success('Operation completed.')
+  if (!confirmed) {
+    return
   }
+
+  toast.success('Operation completed.')
 }
 
 async function handleLoading() {
@@ -31,8 +33,9 @@ async function handleLoading() {
 }
 
 async function handleCopy() {
-  if (await copyText(clipboardValue)) {
-    toast.success('Text copied to clipboard.')
+  if (await copyText(clipboardValue.value)) {
+    const pasteValue = await pasteText()
+    toast.success(`${pasteValue}`, { timeout: 3000 })
   } else {
     toast.error('Clipboard access is unavailable.')
   }
@@ -82,9 +85,9 @@ async function handleCopy() {
     <v-sheet class="pa-4" :elevation="1" rounded>
       <h2 class="mt-0">Clipboard</h2>
 
-      <p>
-        <code>{{ clipboardValue }}</code>
-      </p>
+      <div>
+        <v-text-field v-model="clipboardValue"></v-text-field>
+      </div>
 
       <v-btn color="primary" @click="handleCopy">Copy text</v-btn>
     </v-sheet>

@@ -8,7 +8,7 @@ export const useAuthStore = defineStore('Auth', () => {
     // This authentication is just for the sample.
     // please put in more effort for the actual implementation.
     const token = crypto.randomUUID()
-    const expiry = Date.now() + 1000 * 60 * 5 // 5 minutes expiration
+    const expiry = Temporal.Now.instant().add({ minutes: 5 }).epochMilliseconds
     account.value = { id: loginAccount.id, token, expiry }
 
     return { success: true, error: '' }
@@ -20,7 +20,7 @@ export const useAuthStore = defineStore('Auth', () => {
 
   function isAuthenticated() {
     if (!account.value) return false
-    if (account.value.expiry <= Date.now()) {
+    if (account.value.expiry <= Temporal.Now.instant().epochMilliseconds) {
       logout()
       return false
     }
