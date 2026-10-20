@@ -6,6 +6,8 @@ on:
       - 'main'
     paths:
       - 'packages/**'
+      - 'package.json'
+      - 'pnpm-*.yaml'
   pull_request:
     paths:
       - 'packages/**'
@@ -51,8 +53,8 @@ jobs:
       - name: Type check
         run: pnpm run typecheck
 
-      # - name: Run tests
-      #   run: pnpm run test
+      - name: Run tests
+        run: pnpm run test
 
       - name: Build
         run: pnpm run build

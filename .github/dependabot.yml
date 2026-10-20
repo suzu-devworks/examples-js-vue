@@ -6,26 +6,38 @@
 
 version: 2
 updates:
+  # 1. Devcontainers
   - package-ecosystem: 'devcontainers'
     directory: '/'
     schedule:
-      interval: monthly
+      interval: 'monthly'
+    open-pull-requests-limit: 0
     groups:
-      minor-and-patch:
+      devcontainers-security:
+        applies-to: 'security-updates'
         patterns:
           - '*'
-        update-types:
-          - minor
-          - patch
 
+  # 2. GitHub Actions
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
+    open-pull-requests-limit: 0
     groups:
-      minor-and-patch:
+      actions-security:
+        applies-to: 'security-updates'
         patterns:
           - '*'
-        update-types:
-          - minor
-          - patch
+
+  # 3. Node.js (npm / pnpm / yarn)
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    open-pull-requests-limit: 0
+    groups:
+      npm-security:
+        applies-to: 'security-updates'
+        patterns:
+          - '*'
