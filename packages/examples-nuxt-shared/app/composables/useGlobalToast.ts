@@ -2,6 +2,8 @@ import { useGlobalToast as useVueToast } from 'examples-vue-shared'
 
 import { useToastStore } from '../stores/interactions/useToastStore'
 
+export type { ToastOptions } from 'examples-vue-shared'
+
 export interface GlobalToastOptions {
   totalVisible?: number
 }
