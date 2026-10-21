@@ -165,5 +165,5 @@ cd examples-nuxt-app
 Start the development server:
 
 ```shell
-pnpm dev --host 0.0.0.0
+pnpm dev
 ```
