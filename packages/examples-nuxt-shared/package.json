@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@examples/eslint-config": "workspace:*",
+    "@nuxt/eslint": "1.17.0",
     "eslint": "catalog:",
     "nuxt": "^4.6.2",
     "oxlint": "catalog:",

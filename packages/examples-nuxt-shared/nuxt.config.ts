@@ -3,5 +3,5 @@ export default defineNuxtConfig({
     name: 'shared',
   },
 
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', '@nuxt/eslint'],
 })
