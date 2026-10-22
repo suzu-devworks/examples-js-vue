@@ -1,75 +1,56 @@
-# Nuxt Minimal Starter
+# examples-nuxt-app
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 4 application starter.
 
-## Setup
+## Purpose
 
-Make sure to install dependencies:
+Try a minimal Nuxt 4 application setup with Pico.css and the Nuxt ESLint module.
 
-```bash
-# npm
-npm install
+## Stack
 
-# pnpm
+- Nuxt 4 / Vue 3
+- [Pico.css](https://picocss.com/)
+- TypeScript
+
+## Getting started
+
+Run from the repository root:
+
+```sh
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm --filter examples-nuxt-app dev
 ```
 
-## Development Server
+## Learning agenda
 
-Start the development server on `http://localhost:3000`:
+Planned learning topics:
 
-```bash
-# npm
-npm run dev
+### Phase 1: Configuration and rendering fundamentals
 
-# pnpm
-pnpm dev
+- [ ] Dynamically control runtime configuration: distinguish `runtimeConfig` (server-only vs. public values) from `appConfig`.
+- [ ] Configure rendering modes per route with `routeRules`: combine SSR and SPA pages.
+- [ ] Observe rendering behavior: inspect when HTML is generated on initial render and during client-side navigation.
 
-# yarn
-yarn dev
+### Phase 2: Nitro, data, and caching
 
-# bun
-bun run dev
-```
+- [ ] Create Nitro Server API handlers in `server/api/` and test calling them directly from the browser.
+- [ ] Introduce Nitro Storage API for server-side caching and experiment with reducing API load.
+- [ ] Fetch data on the client with `useFetch` and reuse it with `useNuxtData` to reduce API requests.
+- [ ] Manage shared state safely across SSR and the client with `useState`, avoiding memory leaks.
 
-## Production
+### Phase 3: Extensibility and customization
 
-Build the application for production:
+- [ ] Inject initialization logic with Nuxt plugins for shared behavior and third-party library setup during SSR and CSR.
+- [ ] Customize `useFetch` to automatically add common headers, such as API keys or request IDs.
+- [ ] Customize `useFetch` to handle API errors such as 401 and 500 responses consistently, including navigation when needed.
 
-```bash
-# npm
-npm run build
+### Phase 4: Authentication and advanced control
 
-# pnpm
-pnpm build
+- [ ] Implement mock authentication APIs with Nitro for login, token issuance, and token validation.
+- [ ] Manage tokens with `useCookie` so they can be accessed safely from both the server and client.
+- [ ] Extend the custom `useFetch` composable to set the `Authorization` header using the `Bearer` authentication scheme.
+- [ ] Restrict navigation with global or page-level route middleware and verify the unauthenticated-user guard.
 
-# yarn
-yarn build
+## Notes
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- ESLint setup: see [@examples/eslint-config](../eslint-config/README.md).
