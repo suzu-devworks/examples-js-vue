@@ -40,7 +40,7 @@ const { data, error } = useFetch('/api/phase1/check')
     </header>
 
     <section>
-      <h3 class="menu-header">🧩 Hydration & Time-lag</h3>
+      <h3 class="menu-header">🧩 Experiment 1: Hydration & Time-lag</h3>
       <p>Compare how the time behaves on <strong>Reload (SSR)</strong> vs <strong>Link Navigation (SPA)</strong>.</p>
 
       <!-- Absolute time rendered on the server side (converted to browser local representation) -->
@@ -79,7 +79,7 @@ const { data, error } = useFetch('/api/phase1/check')
 
     <!-- 2. UseFetch communication source (SSR vs SPA) verification area -->
     <footer>
-      <h3 class="menu-header">🔍 Data Fetching Origin</h3>
+      <h3 class="menu-header">🔍 Experiment 2: Data Fetching Origin</h3>
 
       <div v-if="error" class="error-message">❌ Fetch Error: {{ error.message }}</div>
 

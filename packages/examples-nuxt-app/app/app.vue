@@ -19,6 +19,10 @@ const agendaMenu: PhaseGroup[] = [
       { path: '/phase1/rendering-verification', label: 'Step 3: Verifying behavior for each rendering mode' },
     ],
   },
+  {
+    phaseTitle: 'Phase 2: Nitro Engine, Data, and Caching',
+    steps: [{ path: '/phase2/nitro-basic', label: 'Step 4: Nitro Server API Basics & Direct URL Verification' }],
+  },
 ]
 </script>
 

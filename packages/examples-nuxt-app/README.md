@@ -31,9 +31,9 @@ Planned learning topics:
 - [x] Configure rendering modes per route with `routeRules`: combine SSR and SPA pages.
 - [x] Observe rendering behavior: inspect when HTML is generated on initial render and during client-side navigation.
 
-### Phase 2: Nitro, data, and caching
+### Phase 2: Nitro Engine, Data, and Caching
 
-- [ ] Create Nitro Server API handlers in `server/api/` and test calling them directly from the browser.
+- [x] Create Nitro Server API handlers in `server/api/` and test calling them directly from the browser.
 - [ ] Introduce Nitro Storage API for server-side caching and experiment with reducing API load.
 - [ ] Fetch data on the client with `useFetch` and reuse it with `useNuxtData` to reduce API requests.
 - [ ] Manage shared state safely across SSR and the client with `useState`, avoiding memory leaks.
