@@ -28,7 +28,7 @@ Planned learning topics:
 ### Phase 1: Configuration and rendering fundamentals
 
 - [x] Dynamically control runtime configuration: distinguish `runtimeConfig` (server-only vs. public values) from `appConfig`.
-- [ ] Configure rendering modes per route with `routeRules`: combine SSR and SPA pages.
+- [x] Configure rendering modes per route with `routeRules`: combine SSR and SPA pages.
 - [ ] Observe rendering behavior: inspect when HTML is generated on initial render and during client-side navigation.
 
 ### Phase 2: Nitro, data, and caching

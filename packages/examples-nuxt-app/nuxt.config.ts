@@ -25,4 +25,13 @@ export default defineNuxtConfig({
       apiBaseUrl: 'http://localhost:3000/api',
     },
   },
+
+  // ★Step 2: Individual control of rendering mode for each URL path (hybrid rendering)
+  routeRules: {
+    // Force full server-side rendering mode
+    '/phase1/rendering-ssr': { ssr: true },
+
+    // Skip server-side generation and run completely client-side (SPA)
+    '/phase1/rendering-spa': { ssr: false },
+  },
 })

@@ -12,7 +12,11 @@ interface PhaseGroup {
 const agendaMenu: PhaseGroup[] = [
   {
     phaseTitle: 'Phase 1: Configuration and rendering fundamentals',
-    steps: [{ path: '/phase1/config-test', label: 'Step 1: Dynamic control of runtime and configuration' }],
+    steps: [
+      { path: '/phase1/config-test', label: 'Step 1: Dynamic control of runtime and configuration' },
+      { path: '/phase1/rendering-ssr', label: 'Step 2: Rendering Verification: SSR (ssr: true)' },
+      { path: '/phase1/rendering-spa', label: 'Step 2: Rendering Verification: SPA (ssr: false)' },
+    ],
   },
 ]
 </script>
