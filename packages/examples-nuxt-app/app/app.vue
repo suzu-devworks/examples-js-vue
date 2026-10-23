@@ -16,6 +16,7 @@ const agendaMenu: PhaseGroup[] = [
       { path: '/phase1/config-test', label: 'Step 1: Dynamic control of runtime and configuration' },
       { path: '/phase1/rendering-ssr', label: 'Step 2: Rendering Verification: SSR (ssr: true)' },
       { path: '/phase1/rendering-spa', label: 'Step 2: Rendering Verification: SPA (ssr: false)' },
+      { path: '/phase1/rendering-verification', label: 'Step 3: Verifying behavior for each rendering mode' },
     ],
   },
 ]
