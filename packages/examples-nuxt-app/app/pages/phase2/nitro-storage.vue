@@ -62,7 +62,7 @@ const handleClearCache = async () => {
   </article>
 </template>
 
-<style scoped lang="css">
+<style scoped>
 .container {
   max-width: 800px;
   margin: 2rem auto;

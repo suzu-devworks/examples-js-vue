@@ -227,7 +227,7 @@ const resetForm = () => {
   </article>
 </template>
 
-<style scoped lang="css">
+<style scoped>
 .grid > * {
   padding: 0.25rem;
   overflow: hidden;

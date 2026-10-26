@@ -47,7 +47,7 @@ const { data: apiData, error } = useFetch('/api/phase1/config-test')
   </article>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .error-message {
   color: var(--pico-form-element-invalid-border-color);
 }
