@@ -29,6 +29,10 @@ const agendaMenu: PhaseGroup[] = [
       { path: '/phase2/use-state', label: 'Step 7: Safe Shared State with `useState`' },
     ],
   },
+  {
+    phaseTitle: 'Phase 3: Extensibility and customization',
+    steps: [{ path: '/phase3/plugin-demo', label: 'Step 8: Inject Initialization Logic with Nuxt Plugins' }],
+  },
 ]
 </script>
 

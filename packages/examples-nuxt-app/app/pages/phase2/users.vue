@@ -15,7 +15,7 @@ const validationErrors = ref<Record<string, string[]>>({})
 const addLog = (action: string, status: number, detail?: unknown) => {
   const instant = Temporal.Now.instant().toZonedDateTimeISO('UTC')
   const timestamp = instant.toPlainTime().toString({ smallestUnit: 'millisecond' })
-  apiLogs.value.unshift(`[${timestamp}] ${action} -> Status: ${status} | ${JSON.stringify(detail)}`)
+  apiLogs.value.unshift(`[${timestamp}Z] ${action} -> Status: ${status} | ${JSON.stringify(detail)}`)
 }
 
 type FetchError = { statusCode?: number; statusMessage?: string; data?: { data?: Record<string, string[]> } }
