@@ -26,6 +26,7 @@ const agendaMenu: PhaseGroup[] = [
       { path: '/phase2/users', label: 'Step 4: Practicing Nitro REST API(CRUD)' },
       { path: '/phase2/nitro-storage', label: 'Step 5: Nitro Storage API Caching' },
       { path: '/phase2/posts', label: 'Step 6: Post List (`useFetch`)' },
+      { path: '/phase2/use-state', label: 'Step 7: Safe Shared State with `useState`' },
     ],
   },
 ]

@@ -37,7 +37,7 @@ Planned learning topics:
 - [x] Step 4: Create Nitro Server API handlers in `server/api/` and test calling them directly from the browser.
 - [x] Step 5: Introduce Nitro Storage API for server-side caching and experiment with reducing API load.
 - [x] Step 6: Fetch data on the client with `useFetch` and reuse it with `useNuxtData` to reduce API requests.
-- [ ] Step 7: Manage shared state safely across SSR and the client with `useState`, avoiding memory leaks.
+- [x] Step 7: Manage shared state safely across SSR and the client with `useState`, avoiding memory leaks.
 
 ### Phase 3: Extensibility and customization
 
