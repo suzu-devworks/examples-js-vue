@@ -1,7 +1,7 @@
 import { defineEventHandler } from 'h3'
 import { useStorage } from 'nitropack/runtime'
 
-export default defineEventHandler(async (/*event*/) => {
+export default defineEventHandler(async () => {
   const storage = useStorage('cache') // Utilizes Nitro's cache storage layer
   const cacheKey = 'heavy-data-cache'
 
