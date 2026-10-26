@@ -13,7 +13,7 @@ const { data: apiData, error } = await useFetch('/api/phase2/hello', {
     </header>
 
     <section>
-      <h5 class="menu-header">🌐 Experiment 1: Direct URL Access (direct browser access)</h5>
+      <h3 class="menu-header">🌐 Experiment 1: Direct URL Access (direct browser access)</h3>
       <p>
         Nitro endpoints exist independently of the Vue frontend. You can access the server API directly via a standard
         browser request.
@@ -47,7 +47,7 @@ const { data: apiData, error } = await useFetch('/api/phase2/hello', {
     </section>
 
     <footer>
-      <h5 class="menu-header">🔍 Experiment 2: Internal Hydration via useFetch</h5>
+      <h3 class="menu-header">🔍 Experiment 2: Internal Hydration via useFetch</h3>
 
       <div v-if="error" class="error-message">❌ API Connection Error: {{ error.message }}</div>
 

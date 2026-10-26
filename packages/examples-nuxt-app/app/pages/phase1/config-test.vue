@@ -36,7 +36,7 @@ const { data: apiData, error } = useFetch('/api/phase1/config-test')
     </ClientOnly>
 
     <footer>
-      <h5 class="menu-header">🔍 Server-side API Connection Status</h5>
+      <h3 class="menu-header">🔍 Server-side API Connection Status</h3>
       <div v-if="error" class="error-message">❌ API Error: {{ error.message }}</div>
       <div v-else-if="apiData">
         <p>The following data was fetched from the Nitro server:</p>
