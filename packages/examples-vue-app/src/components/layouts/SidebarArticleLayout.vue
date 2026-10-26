@@ -20,7 +20,7 @@ onBeforeRouteUpdate(() => close())
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 /*
 SidebarArticleLayout
 +- #sidebar: fixed sidebar

@@ -29,7 +29,7 @@ setTimeout(() => {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 ul {
   padding: 5px;
   list-style-type: none;

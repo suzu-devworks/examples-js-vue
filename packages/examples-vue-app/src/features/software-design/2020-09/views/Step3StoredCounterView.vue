@@ -54,7 +54,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .sd-step3-counter {
   .container {
     display: flex;

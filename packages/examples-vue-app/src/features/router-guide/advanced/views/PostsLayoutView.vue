@@ -18,7 +18,7 @@ import { AccountPanel } from '@/features/auth'
   </main>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .posts-layout-view {
   .account-section {
     display: flex;

@@ -37,7 +37,7 @@ import SharedWorkerComponent from '../components/SharedWorkerComponent.vue'
   </main>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .feature-view {
   .grid-box {
     display: grid;

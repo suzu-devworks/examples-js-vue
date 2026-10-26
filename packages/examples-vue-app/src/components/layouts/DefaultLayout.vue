@@ -19,7 +19,7 @@ import BlandLogo from './BlandLogo.vue'
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .default-layout {
   --layout-header-height: 2.4rem;
   --layout-footer-height: 0;

@@ -449,7 +449,7 @@ onUnmounted(() => {
   </DefaultLayout>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .tokens-page {
   --page-width: 860px;
   --section-gap: var(--app-spacing-xxl);

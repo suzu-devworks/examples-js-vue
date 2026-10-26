@@ -26,7 +26,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .sd-step2-pagination {
   .container {
     display: flex;

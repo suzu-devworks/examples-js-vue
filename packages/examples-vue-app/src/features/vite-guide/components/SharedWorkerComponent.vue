@@ -91,7 +91,7 @@ function onChangeStartWorker(): void {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .dedicated-worker-component {
   display: flex;
   flex-direction: column;

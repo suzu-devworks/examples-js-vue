@@ -130,7 +130,7 @@ const counter8 = ref(8)
   </section>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .article-section {
   .button-fallthrough {
     color: var(--app-color-on-secondary);

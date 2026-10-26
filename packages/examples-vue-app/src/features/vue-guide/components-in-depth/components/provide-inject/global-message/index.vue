@@ -15,7 +15,7 @@ const message = plugin?.say()
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .global-component {
   span {
     color: var(--app-color-accent);

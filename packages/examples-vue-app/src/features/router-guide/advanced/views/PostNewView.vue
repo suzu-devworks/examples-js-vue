@@ -47,7 +47,7 @@ function createPost() {
   </section>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .post-new-view {
   form {
     display: grid;

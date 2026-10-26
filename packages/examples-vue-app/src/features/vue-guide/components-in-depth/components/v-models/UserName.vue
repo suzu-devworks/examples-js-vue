@@ -10,7 +10,7 @@ const lastName = defineModel<string>('lastName')
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .user-name-component {
   display: flex;
   gap: var(--app-spacing-sm);

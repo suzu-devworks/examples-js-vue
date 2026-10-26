@@ -13,7 +13,7 @@ const { isLoading } = useGlobalLoading()
   </Teleport>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .loading-backdrop {
   position: fixed;
   inset: 0;

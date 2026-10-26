@@ -55,7 +55,7 @@ function removePost(postId: number) {
   </section>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .posts-list-view {
   ul > li {
     border-radius: var(--app-radius-md);

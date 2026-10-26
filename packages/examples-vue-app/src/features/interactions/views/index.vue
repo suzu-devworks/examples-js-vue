@@ -177,7 +177,7 @@ async function handleCopy() {
   </DefaultLayout>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .toast-button--success {
   color: var(--app-color-on-success);
   background-color: var(--app-color-success);

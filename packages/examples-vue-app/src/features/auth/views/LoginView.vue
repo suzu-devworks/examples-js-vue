@@ -51,7 +51,7 @@ function login() {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .login-view {
   display: flex;
   align-items: center;

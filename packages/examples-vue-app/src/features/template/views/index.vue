@@ -53,7 +53,7 @@ onUnmounted(() => {
   </DefaultLayout>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .template-view main {
   max-width: 1280px;
   padding: 2rem;

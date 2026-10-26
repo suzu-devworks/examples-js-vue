@@ -20,7 +20,7 @@ defineProps<{
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .dynamic-tab-layout {
   display: flex;
   flex-direction: column;

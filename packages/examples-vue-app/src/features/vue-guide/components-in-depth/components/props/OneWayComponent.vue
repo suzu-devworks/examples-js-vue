@@ -61,7 +61,7 @@ if (props.list) {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .one-way-component {
   li pre {
     display: inline-block;

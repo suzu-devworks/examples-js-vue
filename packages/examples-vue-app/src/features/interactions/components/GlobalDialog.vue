@@ -91,7 +91,7 @@ function dismissDialog() {
   </Teleport>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .dialog-backdrop {
   position: fixed;
   inset: 0;

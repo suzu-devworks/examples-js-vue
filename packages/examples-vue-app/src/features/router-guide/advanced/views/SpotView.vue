@@ -84,7 +84,7 @@ const currentSpot = computed(() => data.spots.find((spot) => spot.id === current
   </main>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .spot-detail-view {
   h3 {
     margin-bottom: var(--app-spacing-md);

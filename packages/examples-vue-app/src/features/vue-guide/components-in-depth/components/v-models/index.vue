@@ -74,7 +74,7 @@ const myText = ref('')
   </section>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .horizontal-form {
   display: flex;
   gap: var(--app-spacing-sm);
