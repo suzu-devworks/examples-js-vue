@@ -1,6 +1,5 @@
-import { UserService } from '~~/server/services/user-service'
-
 import { createError, defineEventHandler } from 'h3'
+import { UserService } from '~~/server/services/user-service'
 
 export default defineEventHandler((event) => {
   const userId = event.context.params?.id

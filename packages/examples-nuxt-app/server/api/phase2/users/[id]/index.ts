@@ -1,7 +1,6 @@
+import { createError, defineEventHandler, readBody, setResponseStatus } from 'h3'
 import z from 'zod'
 import { UserCreateSchema, UserService } from '~~/server/services/user-service'
-
-import { createError, defineEventHandler, readBody, setResponseStatus } from 'h3'
 
 export default defineEventHandler(async (event) => {
   const userId = event.context.params?.id

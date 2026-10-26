@@ -34,4 +34,21 @@ export default defineNuxtConfig({
     // Skip server-side generation and run completely client-side (SPA)
     '/phase1/rendering-spa': { ssr: false },
   },
+
+  // ★Step 5: Nitro Storage API configuration
+  nitro: {
+    storage: {
+      cache: {
+        driver: 'fs',
+        base: './.data/cache',
+      },
+    },
+    // If you want to use separate storage only during development, you can also use devStorage.
+    devStorage: {
+      cache: {
+        driver: 'fs',
+        base: './.data/cache',
+      },
+    },
+  },
 })
