@@ -15,7 +15,7 @@ const {
 <template>
   <article>
     <header>
-      <h2>Step 6: Post List (`useFetch`)</h2>
+      <h2>Step 6: Post List (<code>useFetch</code>)</h2>
     </header>
 
     <section>
