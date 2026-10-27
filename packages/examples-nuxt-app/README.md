@@ -43,7 +43,7 @@ Planned learning topics:
 
 - [x] Step 8: Inject initialization logic with Nuxt plugins for shared behavior
       and third-party library setup during SSR and CSR.
-- [ ] Step 9: Customize `useFetch` to automatically add common headers, such as API keys or request IDs.
+- [x] Step 9: Customize `useFetch` to automatically add common headers, such as API keys or request IDs.
 - [ ] Step 10: Customize `useFetch` to handle API errors such as 401 and 500 responses consistently,
       including navigation when needed.
 

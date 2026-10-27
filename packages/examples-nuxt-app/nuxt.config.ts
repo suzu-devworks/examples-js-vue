@@ -22,7 +22,8 @@ export default defineNuxtConfig({
 
     // Settings that can be exposed to clients (browsers)
     public: {
-      apiBaseUrl: 'http://localhost:3000/api',
+      apiBaseUrl: 'http://localhost:3000',
+      apiKey: 'your-public-api-key',
     },
   },
 
