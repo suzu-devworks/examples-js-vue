@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, useFetch } from '#imports'
+import { useFetch } from 'nuxt/app'
+import { ref } from 'vue'
 
 const clearMessage = ref('')
 

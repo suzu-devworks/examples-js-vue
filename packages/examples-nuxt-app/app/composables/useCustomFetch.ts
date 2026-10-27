@@ -1,6 +1,7 @@
 import type { UseFetchOptions } from 'nuxt/app'
+import { useRuntimeConfig } from 'nuxt/app'
 
-import { createUseFetch, useRuntimeConfig } from '#imports'
+import { createUseFetch } from '#app/composables/fetch'
 
 export const useCustomFetch = createUseFetch(<T>(callerOptions: UseFetchOptions<T> = {}) => {
   const config = useRuntimeConfig()

@@ -1,6 +1,5 @@
 import { defineEventHandler } from 'h3'
-
-import { useRuntimeConfig } from '#imports'
+import { useRuntimeConfig } from 'nitropack/runtime'
 
 export default defineEventHandler((event) => {
   // Passing event as an argument is a best practice in Nuxt 4

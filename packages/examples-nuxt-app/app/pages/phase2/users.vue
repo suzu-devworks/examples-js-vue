@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { ref, useAsyncData, computed, useState } from '#imports'
+import { useAsyncData, useState } from 'nuxt/app'
+import { computed, ref } from 'vue'
+
 import type { UserRecord as User } from '#shared/types/users'
 
 // --- state management ---

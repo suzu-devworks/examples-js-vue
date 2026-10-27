@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAppConfig, useFetch, useRuntimeConfig } from '#imports'
+import { useAppConfig, useFetch, useRuntimeConfig } from 'nuxt/app'
 
 const config = useRuntimeConfig()
 const appConfig = useAppConfig()

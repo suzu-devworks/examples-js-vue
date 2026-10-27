@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useFetch } from '#imports'
+import { useFetch } from 'nuxt/app'
+
 import type { Post } from '#shared/types/posts'
 
 // Allow cache to be shared by specifying a key

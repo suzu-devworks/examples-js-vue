@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useGlobalToast } from '#imports'
-
 const { queue, snackbarOptions } = useGlobalToast({
   totalVisible: 3,
 })

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRoute } from '#imports'
+import { useRoute } from 'nuxt/app'
 
 const route = useRoute()
 </script>

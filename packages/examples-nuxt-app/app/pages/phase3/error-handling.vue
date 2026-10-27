@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { computed, ref, useErrorHandledFetch } from '#imports'
+import { computed, ref } from 'vue'
+
+import { useErrorHandledFetch } from '~/composables/useErrorHandledFetch'
 
 // Reactive variable to toggle the status code to test (401, 500, 200, etc.)
 const errorCode = ref<number>(500)

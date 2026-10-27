@@ -1,4 +1,4 @@
-import { useState } from '#imports'
+import { useState } from 'nuxt/app'
 
 export interface UserState {
   count: number

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, useNuxtApp, useState } from '#imports'
+import { useNuxtApp, useState } from 'nuxt/app'
+import { ref } from 'vue'
 
 // Get functionality provided by plugin from NuxtApp
 const { $appVersion, $logMessage } = useNuxtApp()

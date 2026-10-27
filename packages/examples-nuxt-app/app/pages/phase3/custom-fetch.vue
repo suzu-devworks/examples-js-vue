@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { ref, useNuxtApp, useCustomFetch } from '#imports'
+import { useNuxtApp } from 'nuxt/app'
+import { ref } from 'vue'
+
+import { useCustomFetch } from '~/composables/useCustomFetch'
 
 const { $customFetch } = useNuxtApp()
 
