@@ -34,6 +34,7 @@ const agendaMenu: PhaseGroup[] = [
     steps: [
       { path: '/phase3/plugin-demo', label: 'Step 8: Inject Initialization Logic with Nuxt Plugins' },
       { path: '/phase3/custom-fetch', label: 'Step 9: Customize `useFetch` with Runtime Config & Common Headers' },
+      { path: '/phase3/error-handling', label: 'Step 10: Customize `useFetch` for Consistent Error Handling' },
     ],
   },
 ]
