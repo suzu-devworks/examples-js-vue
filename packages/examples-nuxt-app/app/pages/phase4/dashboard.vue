@@ -32,7 +32,6 @@ const handleLogout = () => {
 
         <div class="grid">
           <button class="secondary outline" @click="handleLogout">Logout</button>
-          <div></div>
         </div>
       </div>
       <div v-else-if="error">
