@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint'],
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
 
   // Use Pico.css for styling
   css: ['@picocss/pico/css/pico.min.css', '@picocss/pico/css/pico.colors.min.css'],
@@ -47,11 +46,18 @@ export default defineNuxtConfig({
         base: './.data/cache',
       },
     },
+  },
+
+  $development: {
+    devtools: { enabled: true },
+
     // If you want to use separate storage only during development, you can also use devStorage.
-    devStorage: {
-      cache: {
-        driver: 'fs',
-        base: './.data/cache',
+    nitro: {
+      storage: {
+        cache: {
+          driver: 'fs',
+          base: './.data/kv',
+        },
       },
     },
   },
