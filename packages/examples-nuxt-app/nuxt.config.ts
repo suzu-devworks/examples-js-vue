@@ -20,6 +20,9 @@ export default defineNuxtConfig({
     // Server-side only (secret key invisible to the browser)
     apiSecretKey: 'MY_SUPER_SECRET_KEY_12345',
 
+    // ★Step 11: Secrets held securely only on the server side (auto-loaded from NUXT_JWT_SECRET)
+    jwtSecret: 'your-super-secure-jwt-secret-key-2026',
+
     // Settings that can be exposed to clients (browsers)
     public: {
       apiBaseUrl: 'http://localhost:3000',
