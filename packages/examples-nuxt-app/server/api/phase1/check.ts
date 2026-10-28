@@ -1,7 +1,7 @@
-import { defineEventHandler } from 'h3'
+import { defineEventHandler } from 'nuxt/server'
 
 export default defineEventHandler((event) => {
-  console.log(`--- [Nitro API] ${event.path} was called (${new Date().toLocaleTimeString()}) ---`)
+  console.log(`--- [Nitro API] ${event.url.pathname} was called (${new Date().toLocaleTimeString()}) ---`)
 
   return {
     calledAt: new Date().toISOString(),

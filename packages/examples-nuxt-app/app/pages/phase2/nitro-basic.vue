@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useFetch } from 'nuxt/app'
+import { useFetch } from '#imports'
 
 const { data: apiData, error } = await useFetch('/api/phase2/hello', {
   query: { name: 'Nuxt4_App_Context' },

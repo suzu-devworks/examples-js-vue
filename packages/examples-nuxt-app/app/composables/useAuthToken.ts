@@ -1,4 +1,4 @@
-import { useCookie } from 'nuxt/app'
+import { useCookie } from '#imports'
 
 export const useAuthToken = () => {
   // Safely manage cookies named 'auth_token' with type safety and SSR/CSR commonality

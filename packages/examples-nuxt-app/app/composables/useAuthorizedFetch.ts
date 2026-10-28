@@ -1,7 +1,5 @@
-import type { UseFetchOptions } from 'nuxt/app'
-import { useRuntimeConfig, useCookie, navigateTo, showError } from 'nuxt/app'
-
-import { createUseFetch } from '#app/composables/fetch'
+import type { UseFetchOptions } from '#app'
+import { createUseFetch, navigateTo, showError, useCookie, useRuntimeConfig } from '#imports'
 
 /**
  * Custom useFetch to automatically grant common headers,

@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { useNuxtData, useRoute } from 'nuxt/app'
-import { computed } from 'vue'
-
-import type { Post } from '#shared/types/posts'
+import { computed, useNuxtData, useRoute, type Post } from '#imports'
 
 const route = useRoute()
 const postId = Number(route.params.id)

@@ -1,6 +1,5 @@
-import { createError, defineEventHandler, readBody } from 'h3'
 import jwt from 'jsonwebtoken'
-import { useRuntimeConfig } from 'nitropack/runtime'
+import { createError, defineEventHandler, readBody, useRuntimeConfig } from 'nuxt/server'
 
 // Flags and arguments to switch between mock implementation and practical implementation
 // (this time we selected practical implementation)
@@ -41,7 +40,7 @@ function isValidCredentials(username: string | undefined, password: string | und
 }
 
 export default defineEventHandler(async (event) => {
-  if (event.node.req.method !== 'POST') {
+  if (event.req.method !== 'POST') {
     throw createError({
       statusCode: 405,
       statusMessage: 'Method Not Allowed',
@@ -49,7 +48,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // Get JWT_SECRET from runtimeConfig at runtime
-  const config = useRuntimeConfig(event)
+  const config = useRuntimeConfig()
   const jwtSecret = config.jwtSecret
 
   const body = await readBody<{ username?: string; password?: string; mode?: ImplementationType }>(event)

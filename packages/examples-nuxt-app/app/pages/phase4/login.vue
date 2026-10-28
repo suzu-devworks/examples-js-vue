@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { navigateTo } from 'nuxt/app'
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
-
-import { useAuthToken } from '~/composables/useAuthToken'
+import { ref, useRoute, useAuthToken, navigateTo } from '#imports'
 
 const username = ref('admin')
 const password = ref('password')

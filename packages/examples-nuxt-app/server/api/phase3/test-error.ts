@@ -1,4 +1,4 @@
-import { createError, defineEventHandler, getQuery } from 'h3'
+import { createError, defineEventHandler, getQuery } from 'nuxt/server'
 
 export default defineEventHandler((event) => {
   const query = getQuery(event)

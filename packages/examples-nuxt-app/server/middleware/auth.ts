@@ -1,6 +1,5 @@
-import { createError, defineEventHandler, getHeader, getRequestURL } from 'h3'
 import jwt from 'jsonwebtoken'
-import { useRuntimeConfig } from 'nitropack/runtime'
+import { defineEventHandler, getRequestURL, getRequestHeader, createError, useRuntimeConfig } from 'nuxt/server'
 
 export default defineEventHandler((event) => {
   const reqUrl = getRequestURL(event)
@@ -14,7 +13,7 @@ export default defineEventHandler((event) => {
 
   // 2. Force validation only when fetch target is phase4 API (adjust as necessary)
   if (pathname.startsWith('/api/phase4/')) {
-    const authHeader = getHeader(event, 'authorization')
+    const authHeader = getRequestHeader(event, 'authorization')
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       throw createError({
@@ -24,7 +23,7 @@ export default defineEventHandler((event) => {
     }
 
     const token = authHeader.replace('Bearer ', '')
-    const config = useRuntimeConfig(event)
+    const config = useRuntimeConfig()
     const jwtSecret = config.jwtSecret || 'fallback-secret-for-safety'
 
     try {

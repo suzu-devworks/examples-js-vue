@@ -1,4 +1,4 @@
-import { defineEventHandler, getQuery } from 'h3'
+import { defineEventHandler, getQuery } from 'nuxt/server'
 
 export default defineEventHandler((event) => {
   // To make it easier to feel whether the server is actually running when accessing directly from the browser,

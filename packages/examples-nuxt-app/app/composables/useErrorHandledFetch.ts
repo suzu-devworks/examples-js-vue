@@ -1,6 +1,4 @@
-import { navigateTo, useRuntimeConfig } from 'nuxt/app'
-
-import { createUseFetch } from '#app/composables/fetch'
+import { createUseFetch, navigateTo, useRuntimeConfig } from '#imports'
 
 export const useErrorHandledFetch = createUseFetch((/* callerOptions */) => {
   const config = useRuntimeConfig()

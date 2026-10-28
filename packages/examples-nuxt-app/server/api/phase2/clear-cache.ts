@@ -1,5 +1,5 @@
-import { defineEventHandler } from 'h3'
 import { useStorage } from 'nitropack/runtime'
+import { defineEventHandler } from 'nuxt/server'
 
 export default defineEventHandler(async () => {
   const storage = useStorage('cache')

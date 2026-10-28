@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { navigateTo, useAuthToken, useRoute } from '#imports'
-import { useAuthorizedFetch } from '~/composables/useAuthorizedFetch'
+import { navigateTo, useAuthorizedFetch, useAuthToken, useRoute } from '#imports'
 
 interface VerifyResponse {
   authenticated: boolean

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSharedState } from '~/composables/useSharedState'
+import { useSharedState } from '#imports'
 
 // Obtain securely defined shared state
 const state = useSharedState()

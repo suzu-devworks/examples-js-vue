@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useFetch, useState } from 'nuxt/app'
-import { onMounted, ref } from 'vue'
+import { useFetch, useState, onMounted, ref } from '#imports'
 
 // 1. Inherit the server's absolute time
 const serverInstant = useState<number>('server-instant', () => {

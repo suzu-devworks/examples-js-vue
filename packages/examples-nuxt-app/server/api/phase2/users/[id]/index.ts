@@ -1,13 +1,13 @@
-import { createError, defineEventHandler, readBody, setResponseStatus } from 'h3'
+import { createError, defineEventHandler, readBody, setResponseStatus } from 'nuxt/server'
 import z from 'zod'
 import { UserCreateSchema, UserService } from '~~/server/services/user-service'
 
 export default defineEventHandler(async (event) => {
   const userId = event.context.params?.id
-  const method = event.method
+  const method = event.req.method
 
   if (method === 'PUT') {
-    console.log(`[Nitro API] PUT ${event.path} - Updating record`)
+    console.log(`[Nitro API] PUT ${event.url.pathname} - Updating record`)
 
     const body = await readBody(event)
     const result = UserCreateSchema.safeParse(body)
@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
   }
 
   if (method === 'DELETE') {
-    console.log(`[Nitro API] DELETE ${event.path} - Deleting record`)
+    console.log(`[Nitro API] DELETE ${event.url.pathname} - Deleting record`)
     const deleted = UserService.delete(userId || '')
     if (!deleted) {
       throw createError({ statusCode: 404, statusMessage: 'User not found' })

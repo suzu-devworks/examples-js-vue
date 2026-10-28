@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { useAsyncData, useState } from 'nuxt/app'
-import { computed, ref } from 'vue'
-
-import type { UserRecord as User } from '#shared/types/users'
+import { useAsyncData, useState, ref, computed, type UserRecord } from '#imports'
 
 // --- state management ---
 const apiLogs = useState<string[]>('phase2/apiLogs', () => [])
@@ -27,9 +24,9 @@ const {
   data: users,
   status,
   refresh: refreshList,
-} = await useAsyncData<User[]>('/api/phase2/users', async () => {
+} = await useAsyncData<UserRecord[]>('/api/phase2/users', async () => {
   try {
-    const data = await $fetch<User[]>('/api/phase2/users')
+    const data = await $fetch<UserRecord[]>('/api/phase2/users')
     addLog('GET (List)', 200, `Fetched ${data.length} users`)
     return data
   } catch (err: unknown) {
@@ -45,7 +42,7 @@ const fetchSingle = async (searchId: string) => {
   if (!searchId) return
 
   try {
-    const data = await $fetch<User>(`/api/phase2/users/${searchId}`)
+    const data = await $fetch<UserRecord>(`/api/phase2/users/${searchId}`)
     addLog(`GET (Single: ID ${searchId})`, 200, data)
     return data
   } catch (err: unknown) {

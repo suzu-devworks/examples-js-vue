@@ -1,9 +1,9 @@
-import { createError, defineEventHandler, readBody } from 'h3'
+import { createError, defineEventHandler, readBody } from 'nuxt/server'
 import z from 'zod'
 import { UserCreateSchema, UserService } from '~~/server/services/user-service'
 
 export default defineEventHandler(async (event) => {
-  console.log(`[Nitro API] POST ${event.path} - Creating record`)
+  console.log(`[Nitro API] POST ${event.url.pathname} - Creating record`)
   const body = await readBody(event)
 
   const result = UserCreateSchema.safeParse(body)

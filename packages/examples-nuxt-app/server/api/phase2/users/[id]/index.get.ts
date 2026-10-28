@@ -1,4 +1,4 @@
-import { createError, defineEventHandler } from 'h3'
+import { createError, defineEventHandler } from 'nuxt/server'
 import { UserService } from '~~/server/services/user-service'
 
 export default defineEventHandler((event) => {

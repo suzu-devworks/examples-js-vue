@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-import { definePageMeta, navigateTo, useAuthToken, useRoute } from '#imports'
+import { ref, definePageMeta, navigateTo, useAuthToken, useRoute } from '#imports'
 
 // Apply root middleware to the page
 definePageMeta({

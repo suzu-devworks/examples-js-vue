@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { useAppConfig, useFetch, useRuntimeConfig } from 'nuxt/app'
+import { useAppConfig, useFetch, useRuntimeConfig } from '#imports'
 
 const config = useRuntimeConfig()
 const appConfig = useAppConfig()
+
 console.log('--- Loading check on the screen (pages/phase1) side ---')
 console.log('[Common] Public API URL:', config.public.apiBaseUrl)
 console.log('[Note] Secret Key:', config.apiSecretKey) // will be undefined in the browser
@@ -37,7 +38,7 @@ const { data: apiData, error } = useFetch('/api/phase1/config-test')
 
     <footer>
       <h3 class="menu-header">🔍 Server-side API Connection Status</h3>
-      <div v-if="error" class="error-message">❌ API Error: {{ error.message }}</div>
+      <div v-if="error" class="error">❌ API Error: {{ error.message }}</div>
       <div v-else-if="apiData">
         <p>The following data was fetched from the Nitro server:</p>
         <pre><code>{{ JSON.stringify(apiData, null, 2) }}</code></pre>
@@ -48,7 +49,7 @@ const { data: apiData, error } = useFetch('/api/phase1/config-test')
 </template>
 
 <style scoped>
-.error-message {
+.error {
   color: var(--pico-form-element-invalid-border-color);
 }
 </style>

@@ -1,4 +1,4 @@
-import { defineEventHandler } from 'h3'
+import { defineEventHandler } from 'nuxt/server'
 
 export default defineEventHandler((event) => {
   // Obtain user information that has already been verified and stored on the middleware side

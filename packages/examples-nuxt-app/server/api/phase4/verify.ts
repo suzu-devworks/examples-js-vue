@@ -1,6 +1,5 @@
-import { createError, defineEventHandler, getHeader, getQuery } from 'h3'
 import jwt from 'jsonwebtoken'
-import { useRuntimeConfig } from 'nitropack/runtime'
+import { createError, defineEventHandler, getRequestHeader, getQuery, useRuntimeConfig } from 'nuxt/server'
 
 type ImplementationType = 'mock' | 'real'
 
@@ -24,10 +23,10 @@ function isTokenPayload(payload: unknown): payload is TokenPayload {
 }
 
 export default defineEventHandler((event) => {
-  const config = useRuntimeConfig(event)
+  const config = useRuntimeConfig()
   const jwtSecret = config.jwtSecret
 
-  const authHeader = getHeader(event, 'authorization')
+  const authHeader = getRequestHeader(event, 'authorization')
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     throw createError({
       statusCode: 401,

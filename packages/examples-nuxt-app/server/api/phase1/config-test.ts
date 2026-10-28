@@ -1,9 +1,8 @@
-import { defineEventHandler } from 'h3'
-import { useRuntimeConfig } from 'nitropack/runtime'
+import { defineEventHandler, useRuntimeConfig } from 'nuxt/server'
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   // Passing event as an argument is a best practice in Nuxt 4
-  const config = useRuntimeConfig(event)
+  const config = useRuntimeConfig()
 
   // Output to the terminal (console) where the server is running
   console.log('--- Check on Nitro server (API) side ---')

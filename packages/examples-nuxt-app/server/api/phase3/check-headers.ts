@@ -1,7 +1,7 @@
-import { defineEventHandler, getHeaders, readBody } from 'h3'
+import { defineEventHandler, getRequestHeaders, readBody } from 'nuxt/server'
 
 export default defineEventHandler(async (event) => {
-  const headers = getHeaders(event)
+  const headers = getRequestHeaders(event)
   const body = await readBody(event)
 
   return {

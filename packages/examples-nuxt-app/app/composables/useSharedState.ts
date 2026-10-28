@@ -1,5 +1,4 @@
-import { useState } from 'nuxt/app'
-
+import { useState } from '#imports'
 export interface UserState {
   count: number
   lastUpdated: string
