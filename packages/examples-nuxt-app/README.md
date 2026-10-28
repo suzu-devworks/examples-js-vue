@@ -51,7 +51,7 @@ Planned learning topics:
 
 - [x] Step 11: Implement mock authentication APIs with Nitro for login, token issuance, and token validation.
 - [x] Step 12: Manage tokens with `useCookie` so they can be accessed safely from both the server and client.
-- [ ] Step 13: Extend the custom `useFetch` composable to set the `Authorization` header
+- [x] Step 13: Extend the custom `useFetch` composable to set the `Authorization` header
       using the `Bearer` authentication scheme.
 - [ ] Step 14: Restrict navigation with global or page-level route middleware and verify the unauthenticated-user guard.
 

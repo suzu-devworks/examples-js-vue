@@ -41,7 +41,8 @@ const agendaMenu: PhaseGroup[] = [
     phaseTitle: 'Phase 4: Authentication and token management',
     steps: [
       { path: '/phase4/test-api', label: 'Step 11: Implement login and token management with Nitro APIs' },
-      { path: '/phase4/login', label: 'Step 12: Manage tokens with `useCookie`</code>`' },
+      { path: '/phase4/login', label: '🔑 Step 12: Manage tokens with `useCookie`</code>`' },
+      { path: '/phase4/authorized', label: '🔐 Step 13: Access protected profile with `useAuthorizedFetch`' },
     ],
   },
 ]
