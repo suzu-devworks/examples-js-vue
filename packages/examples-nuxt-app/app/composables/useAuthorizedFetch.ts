@@ -3,8 +3,9 @@ import { useRuntimeConfig, useCookie, navigateTo, showError } from 'nuxt/app'
 
 import { createUseFetch } from '#app/composables/fetch'
 
-/**s
- * Custom useFetch to automatically grant common headers, error handling, and Bearer authentication tokens
+/**
+ * Custom useFetch to automatically grant common headers,
+ * error handling, and Bearer authentication tokens
  */
 export const useAuthorizedFetch = createUseFetch(<T>(callerOptions: UseFetchOptions<T> = {}) => {
   const config = useRuntimeConfig()
@@ -37,7 +38,8 @@ export const useAuthorizedFetch = createUseFetch(<T>(callerOptions: UseFetchOpti
         console.warn('[API Error 401] Token expired or unauthorized. Redirecting to login...')
         if (import.meta.client) {
           accessToken.value = null // destroy token
-          navigateTo('/phase4/login')
+          const fullPath = window.location.pathname + window.location.search
+          navigateTo(`/phase4/login?redirect=${encodeURIComponent(fullPath)}`)
         }
       } else if (status === 500) {
         showError({

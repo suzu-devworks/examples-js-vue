@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { navigateTo, useAuthToken, useRoute } from '#imports'
 import { useAuthorizedFetch } from '~/composables/useAuthorizedFetch'
 
 interface VerifyResponse {
@@ -11,9 +12,20 @@ interface VerifyResponse {
   }
 }
 
+const route = useRoute()
+const { clearToken } = useAuthToken()
+
 // Call validation API with custom fetch with authentication
 // Automatically sent if the cookie has a valid Bearer token
 const { data, pending, error } = await useAuthorizedFetch<VerifyResponse>('/api/phase4/verify')
+
+const handleLogout = () => {
+  clearToken()
+  navigateTo({
+    path: '/phase4/login',
+    query: { redirect: route.fullPath },
+  })
+}
 </script>
 
 <template>
@@ -31,6 +43,11 @@ const { data, pending, error } = await useAuthorizedFetch<VerifyResponse>('/api/
         <h3>✅ Authorized Access Successful</h3>
         <p><strong>Message:</strong> {{ data.message }}</p>
         <p><strong>Logged in as:</strong> {{ data.user.username }} (Role: {{ data.user.role }})</p>
+
+        <div class="grid">
+          <button class="secondary outline" @click="handleLogout">Logout</button>
+          <div></div>
+        </div>
       </div>
     </section>
   </article>
