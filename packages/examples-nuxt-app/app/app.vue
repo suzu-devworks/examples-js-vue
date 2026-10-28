@@ -37,6 +37,13 @@ const agendaMenu: PhaseGroup[] = [
       { path: '/phase3/error-handling', label: 'Step 10: Customize `useFetch` for Consistent Error Handling' },
     ],
   },
+  {
+    phaseTitle: 'Phase 4: Authentication and token management',
+    steps: [
+      { path: '/phase4/test-api', label: 'Step 11: Implement login and token management with Nitro APIs' },
+      { path: '/phase4/login', label: 'Step 12: Manage tokens with `useCookie`</code>`' },
+    ],
+  },
 ]
 </script>
 
