@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAsyncData, useState, ref, computed, type UserRecord } from '#imports'
+import { useAsyncData, useState, ref, computed, type UserRecord, type IFetchError } from '#imports'
 
 // --- state management ---
 const apiLogs = useState<string[]>('phase2/apiLogs', () => [])
@@ -17,8 +17,6 @@ const addLog = (action: string, status: number, detail?: unknown) => {
   apiLogs.value.unshift(`[${timestamp}Z] ${action} -> Status: ${status} | ${JSON.stringify(detail)}`)
 }
 
-type FetchError = { statusCode?: number; statusMessage?: string; data?: { data?: Record<string, string[]> } }
-
 // 📝 1. Get list
 const {
   data: users,
@@ -29,9 +27,9 @@ const {
     const data = await $fetch<UserRecord[]>('/api/phase2/users')
     addLog('GET (List)', 200, `Fetched ${data.length} users`)
     return data
-  } catch (err: unknown) {
-    const e = err as FetchError
-    addLog('GET (List) ERROR', e?.statusCode || 500, e?.statusMessage || err)
+  } catch (error) {
+    const e = error as IFetchError
+    addLog('GET (List) ERROR', e?.statusCode || 500, e?.statusMessage || error)
     return []
   }
 })
@@ -45,9 +43,9 @@ const fetchSingle = async (searchId: string) => {
     const data = await $fetch<UserRecord>(`/api/phase2/users/${searchId}`)
     addLog(`GET (Single: ID ${searchId})`, 200, data)
     return data
-  } catch (err: unknown) {
-    const e = err as FetchError
-    addLog(`GET (Single: ID ${searchId}) ERROR`, e.statusCode || 404, e.statusMessage)
+  } catch (error) {
+    const e = error as IFetchError
+    addLog(`GET (Single: ID ${searchId}) ERROR`, e.statusCode || 404, e.statusMessage || error)
   }
 }
 
@@ -66,13 +64,13 @@ const submitForm = async () => {
     }
     resetForm()
     await refreshList()
-  } catch (err: unknown) {
-    const e = err as FetchError
+  } catch (error) {
+    const e = error as IFetchError
     if (e?.statusCode === 400) {
       validationErrors.value = e?.data?.data ?? {}
       addLog('Validation Error', 400, validationErrors.value)
     } else {
-      addLog('Submit ERROR', e.statusCode || 500, e.statusMessage || err)
+      addLog('Submit ERROR', e.statusCode || 500, e.statusMessage || error)
     }
   }
 }
@@ -86,9 +84,9 @@ const deleteUser = async (id: string) => {
     await $fetch(`/api/phase2/users/${id}`, { method: 'DELETE' })
     addLog(`DELETE (ID ${id})`, 204, 'No Content')
     await refreshList()
-  } catch (err: unknown) {
-    const e = err as FetchError
-    addLog(`DELETE (ID ${id}) ERROR`, e.statusCode || 500, e.statusMessage || err)
+  } catch (error) {
+    const e = error as IFetchError
+    addLog(`DELETE (ID ${id}) ERROR`, e.statusCode || 500, e.statusMessage || error)
   }
 }
 

@@ -33,8 +33,8 @@ export default defineEventHandler((event) => {
       // 4. By having verified user information in event.context,
       // You can now retrieve user information without having to validate it in each subsequent API handler
       event.context.auth = decoded
-    } catch (err) {
-      console.error('JWT verification failed:', err)
+    } catch (error) {
+      console.error('JWT verification failed:', error)
       throw createError({
         statusCode: 401,
         statusMessage: 'Unauthorized: Token expired or invalid signature',

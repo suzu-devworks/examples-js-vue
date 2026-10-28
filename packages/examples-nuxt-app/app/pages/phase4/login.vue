@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useRoute, useAuthToken, navigateTo } from '#imports'
+import { ref, useRoute, useAuthToken, navigateTo, type IFetchError } from '#imports'
 
 const username = ref('admin')
 const password = ref('password')
@@ -8,9 +8,6 @@ const loading = ref(false)
 
 const route = useRoute()
 const { setToken } = useAuthToken()
-
-// Extract the response body (`data`) from an error thrown by $fetch
-const toErrorData = (err: unknown) => (err as { data?: { statusMessage?: string } } | undefined)?.data
 
 const handleLogin = async () => {
   try {
@@ -27,8 +24,9 @@ const handleLogin = async () => {
       const redirectPath = (route.query.redirect as string) || '/phase4/dashboard'
       navigateTo(redirectPath)
     }
-  } catch (err: unknown) {
-    errorMessage.value = toErrorData(err)?.statusMessage || 'login failed'
+  } catch (error) {
+    const err = error as IFetchError
+    errorMessage.value = err?.statusMessage || 'login failed'
   }
 }
 </script>

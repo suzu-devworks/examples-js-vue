@@ -27,7 +27,7 @@ export default defineNitroPlugin(async () => {
 
     await storage.setItemRaw(FILE_NAME, buffer)
     console.log('--- [Holidays Init] Holidays CSV successfully saved! ---')
-  } catch (error: unknown) {
+  } catch (error) {
     console.error('--- [Holidays Init] An error occurred while initializing holiday data: ---', error)
   }
 

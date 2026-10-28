@@ -25,8 +25,8 @@ export const useGlobalProfileStore = defineStore('globalProfile', () => {
     try {
       const response = await fetch(`https://api.github.com/users/${payload.user_id}`)
       setGithubProfile(await response.json())
-    } catch (ex) {
-      error.value = ex as Error
+    } catch (e) {
+      error.value = e as Error
     } finally {
       loading.value = false
     }

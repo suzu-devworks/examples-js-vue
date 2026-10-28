@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, definePageMeta, navigateTo, useAuthToken, useRoute } from '#imports'
+import { ref, definePageMeta, navigateTo, useAuthToken, useRoute, type IFetchError } from '#imports'
 
 // Apply root middleware to the page
 definePageMeta({
@@ -9,9 +9,6 @@ definePageMeta({
 const route = useRoute()
 
 const verifyResult = ref<Record<string, unknown> | null>(null)
-
-// Extract the response body (`data`) from an error thrown by $fetch
-const toErrorData = (err: unknown) => (err as { data?: { statusMessage?: string } } | undefined)?.data
 
 // Call useAuthToken created in Step 12
 const { token, clearToken } = useAuthToken()
@@ -25,8 +22,9 @@ const handleVerify = async () => {
         Authorization: `Bearer ${token.value}`,
       },
     })
-  } catch (err: unknown) {
-    verifyResult.value = toErrorData(err) ?? { error: 'Verification failed' }
+  } catch (error) {
+    const err = error as IFetchError
+    verifyResult.value = err.data ?? { error: 'Verification failed' }
   }
 }
 

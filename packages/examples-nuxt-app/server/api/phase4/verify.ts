@@ -70,8 +70,8 @@ export default defineEventHandler((event) => {
         role: decoded.role,
       },
     }
-  } catch (e) {
-    console.error('JWT verification error:', e)
+  } catch (error) {
+    console.error('JWT verification error:', error)
 
     throw createError({
       statusCode: 401,

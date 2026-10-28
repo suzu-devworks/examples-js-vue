@@ -56,7 +56,7 @@ export default defineCachedEventHandler(
       return {
         holidays: [...new Set(holidayDates)],
       }
-    } catch (error: unknown) {
+    } catch (error) {
       // Handling server errors
       const message = error instanceof Error ? error.message : ''
 

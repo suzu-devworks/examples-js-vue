@@ -32,8 +32,8 @@ const handleSubmit = async () => {
     } else {
       await fetchWithPlugin(url)
     }
-  } catch (err: unknown) {
-    errorMessage.value = err instanceof Error ? err.message : 'Unknown error'
+  } catch (error) {
+    errorMessage.value = error instanceof Error ? error.message : 'Unknown error'
   } finally {
     isLoading.value = false
   }
