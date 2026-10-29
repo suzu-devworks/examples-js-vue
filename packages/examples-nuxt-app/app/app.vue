@@ -1,0 +1,125 @@
+<script setup lang="ts">
+interface StepLink {
+  path: string
+  label: string
+}
+
+interface PhaseGroup {
+  phaseTitle: string
+  steps: StepLink[]
+}
+
+const agendaMenu: PhaseGroup[] = [
+  {
+    phaseTitle: 'Phase 1: Configuration and rendering fundamentals',
+    steps: [
+      { path: '/phase1/config-test', label: 'Step 1: Dynamic control of runtime and configuration' },
+      { path: '/phase1/rendering-ssr', label: 'Step 2: Rendering Verification: SSR (ssr: true)' },
+      { path: '/phase1/rendering-spa', label: 'Step 2: Rendering Verification: SPA (ssr: false)' },
+      { path: '/phase1/rendering-verification', label: 'Step 3: Verifying behavior for each rendering mode' },
+    ],
+  },
+  {
+    phaseTitle: 'Phase 2: Nitro Engine, Data, and Caching',
+    steps: [
+      { path: '/phase2/nitro-basic', label: 'Step 4: Nitro Server API Basics & Direct URL Verification' },
+      { path: '/phase2/users', label: 'Step 4: Practicing Nitro REST API(CRUD)' },
+      { path: '/phase2/nitro-storage', label: 'Step 5: Nitro Storage API Caching' },
+      { path: '/phase2/posts', label: 'Step 6: Post List (`useFetch`)' },
+      { path: '/phase2/use-state', label: 'Step 7: Safe Shared State with `useState`' },
+    ],
+  },
+  {
+    phaseTitle: 'Phase 3: Extensibility and customization',
+    steps: [
+      { path: '/phase3/plugin-demo', label: 'Step 8: Inject Initialization Logic with Nuxt Plugins' },
+      { path: '/phase3/custom-fetch', label: 'Step 9: Customize `useFetch` with Runtime Config & Common Headers' },
+      { path: '/phase3/error-handling', label: 'Step 10: Customize `useFetch` for Consistent Error Handling' },
+    ],
+  },
+  {
+    phaseTitle: 'Phase 4: Authentication and token management',
+    steps: [
+      { path: '/phase4/test-api', label: 'Step 11: Implement login and token management with Nitro APIs' },
+      { path: '/phase4/test-cookie', label: '🔐 Step 12: Manage tokens with `useCookie`' },
+      { path: '/phase4/authorized', label: '🔐 Step 13: Access protected profile with `useAuthorizedFetch`' },
+      { path: '/phase4/dashboard', label: '🔐 Step 14: Protected Dashboard (Route Middleware Guard)' },
+    ],
+  },
+]
+</script>
+
+<template>
+  <div class="container">
+    <header>
+      <nav>
+        <!-- Left side -->
+        <ul>
+          <li>
+            <a href="/" class="brand-link">
+              <strong>Nuxt 4 Deep Dive</strong>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right side -->
+        <ul>
+          <li>
+            <details class="dropdown">
+              <summary class="secondary">Project Agenda</summary>
+              <ul class="agenda-list">
+                <template v-for="(phase, index) in agendaMenu" :key="phase.phaseTitle">
+                  <hr v-if="index > 0" />
+                  <li class="menu-header">
+                    <strong>{{ phase.phaseTitle }}</strong>
+                  </li>
+                  <li v-for="step in phase.steps" :key="step.path">
+                    <NuxtLink :to="step.path" class="menu-item"> ▪️ {{ step.label }}</NuxtLink>
+                  </li>
+                </template>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <NuxtPage />
+    </main>
+  </div>
+</template>
+
+<style scoped>
+.brand-link {
+  color: var(--pico-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--pico-primary-hover);
+  }
+}
+
+.agenda-list {
+  position: absolute;
+  right: 0;
+  left: auto;
+  max-height: 80vh;
+  padding: 0.75rem;
+  overflow-y: auto;
+
+  hr {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .menu-header {
+    font-size: 0.85rem;
+    color: var(--pico-heading-color);
+  }
+
+  .menu-item {
+    font-size: 0.8rem;
+  }
+}
+</style>
