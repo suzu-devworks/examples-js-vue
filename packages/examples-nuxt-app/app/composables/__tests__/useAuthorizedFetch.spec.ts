@@ -44,7 +44,10 @@ describe('useAuthorizedFetch', () => {
     expect(headers.get('x-request-id')).toMatch(/^req_[a-z0-9]{9}$/)
 
     expect(responseErrorHandler).toBeTypeOf('function')
-    if (typeof responseErrorHandler !== 'function') throw new Error('Expected response error handler')
+    if (typeof responseErrorHandler !== 'function') {
+      throw new Error('Expected response error handler')
+    }
+
     responseErrorHandler({ response: { status: 500 } as Response } as never)
     expect(showError).toHaveBeenCalledWith({
       statusCode: 500,

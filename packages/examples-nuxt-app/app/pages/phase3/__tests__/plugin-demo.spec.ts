@@ -11,4 +11,12 @@ describe('plugin demonstration page', () => {
     expect(wrapper.text()).toContain('4.0.0-learn')
     expect(wrapper.get('button').text()).toContain('Trigger Plugin Logger')
   })
+
+  it('displays a Button clicked log after the button is pressed', async () => {
+    const wrapper = await mountSuspended(Page)
+
+    await wrapper.get('button').trigger('click')
+
+    expect(wrapper.text()).toContain('Button clicked')
+  })
 })

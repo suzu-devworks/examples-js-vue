@@ -1,6 +1,5 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
-import { nextTick } from 'vue'
 
 import Page from '.././use-state.vue'
 
@@ -12,15 +11,13 @@ describe('shared state page', () => {
 
     expect(wrapper.text()).toContain('Count: 0')
     await buttons[0]!.trigger('click')
-    await nextTick()
     expect(wrapper.text()).toContain('Count: 1')
 
     await buttons[1]!.trigger('click')
-    await nextTick()
-    expect(wrapper.text()).toContain('Count: 0')
+    await buttons[1]!.trigger('click')
+    expect(wrapper.text()).toContain('Count: -1')
 
     await buttons[2]!.trigger('click')
-    await nextTick()
     expect(wrapper.text()).toContain('Count: 0')
   })
 })

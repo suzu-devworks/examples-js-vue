@@ -1,6 +1,6 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, nextTick } from 'vue'
 
 import { useSharedState } from '.././useSharedState'
 
@@ -20,6 +20,7 @@ describe('useSharedState', () => {
     expect(state.value.lastUpdated).not.toBe('')
 
     state.value.count = 2
+    await nextTick()
     expect(wrapper.text()).toContain('2:')
   })
 })

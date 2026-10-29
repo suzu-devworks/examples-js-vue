@@ -35,7 +35,10 @@ describe('useErrorHandledFetch', () => {
     await result.execute()
 
     expect(responseErrorHandler).toBeTypeOf('function')
-    if (typeof responseErrorHandler !== 'function') throw new Error('Expected response error handler')
+    if (typeof responseErrorHandler !== 'function') {
+      throw new Error('Expected response error handler')
+    }
+
     responseErrorHandler({ response: { status: 401 } as Response } as never)
     responseErrorHandler({ response: { status: 500, url: 'https://api.example.test/fail' } as Response } as never)
     expect(warn).toHaveBeenCalled()
