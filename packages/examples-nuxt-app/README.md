@@ -21,6 +21,15 @@ pnpm install
 pnpm --filter examples-nuxt-app dev
 ```
 
+## Testing
+
+Tests use Vitest with the Nuxt environment. Each test is placed in an `__tests__` directory alongside the code it covers.
+
+```sh
+pnpm --filter examples-nuxt-app test
+pnpm --filter examples-nuxt-app test:watch
+```
+
 ## Learning agenda
 
 Planned learning topics:
