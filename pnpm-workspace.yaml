@@ -1,6 +1,8 @@
 packages:
   - "packages/*"
 
+storeDir: /workspaces/.pnpm-store
+
 catalog:
   eslint: ^10.13.0
   oxlint: ^1.90.0
