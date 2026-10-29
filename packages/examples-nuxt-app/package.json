@@ -11,6 +11,8 @@
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
     "lint:eslint": "eslint",
     "lint:oxlint": "oxlint --type-aware .",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
@@ -24,11 +26,15 @@
   "devDependencies": {
     "@examples/eslint-config": "workspace:*",
     "@nuxt/eslint": "^1.17.0",
+    "@nuxt/test-utils": "^4.3.4",
     "@types/jsonwebtoken": "^9.0.10",
+    "@vue/test-utils": "^2.5.1",
     "eslint": "catalog:",
+    "happy-dom": "^21.0.4",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "typescript": "catalog:",
-    "vue-tsc": "catalog:"
+    "vue-tsc": "catalog:",
+    "vitest": "^5.0.5"
   }
 }
