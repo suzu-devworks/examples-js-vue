@@ -15,7 +15,7 @@ const text = ref('Hello')
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .child-component {
   .input-container {
     display: flex;

@@ -3,13 +3,12 @@ packages:
 
 catalog:
   eslint: ^10.13.0
-  oxlint: ^1.88.0
-  oxlint-tsgolint: ^7.0.2004
-  typescript: ~6.0.3
+  oxlint: ^1.90.0
+  oxlint-tsgolint: ^7.0.2005
+  typescript: ^6.0.3
   vue-tsc: ^3.3.13
 
 overrides:
-  # nuxt@4.5.2
   glob: "^13.0.0"
 
 allowBuilds:

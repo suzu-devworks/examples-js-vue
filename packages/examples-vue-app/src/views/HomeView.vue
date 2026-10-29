@@ -31,7 +31,7 @@ import { features } from '@/features'
   </DefaultLayout>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .home-view {
   --brand-logo-size: calc(var(--app-text-base) * 4);
   --brand-logo-title-size: var(--app-text-lg);

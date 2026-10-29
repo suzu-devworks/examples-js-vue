@@ -67,7 +67,7 @@ onScopeDispose(() => {
   </Teleport>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .toast-stack {
   position: fixed;
   inset: 0 0 auto auto;

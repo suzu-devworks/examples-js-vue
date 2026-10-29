@@ -26,7 +26,7 @@ const onLogout = () => {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .account-panel {
   display: flex;
   gap: var(--app-spacing-xs);

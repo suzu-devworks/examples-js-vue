@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useGlobalDialog } from '#imports'
-
 const { isOpen, dialogOptions, closeDialog } = useGlobalDialog()
 
 // Handling when the overlay is closed by clicking outside the frame

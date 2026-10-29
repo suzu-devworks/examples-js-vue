@@ -11,7 +11,7 @@ import { RouterLink } from 'vue-router'
   </RouterLink>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .brand-logo {
   --brand-title-size: var(--app-text-base);
   --brand-icon-size: calc(var(--brand-title-size) * 1.25);

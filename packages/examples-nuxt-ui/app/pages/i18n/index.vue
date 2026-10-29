@@ -192,7 +192,7 @@ const getHolidayName = (date: DateValue) => {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 @reference "~/assets/css/main.css";
 
 [data-show-colors] {

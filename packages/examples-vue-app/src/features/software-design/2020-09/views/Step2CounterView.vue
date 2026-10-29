@@ -38,7 +38,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .sd-step2-counter {
   .container {
     display: flex;

@@ -4,7 +4,7 @@ import { useMenu } from '../../composables/wireframes/useMenu'
 const { menuItems } = useMenu()
 
 const { mdAndUp } = useDisplay()
-const drawer = ref(mdAndUp)
+const drawer = ref(mdAndUp.value)
 </script>
 
 <template>

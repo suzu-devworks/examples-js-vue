@@ -5,7 +5,7 @@
   </button>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .fancy-button {
   padding: 5px 10px;
   margin: 5px;

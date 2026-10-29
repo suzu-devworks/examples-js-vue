@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .card {
   padding: 0;
   border: 1px solid var(--app-surface-border);

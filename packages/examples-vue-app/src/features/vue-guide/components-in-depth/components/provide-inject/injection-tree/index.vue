@@ -22,7 +22,7 @@ provide('message', message)
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .tree-component {
   :deep(summary) {
     padding: 0 var(--app-spacing-sm);

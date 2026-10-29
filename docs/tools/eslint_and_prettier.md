@@ -276,6 +276,16 @@ import frameworkPreset from 'eslint-config-framework'
 export default [frameworkPreset, ...sharedRules, ...disabledRules]
 ```
 
+### [eslint] Nuxt Module install
+
+Install the Nuxt ESLint module in your Nuxt application:
+
+```bash
+pnpm dlx nuxi module add --dev eslint
+```
+
+The official documentation doesn't mention `--dev`, but I don't think that will be an issue.
+
 ## Run
 
 Run it using the following command:

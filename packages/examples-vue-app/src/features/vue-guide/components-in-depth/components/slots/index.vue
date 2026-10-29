@@ -208,7 +208,7 @@ const currentTab = ref('overview')
   </section>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .article-section {
   .parent-message {
     width: 100%;

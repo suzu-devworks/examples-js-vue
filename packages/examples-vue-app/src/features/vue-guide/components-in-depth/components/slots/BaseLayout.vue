@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 footer {
   font-size: 0.8em;
   color: #666;
