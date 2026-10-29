@@ -13,6 +13,7 @@
     "lint:oxlint": "oxlint --type-aware .",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
@@ -28,13 +29,14 @@
     "@nuxt/eslint": "^1.17.0",
     "@nuxt/test-utils": "^4.3.4",
     "@types/jsonwebtoken": "^9.0.10",
+    "@vitest/coverage-v8": "^5.0.5",
     "@vue/test-utils": "^2.5.1",
     "eslint": "catalog:",
     "happy-dom": "^21.0.4",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "typescript": "catalog:",
-    "vue-tsc": "catalog:",
-    "vitest": "^5.0.5"
+    "vitest": "^5.0.5",
+    "vue-tsc": "catalog:"
   }
 }
