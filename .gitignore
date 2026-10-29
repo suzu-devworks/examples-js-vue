@@ -133,6 +133,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# pnpm
+.pnpm-store/
+
 ##> system files.
 [Tt]emp/
 [Tt]humbs.db
